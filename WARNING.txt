@@ -1,0 +1,4 @@
+1) Изменить порт, можно указав в файле package.json команду --port xxxx.
+ Пример "serve": "vue-cli-service serve --port 3000";
+
+ 2)

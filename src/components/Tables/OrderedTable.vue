@@ -3,10 +3,10 @@
     <md-table v-model="users" :table-header-color="tableHeaderColor">
       <md-table-row slot="md-table-row" slot-scope="{ item }">
         <md-table-cell md-label="ID">{{ item.id }}</md-table-cell>
-        <md-table-cell md-label="Name">{{ item.name }}</md-table-cell>
-        <md-table-cell md-label="Salary">{{ item.salary }}</md-table-cell>
-        <md-table-cell md-label="Country">{{ item.country }}</md-table-cell>
-        <md-table-cell md-label="City">{{ item.city }}</md-table-cell>
+        <md-table-cell md-label="Название задачи"><a href="">{{ item.name }}</a></md-table-cell>
+        <md-table-cell md-label="Приоритет">{{ item.salary }}</md-table-cell>
+        <md-table-cell md-label="Проект">{{ item.country }}</md-table-cell>
+        <md-table-cell md-label="Описание">{{ item.city }}</md-table-cell>
       </md-table-row>
     </md-table>
   </div>

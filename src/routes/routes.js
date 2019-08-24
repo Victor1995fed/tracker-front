@@ -27,7 +27,7 @@ const routes = [
       },
       {
         path: "table",
-        name: "Table List",
+        name: "Задачи",
         component: TableList
       },
       {

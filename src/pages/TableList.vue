@@ -4,6 +4,9 @@
       <div
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-100"
       >
+      <md-button class="md-success" >Добавить задачу</md-button>
+<md-button class="md-success" >Добавить категорию</md-button>
+<md-button class="md-success" >Добавить проект</md-button>
         <md-card>
           <md-card-header data-background-color="green">
             <h4 class="title">Проект 1</h4>

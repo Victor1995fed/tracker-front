@@ -9,8 +9,8 @@
 <md-button class="md-success" >Добавить проект</md-button>
         <md-card>
           <md-card-header data-background-color="green">
-            <h4 class="title">Проект 1</h4>
-            <p class="category">Краткое описание проекта</p>
+            <h4 class="title">Ваши задачи</h4>
+            <p class="category">Сортировка по активным</p>
           </md-card-header>
           <md-card-content>
             <simple-table table-header-color="green"></simple-table>
@@ -31,7 +31,6 @@ import { SimpleTable} from "@/components";
 
 export default {
   components: {
-  
     SimpleTable
   }
 };

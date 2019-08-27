@@ -1,18 +1,20 @@
 <template>
   <div>
-    <md-table v-model="users" :table-header-color="tableHeaderColor">
+    <md-table v-model="task" :table-header-color="tableHeaderColor">
       <md-table-row slot="md-table-row" slot-scope="{ item }">
-        <md-table-cell md-label="ID">{{ item.id }}</md-table-cell>
-        <md-table-cell md-label="Проект">{{ item.project }}</md-table-cell>
-        <md-table-cell md-label="Категория">{{ item.category }}</md-table-cell>
-        <md-table-cell md-label="Тема"><a :href="item.link">{{ item.title }}</a></md-table-cell>
-        <md-table-cell md-label="Приоритет">{{ item.priority }}</md-table-cell>
+        <md-table-cell md-label="#">{{ item.id }}</md-table-cell>
+        <md-table-cell md-label="Тема"><a :href="'task/view?id='+item.id">{{ item.title }}</a></md-table-cell>
+        <!-- <md-table-cell md-label="Проект">{{ item.project }}</md-table-cell> -->
+        <md-table-cell md-label="Категория">{{ item.category.title }}</md-table-cell>
+        <md-table-cell md-label="Приоритет">{{ item.priority.title }}</md-table-cell>
       </md-table-row>
     </md-table>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+import repository from '@/settings.js'; 
 export default {
   name: "simple-table",
   props: {
@@ -23,6 +25,7 @@ export default {
   },
   data() {
     return {
+      task: [],
       selected: [],
       users: [
         {
@@ -51,6 +54,15 @@ export default {
         }
       ]
     };
-  }
+  },
+  
+  mounted() {
+
+axios.get(repository.API+'task/index').then(response => {
+
+this.task = response.data
+
+})
+}
 };
 </script>

@@ -2,6 +2,7 @@ import DashboardLayout from "@/pages/Layout/DashboardLayout.vue";
 
 import Dashboard from "@/pages/Dashboard.vue";
 import UserProfile from "@/pages/UserProfile.vue";
+import TaskView from "@/pages/Task/View.vue";
 import TableList from "@/pages/TableList.vue";
 import Typography from "@/pages/Typography.vue";
 import Icons from "@/pages/Icons.vue";
@@ -14,11 +15,22 @@ const routes = [
     path: "/",
     component: DashboardLayout,
     redirect: "/dashboard",
+
     children: [
       {
         path: "dashboard",
         name: "Dashboard",
         component: Dashboard
+      },
+      {
+        path: "task/view/:id",
+        name: "ВИД",
+        component: TaskView
+        },
+      {
+        path: "task22",
+        name: "User Profile",
+        component: TaskView
       },
       {
         path: "user",

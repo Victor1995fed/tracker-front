@@ -1,11 +1,8 @@
 <template>
   <div class="content">
     <div class="md-layout">
-      <div class="md-layout-item md-medium-size-100 md-size-66">
+      <div class="md-layout-item md-medium-size-100 md-size-100">
         <edit-task data-background-color="green"> </edit-task>
-      </div>
-      <div class="md-layout-item md-medium-size-100 md-size-33">
-        <!-- <user-card> </user-card> -->
       </div>
     </div>
   </div>

@@ -77,26 +77,23 @@
             </md-field>
           </div>
   <div class="md-layout-item md-small-size-100 md-size-50">
-    <label>Дата начала</label>
+   
          
-              <!-- <datepicker></datepicker> -->
-              <datepicker  v-model="dateStart" :clear-button="true" :language="ru" input-class="date-picker" :format="format"/>
-              <!-- <md-datepicker  v-model="dateStart" :md-open-on-focus="false" :md-immediately="true"></md-datepicker> -->
-        
+      <md-field>
+              <md-datepicker  v-model="dateStart" :md-open-on-focus="false" :md-immediately="true"><label>Дата начала</label></md-datepicker>
+         </md-field>
           </div>
 
            <div class="md-layout-item md-small-size-100 md-size-50">
-             <label>Дата завершения</label>
-          
-          
-           <datepicker  v-model="dateEnd" :clear-button="true" :language="ru" input-class="date-picker" :format="format"/>
-              <!-- <md-datepicker  v-model="dateEnd" :md-open-on-focus="false" :md-immediately="true"></md-datepicker> -->
+              <md-field>
+              <md-datepicker  v-model="dateEnd" :md-open-on-focus="false" :md-immediately="true"><label>Дата завершения</label></md-datepicker>
+                </md-field>
           </div>
 
           <div class="md-layout-item md-small-size-100 md-size-100">
-            <label>Приложенные файлы</label>
+           
             <md-field>
-              
+               <label>Приложенные файлы</label>
               <!-- <md-input v-model="file" type='file'></md-input> -->
              <md-file v-model="file" multiple  />
             </md-field>
@@ -122,15 +119,10 @@
 </style>
 <script>
 import { VueEditor } from "vue2-editor";
-import Datepicker from 'vuejs-datepicker';
-import {en, ru} from 'vuejs-datepicker/dist/locale'
-// this.dateFormat = 'yyyy/MM/dd'
+import Vue from 'vue'
 export default {
    components: {
-    VueEditor,
-    Datepicker,
-    en,
-    ru
+    VueEditor
   },
   name: "edit-task",
   props: {
@@ -141,11 +133,7 @@ export default {
   },
   data() {
     return {
-      format:'yyyy-dd-MM',
-      ru: ru,
       content: "<h1>Some initial content</h1>",
-      // dateFormat : 'yyyy/MM/dd',
-    //  ru: 'ru',
       dateStart: null,
       dateEnd: null,
       file: null,
@@ -210,6 +198,24 @@ export default {
       description: "Пиши"
     };
   },
+
+   mounted() {
+        Vue.material.locale = {
+    // range for datepicker
+    startYear: 1900,
+    endYear: 2099,
+    // date format for date picker
+    dateFormat: 'dd.MM.yyyy',
+    // i18n strings
+    days: ['Воскреенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
+    shortDays: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+    shorterDays: ['В', 'П', 'В', 'Ср', 'Ч', 'П', 'Сб'],
+    months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+    shortMonths: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июнь', 'Июль', 'Авг', 'Сент', 'Окт', 'Нояб', 'Дек'],
+    shorterMonths: ['Я', 'Ф', 'М', 'А', 'М', 'Ин', 'Ил', 'Ав', 'Се', 'О', 'Н', 'Д'],
+
+  }
+    }
 };
 
 </script>

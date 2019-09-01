@@ -132,8 +132,10 @@
         content: "gives the styles and works fine with dark themes. Look:"
     }),
     mounted() {
+      
+        // Vue.material.locale.dateFormat = 'dd/MM/yyyy'
+        // console.log(Vue.material.locale.dateFormat);
         let id = this.$route.params.id;
-        console.log({ router: this.$router });
         axios.get(repository.API + "task/view?id=" + id).then(response => {
         this.task = response.data;
         });

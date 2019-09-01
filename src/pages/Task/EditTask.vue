@@ -79,15 +79,15 @@
   <div class="md-layout-item md-small-size-100 md-size-50">
    
          
-      <md-field>
-              <md-datepicker  v-model="dateStart" :md-open-on-focus="false" :md-immediately="true"><label>Дата начала</label></md-datepicker>
-         </md-field>
+    
+              <md-datepicker ref="datePicker" v-on:md-opened="changeText"  v-model="dateStart" :md-open-on-focus="false" :md-immediately="true"><label>Дата начала</label></md-datepicker>
+         
           </div>
 
            <div class="md-layout-item md-small-size-100 md-size-50">
-              <md-field>
-              <md-datepicker  v-model="dateEnd" :md-open-on-focus="false" :md-immediately="true"><label>Дата завершения</label></md-datepicker>
-                </md-field>
+              
+              <md-datepicker  v-model="dateEnd" v-on:md-opened="changeText" :md-open-on-focus="false" :md-immediately="true"><label>Дата завершения</label></md-datepicker>
+           
           </div>
 
           <div class="md-layout-item md-small-size-100 md-size-100">
@@ -130,6 +130,21 @@ export default {
       type: String,
       default: ""
     }
+  },
+  methods:{
+ changeText: function(event){
+     this.$nextTick(function () {
+let datepickerFooter = document.getElementsByClassName('md-datepicker-body-footer')[0]
+let buttonDatepicker = datepickerFooter.getElementsByClassName('md-button-content')[0]
+buttonDatepicker.innerText = 'Отмена'
+  })
+
+// for(var i=0; i < test.length; i++) { 
+//   console.log(test[i])
+// }
+//  test.innerText = 'dfdf'
+
+ }
   },
   data() {
     return {
@@ -198,9 +213,12 @@ export default {
       description: "Пиши"
     };
   },
-
    mounted() {
+// console.log(this.$refs.datePicker)
+// console.log(this.$refs.datePicker)
+// console.dir(this.$children);
         Vue.material.locale = {
+          mdCancelText:'sdsd',
     // range for datepicker
     startYear: 1900,
     endYear: 2099,
@@ -213,10 +231,15 @@ export default {
     months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
     shortMonths: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июнь', 'Июль', 'Авг', 'Сент', 'Окт', 'Нояб', 'Дек'],
     shorterMonths: ['Я', 'Ф', 'М', 'А', 'М', 'Ин', 'Ил', 'Ав', 'Се', 'О', 'Н', 'Д'],
-
+ firstDayOfAWeek: 1
   }
-    }
+    },
+
+    updated: function () {
+  this.$nextTick(function () {
+
+  })
+}
 };
 
 </script>
-<style></style>

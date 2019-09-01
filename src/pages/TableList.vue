@@ -4,8 +4,7 @@
       <div
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-100"
       >
-      <a href="/#/task/view/4">Переход</a>
-      <md-button class="md-success" >Добавить задачу</md-button>
+      <md-button class="md-success" href="/#/task/create/4">Добавить задачу</md-button>
 <md-button class="md-success" >Добавить категорию</md-button>
 <md-button class="md-success" >Добавить проект</md-button>
         <md-card>

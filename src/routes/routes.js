@@ -2,6 +2,7 @@ import DashboardLayout from "@/pages/Layout/DashboardLayout.vue";
 
 import Dashboard from "@/pages/Dashboard.vue";
 import UserProfile from "@/pages/UserProfile.vue";
+import TaskCreate from "@/pages/Task/Create.vue";
 import TaskView from "@/pages/Task/View.vue";
 import TableList from "@/pages/TableList.vue";
 import Typography from "@/pages/Typography.vue";
@@ -23,15 +24,18 @@ const routes = [
         component: Dashboard
       },
       {
-        path: "task/view/:id",
-        name: "ВИД",
-        component: TaskView
-        },
-      {
-        path: "task22",
-        name: "User Profile",
-        component: TaskView
+        path: "task/create/:id",
+        name: "Редактирование задачи",
+        component: TaskCreate,
+        props: true
       },
+      {
+        path: "task/view/:id",
+        name: "Просмотр задачи",
+        component: TaskView,
+        props: true
+      },
+   
       {
         path: "user",
         name: "User Profile",

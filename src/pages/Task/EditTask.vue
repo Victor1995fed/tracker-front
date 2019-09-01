@@ -2,8 +2,8 @@
   <form>
     <md-card>
       <md-card-header :data-background-color="dataBackgroundColor">
-        <h4 class="title">Редактирование задачи</h4>
-        <p class="category">Complete your profile</p>
+        <h4 class="title">Название проекта </h4>
+        <p class="category">Название задачи если есть</p>
       </md-card-header>
 
       <md-card-content>
@@ -97,7 +97,8 @@
             <label>Приложенные файлы</label>
             <md-field>
               
-              <md-input v-model="file" type='file'></md-input>
+              <!-- <md-input v-model="file" type='file'></md-input> -->
+             <md-file v-model="file" multiple  />
             </md-field>
           </div>
 

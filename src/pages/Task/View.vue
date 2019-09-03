@@ -65,6 +65,17 @@
                     </div>
                     <div class="md-layout-item">
                         <p>
+                        <span class="md-body-2">Потрачено(ч):</span>
+                        5
+                        </p>
+                    </div>
+                 
+                    </div>
+
+
+                       <div class="md-layout">
+                       <div class="md-layout-item">
+                        <p>
                         <span class="md-body-2">Готовность:</span>
                         <span>{{amount}}</span>%
                         </p>

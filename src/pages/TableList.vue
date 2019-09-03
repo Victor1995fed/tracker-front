@@ -6,7 +6,7 @@
       >
       <md-button class="md-success" href="/#/task/create/4">Добавить задачу</md-button>
 <md-button class="md-success" >Добавить категорию</md-button>
-<md-button class="md-success" >Добавить проект</md-button>
+<md-button class="md-success"  href="/#/project/create/5" >Добавить проект</md-button>
         <md-card>
           <md-card-header data-background-color="green">
             <h4 class="title">Ваши задачи</h4>

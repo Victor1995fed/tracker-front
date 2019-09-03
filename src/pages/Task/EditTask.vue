@@ -90,6 +90,16 @@
            
           </div>
 
+
+<div class="md-layout-item md-small-size-100 md-size-100">
+           <label>Прогресс</label>
+            <md-field>
+               
+              <!-- <md-input v-model="file" type='file'></md-input> -->
+              <input type="range" v-model.number="amount"> {{ amount }}%
+              
+            </md-field>
+          </div>
           <div class="md-layout-item md-small-size-100 md-size-100">
            
             <md-field>
@@ -148,6 +158,7 @@ buttonDatepicker.innerText = 'Отмена'
   },
   data() {
     return {
+      amount:10,
       content: "<h1>Some initial content</h1>",
       dateStart: null,
       dateEnd: null,

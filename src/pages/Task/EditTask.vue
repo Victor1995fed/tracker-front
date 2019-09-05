@@ -126,6 +126,13 @@
 .date-picker:focus {
   border-bottom: 1px solid #a84db8; 
 }
+.md-datepicker-header {
+  color:#fff !important;
+}
+button.md-datepicker-month-trigger {
+  background-color:#4caf50 !important;
+}
+
 </style>
 <script>
 import { VueEditor } from "vue2-editor";

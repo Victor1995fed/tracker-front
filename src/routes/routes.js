@@ -4,6 +4,7 @@ import Dashboard from "@/pages/Dashboard.vue";
 import UserProfile from "@/pages/UserProfile.vue";
 import TaskCreate from "@/pages/Task/Create.vue";
 import ProjectCreate from "@/pages/Project/Create.vue";
+import ProjectView from "@/pages/Project/View.vue";
 import TaskView from "@/pages/Task/View.vue";
 import TableList from "@/pages/TableList.vue";
 import Typography from "@/pages/Typography.vue";
@@ -31,18 +32,20 @@ const routes = [
         props: true
       },
       {
-        path: "project/create/:id",
-        name: "Редактирование проекта",
-        component: ProjectCreate,
-        props: true
-      },
-      {
         path: "task/view/:id",
         name: "Просмотр задачи",
         component: TaskView,
-        props: true
       },
-   
+      {
+        path: "project/create/:id",
+        name: "Редактирование проекта",
+        component: ProjectCreate,
+      },
+      {
+        path: "project/view/:id",
+        name: "Редактирование проекта",
+        component: ProjectView,
+      },
       {
         path: "user",
         name: "User Profile",

@@ -1,24 +1,23 @@
 <template>
-  <form method="POST" :action="action" @submit.prevent="projectReview" ref="formData">
+  <form novalidate method="POST" class="md-layout" :action="action" @submit.prevent="validateUser" ref="formData">
     <md-card>
       <md-card-header :data-background-color="dataBackgroundColor">
         <h4 class="title">Название проекта </h4>
         <p class="category">Название задачи если есть</p>
       </md-card-header>
-
       <md-card-content>
         <div class="md-layout">
           <div class="md-layout-item md-small-size-100 md-size-100">
-            <md-field>
+            <md-field :class="getValidationClass('title')" >
               <label>Название проекта</label>
-              <md-input name="title" v-model="title" ref="title"></md-input>
+              <md-input  name="title"  autocomplete="given-name" v-model="form.title" ref="title" :disabled="sending"></md-input>
+                <span class="md-error" v-if="!$v.form.title.required">The first name is required</span>
+                <span class="md-error" v-else-if="!$v.form.title.minlength">Invalid first name</span>
             </md-field>
           </div>
-
           <div class="md-layout-item md-size-100">
             <label>Описание</label>
             <md-field maxlength="5">
-              
      <div id="app">
     <vue-editor  v-model="description" ref="description"></vue-editor>
     <!-- <textarea style="display:none" v-model="description" name="description" id="description" > </textarea> -->
@@ -37,14 +36,20 @@
 </template>
 <script>
 import { VueEditor } from "vue2-editor";
-import Vue from 'vue'
+// import Vue from 'vue'
 import axios from 'axios';
-import repository from '@/settings.js'; 
+import repository from '@/settings.js';
+import { validationMixin } from 'vuelidate'
+import {
+    required,
+    minLength,
+} from 'vuelidate/lib/validators'
 export default {
    components: {
     VueEditor
   },
   name: "edit-project",
+  mixins: [validationMixin],
   props: {
     dataBackgroundColor: {
       type: String,
@@ -53,6 +58,10 @@ export default {
   },
   data() {
     return {
+        form: {
+            title: null,
+        },
+        rules:[],
       amount:10,
       action:'http://tracker.zz/project/create',
       content: "<h1>Some initial content</h1>",
@@ -61,17 +70,60 @@ export default {
       file: null,
       username: null,
       title: null,
-      description: "Пиши"
+      description: "Пиши",
+        sending:false
     };
   },
+    validations: {
+        form: {
+
+            title: {
+                required,
+                minLength: minLength(3)
+            }
+        },
+        sending: false
+    },
   methods:{
-    projectReview(obj){
+      getValidationClass (fieldName) {
+          const field = this.$v.form[fieldName]
+
+          if (field) {
+              console.log("INVA",field.$invalid);
+              console.log("DIR",field.$dirty);
+              return {
+                  'md-invalid': field.$invalid && field.$dirty
+              }
+          }
+      },
+      clearForm () {
+          this.$v.$reset()
+          this.form.title = null
+      },
+      saveUser () {
+          this.sending = true
+
+          // Instead of this timeout, here you can call your API
+          window.setTimeout(() => {
+              this.lastUser = `${this.form.title}`
+              this.userSaved = true
+              this.sending = false
+              this.clearForm()
+          }, 1500)
+      },
+      validateUser () {
+          this.$v.$touch()
+          if (!this.$v.$invalid) {
+              this.saveUser()
+          }
+      },
+    projectReview(){
       let _this = this
       const formData = new FormData();
       formData.append('title', (this.$refs.title.value == null) ? '' : this.$refs.title.value);
       formData.append('description', this.$refs.description.value);
 
-      axios.post(repository.API+'project/create', 
+      axios.post(repository.API+'project/create',
     formData)
     .then(function(response){
        console.log(response.data)
@@ -86,10 +138,16 @@ export default {
           alert('error'+response.data.message)
      }
     })
-     
+
       // console.log(this.$refs.description.value);
+    },
+
+  },
+    mounted() {
+        axios.get(repository.API+'project/create').then(response => {
+            this.rules = response.data
+        })
     }
-  }
 
 
 };

@@ -23,7 +23,8 @@
     "vue-router": "3.0.6",
     "vue-social-sharing": "2.4.5",
     "vue2-editor": "^2.10.2",
-    "vuejs-datepicker": "^1.6.2"
+    "vuejs-datepicker": "^1.6.2",
+    "vuelidate": "^0.7.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "3.8.0",

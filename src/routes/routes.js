@@ -3,12 +3,22 @@ import DashboardLayout from "@/pages/Layout/DashboardLayout.vue";
 import Dashboard from "@/pages/Dashboard.vue";
 import UserProfile from "@/pages/UserProfile.vue";
 import TaskCreate from "@/pages/Task/Create.vue";
+//Project
 import ProjectCreate from "@/pages/Project/Create.vue";
 import ProjectList from "@/pages/Project/List.vue";
-import PageTest from "@/pages/Tests/Test.vue";
 import ProjectView from "@/pages/Project/View.vue";
+import ProjectChoice from "@/pages/Project/Choice.vue";
+import PageTest from "@/pages/Tests/Test.vue";
+
+//Task
 import TaskView from "@/pages/Task/View.vue";
 import TableList from "@/pages/TableList.vue";
+
+//Category
+import CategoryCreate from "@/pages/Category/Create.vue";
+import CategoryList from "@/pages/Category/List.vue";
+import CategoryView from "@/pages/Category/View.vue";
+
 import Typography from "@/pages/Typography.vue";
 import Icons from "@/pages/Icons.vue";
 import Maps from "@/pages/Maps.vue";
@@ -34,7 +44,7 @@ const routes = [
       },
 
       {
-        path: "task/create/:id",
+        path: "task/create/:id?/:project_id?",
         name: "Редактирование задачи",
         component: TaskCreate,
         props: true
@@ -54,11 +64,32 @@ const routes = [
         name: "Редактирование проекта",
         component: ProjectView,
       },
+
         {
             path:'project/list',
-            name: "Тестирование",
+            name: "Вывод",
             component: ProjectList,
         },
+      {
+        path:'project/choice',
+        name: "Вывод",
+        component: ProjectChoice,
+      },
+      {
+        path: "category/create/:id",
+        name: "Редактирование проекта",
+        component: CategoryCreate,
+      },
+      {
+        path: "category/view/:id",
+        name: "Редактирование проекта",
+        component: CategoryView,
+      },
+      {
+        path:'category/list',
+        name: "Вывод",
+        component: CategoryList,
+      },
       {
         path: "user",
         name: "User Profile",

@@ -8,6 +8,10 @@
         <md-icon>dashboard</md-icon>
         <p>Главная</p>
       </sidebar-link>
+      <sidebar-link to="/project/list">
+        <md-icon>dashboard</md-icon>
+        <p>Проекты</p>
+      </sidebar-link>
       <sidebar-link to="/user">
         <md-icon>person</md-icon>
         <p>Профиль</p>

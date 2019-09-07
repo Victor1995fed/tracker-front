@@ -4,6 +4,8 @@ import Dashboard from "@/pages/Dashboard.vue";
 import UserProfile from "@/pages/UserProfile.vue";
 import TaskCreate from "@/pages/Task/Create.vue";
 import ProjectCreate from "@/pages/Project/Create.vue";
+import ProjectList from "@/pages/Project/List.vue";
+import PageTest from "@/pages/Tests/Test.vue";
 import ProjectView from "@/pages/Project/View.vue";
 import TaskView from "@/pages/Task/View.vue";
 import TableList from "@/pages/TableList.vue";
@@ -26,6 +28,12 @@ const routes = [
         component: Dashboard
       },
       {
+        path:'test',
+        name: "Тестирование",
+        component: PageTest,
+      },
+
+      {
         path: "task/create/:id",
         name: "Редактирование задачи",
         component: TaskCreate,
@@ -46,6 +54,11 @@ const routes = [
         name: "Редактирование проекта",
         component: ProjectView,
       },
+        {
+            path:'project/list',
+            name: "Тестирование",
+            component: ProjectList,
+        },
       {
         path: "user",
         name: "User Profile",

@@ -24,17 +24,12 @@
                     </div>
                 </div>
                 <div class="row">
-                  
-                   
-
-
-
-
                     <hr />
                     <div class="md-layout">
                     <div class="md-layout-item">
                         <h4>Описание</h4>
-                        <span >{{response.description}}</span>
+<!--                        <vue-editor v-model="response.description"></vue-editor>-->
+                        <div class="ql-editor" v-html="response.description"></div>
                     </div>
                     </div>
                     <hr />
@@ -48,6 +43,7 @@
     </template>
 
     <script>
+
     import axios from "axios";
     import repository from "@/settings.js";
     export default {
@@ -66,7 +62,7 @@
         content: "gives the styles and works fine with dark themes. Look:"
     }),
     mounted() {
-      
+
         // Vue.material.locale.dateFormat = 'dd/MM/yyyy'
         // console.log(Vue.material.locale.dateFormat);
         let id = this.$route.params.id;
@@ -77,8 +73,16 @@
     };
     </script>
 
-    <style lang="scss" scoped>
-    small {
-    display: block;
-    }
+    <style lang="css">
+        @import "~vue2-editor/dist/vue2-editor.css";
+        /* Import the Quill styles you want */
+        @import '~quill/dist/quill.core.css';
+        @import '~quill/dist/quill.bubble.css';
+        @import '~quill/dist/quill.snow.css';
+        small {
+        display: block;
+        }
+        .ql-editor {
+            min-height: 50px;
+        }
     </style>

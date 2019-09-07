@@ -1,5 +1,5 @@
 <template>
-  <form novalidate method="POST" class="md-layout" :action="action" @submit.prevent="validateUser" ref="formData">
+  <form novalidate method="POST" class="md-layout" :action="action" @submit.prevent="validateFields" ref="formData">
     <md-card>
       <md-card-header :data-background-color="dataBackgroundColor">
         <h4 class="title">Название проекта </h4>
@@ -11,15 +11,15 @@
             <md-field :class="getValidationClass('title')" >
               <label>Название проекта</label>
               <md-input  name="title"  autocomplete="given-name" v-model="form.title" ref="title" :disabled="sending"></md-input>
-                <span class="md-error" v-if="!$v.form.title.required">The first name is required</span>
-                <span class="md-error" v-else-if="!$v.form.title.minlength">Invalid first name</span>
+                <span class="md-error" v-if="!$v.form.title.required">Название обязательно</span>
+                <span class="md-error" v-else-if="!$v.form.title.minlength">Минимум 3 символа</span>
             </md-field>
           </div>
           <div class="md-layout-item md-size-100">
             <label>Описание</label>
             <md-field maxlength="5">
      <div id="app">
-    <vue-editor  v-model="description" ref="description"></vue-editor>
+    <vue-editor  v-model="form.description" ref="description"></vue-editor>
     <!-- <textarea style="display:none" v-model="description" name="description" id="description" > </textarea> -->
   </div>
               <!-- <md-textarea v-model="description"></md-textarea> -->
@@ -60,6 +60,7 @@ export default {
     return {
         form: {
             title: null,
+            description: ""
         },
         rules:[],
       amount:10,
@@ -76,7 +77,6 @@ export default {
   },
     validations: {
         form: {
-
             title: {
                 required,
                 minLength: minLength(3)
@@ -86,7 +86,7 @@ export default {
     },
   methods:{
       getValidationClass (fieldName) {
-          const field = this.$v.form[fieldName]
+       const field = this.$v.form[fieldName]
 
           if (field) {
               console.log("INVA",field.$invalid);
@@ -102,16 +102,16 @@ export default {
       },
       saveUser () {
           this.sending = true
-
+          this.projectReview()
           // Instead of this timeout, here you can call your API
-          window.setTimeout(() => {
-              this.lastUser = `${this.form.title}`
-              this.userSaved = true
-              this.sending = false
-              this.clearForm()
-          }, 1500)
+          // window.setTimeout(() => {
+          //     this.lastUser = `${this.form.title}`
+          //     this.userSaved = true
+          //     this.sending = false
+          //     this.clearForm()
+          // }, 1500)
       },
-      validateUser () {
+      validateFields () {
           this.$v.$touch()
           if (!this.$v.$invalid) {
               this.saveUser()
@@ -120,8 +120,8 @@ export default {
     projectReview(){
       let _this = this
       const formData = new FormData();
-      formData.append('title', (this.$refs.title.value == null) ? '' : this.$refs.title.value);
-      formData.append('description', this.$refs.description.value);
+      formData.append('title', (this.form.title == null) ? '' : this.form.title);
+      formData.append('description', this.form.description);
 
       axios.post(repository.API+'project/create',
     formData)

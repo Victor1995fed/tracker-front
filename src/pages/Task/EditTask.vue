@@ -1,17 +1,19 @@
 <template>
-  <form>
+  <form novalidate @submit.prevent="validateFields">
     <md-card>
       <md-card-header :data-background-color="dataBackgroundColor">
-        <h4 class="title">Название проекта </h4>
+        <h4 class="title">Название проекта</h4>
         <p class="category">Название задачи если есть</p>
       </md-card-header>
 
       <md-card-content>
         <div class="md-layout">
           <div class="md-layout-item md-small-size-100 md-size-100">
-            <md-field>
+            <md-field :class="getValidationClass('title')">
               <label>Название задачи</label>
-              <md-input v-model="title"></md-input>
+              <md-input v-model="form.title" autocomplete="given-name" :disabled="sending"></md-input>
+                <span class="md-error" v-if="!$v.form.title.required">Название обязательно</span>
+                <span class="md-error" v-else-if="!$v.form.title.minlength">Минимум 3 символа</span>
             </md-field>
           </div>
 
@@ -20,41 +22,41 @@
             <md-field maxlength="5">
               
      <div id="app">
-    <vue-editor v-model="description"></vue-editor>
+    <vue-editor v-model="form.description"></vue-editor>
   </div>
               <!-- <md-textarea v-model="description"></md-textarea> -->
             </md-field>
           </div>
-          <div class="md-layout-item md-small-size-100 md-size-50">
+          <div class="md-layout-item md-small-size-100 md-size-33">
             <md-field>
               <label>Приоритет</label>
-              <md-select name="priority  " id="priority">
+              <md-select name="priority" id="priority" v-model="form.priority">
                 <md-option
-                  v-for="one in priority"
-                  :value="one.value"
-                  v-bind:key="one.value"
-                >{{ one.name }}</md-option>
+                  v-for="one in response.priority"
+                  :value="one.id"
+                  v-bind:key="one.id"
+                >{{ one.title }}</md-option>
               </md-select>
             </md-field>
           </div>
 
-            <div class="md-layout-item md-small-size-100 md-size-50">
+            <div class="md-layout-item md-small-size-100 md-size-33">
             <md-field>
               <label>Категория</label>
-              <md-select name="category  " id="category">
+              <md-select name="category" id="category" v-model="form.category">
                 <md-option
-                  v-for="one in category"
-                  :value="one.value"
-                 v-bind:key="one.value"
-                >{{ one.name }}</md-option>
+                  v-for="one in response.category"
+                  :value="one.id"
+                 v-bind:key="one.id"
+                >{{ one.title }}</md-option>
               </md-select>
             </md-field>
           </div>
          
-         <div class="md-layout-item md-small-size-100 md-size-50">
+         <div class="md-layout-item md-small-size-100 md-size-33">
             <md-field>
               <label>Метки</label>
-              <md-select name="tag  " id="tag">
+              <md-select name="tag" id="tag" v-model="form.tag">
                 <md-option
                   v-for="one in tag"
                   :value="one.value"
@@ -63,40 +65,27 @@
               </md-select>
             </md-field>
           </div>
-
-          <div class="md-layout-item md-small-size-100 md-size-50">
-            <md-field>
-              <label>Родительская задача</label>
-              <md-select name="tag  " id="tag">
-                <md-option
-                  v-for="one in parent"
-                  :value="one.value"
-                  v-bind:key="one.value"
-                >{{ one.name }}</md-option>
-              </md-select>
-            </md-field>
-          </div>
-  <div class="md-layout-item md-small-size-100 md-size-50">
+  <div class="md-layout-item md-small-size-100 md-size-33">
    
          
     
-              <md-datepicker ref="datePicker" v-on:md-opened="changeText"  v-model="dateStart" :md-open-on-focus="false" :md-immediately="true"><label>Дата начала</label></md-datepicker>
+              <md-datepicker ref="datePicker" v-on:md-opened="changeText"  v-model="form.dateStart" :md-open-on-focus="false" :md-immediately="true"><label>Дата начала</label></md-datepicker>
          
           </div>
 
-           <div class="md-layout-item md-small-size-100 md-size-50">
+           <div class="md-layout-item md-small-size-100 md-size-33">
               
-              <md-datepicker  v-model="dateEnd" v-on:md-opened="changeText" :md-open-on-focus="false" :md-immediately="true"><label>Дата завершения</label></md-datepicker>
+              <md-datepicker  v-model="form.dateEnd" v-on:md-opened="changeText" :md-open-on-focus="false" :md-immediately="true"><label>Дата завершения</label></md-datepicker>
            
           </div>
 
 
-<div class="md-layout-item md-small-size-100 md-size-100">
+<div class="md-layout-item md-small-size-100 md-size-33">
            <label>Прогресс</label>
             <md-field>
                
               <!-- <md-input v-model="file" type='file'></md-input> -->
-              <input type="range" v-model.number="amount"> {{ amount }}%
+              <input type="range" v-model.number="form.amount"> {{ form.amount }}%
               
             </md-field>
           </div>
@@ -105,43 +94,34 @@
             <md-field>
                <label>Приложенные файлы</label>
               <!-- <md-input v-model="file" type='file'></md-input> -->
-             <md-file v-model="file" multiple  />
+             <md-file v-model="form.file" multiple  />
             </md-field>
           </div>
 
           <div class="md-layout-item md-size-100 text-right">
-            <md-button class="md-raised md-success">Сохранить</md-button>
+            <md-button type="submit" class="md-raised md-success">Сохранить</md-button>
           </div>
         </div>
       </md-card-content>
     </md-card>
   </form>
 </template>
-<style>
-.date-picker {
-  width:90%;
-  border: none;
-  border-bottom: 1px solid #d2d2d2; 
-}
-.date-picker:focus {
-  border-bottom: 1px solid #a84db8; 
-}
-.md-datepicker-header {
-  color:#fff !important;
-}
-button.md-datepicker-month-trigger {
-  background-color:#4caf50 !important;
-}
-
-</style>
 <script>
+import axios from 'axios';
+import repository from '@/settings.js';
 import { VueEditor } from "vue2-editor";
 import Vue from 'vue'
+import { validationMixin } from 'vuelidate'
+import {
+    required,
+    minLength,
+} from 'vuelidate/lib/validators'
 export default {
    components: {
     VueEditor
   },
   name: "edit-task",
+    mixins: [validationMixin],
   props: {
     dataBackgroundColor: {
       type: String,
@@ -149,38 +129,83 @@ export default {
     }
   },
   methods:{
- changeText: function(event){
+      validateFields () {
+          this.$v.$touch()
+          if (!this.$v.$invalid) {
+              this.save()
+          }
+      },
+      save () {
+          this.sending = true
+          this.taskSend()
+      },
+      taskSend(){
+          let _this = this
+          const formData = new FormData();
+          //TODO: Положить добавление в цикл
+          formData.append('title', (this.form.title == null) ? '' : this.form.title);
+          formData.append('description', this.form.description);
+          formData.append('priority_id', this.form.priority);
+
+          axios.post(repository.API+'task/create',
+              formData)
+              .then(function(response){
+                  console.log(response.data)
+                  if (response.data.result) {
+                      _this.$router.push('/task/view/'+response.data.id);
+                  }
+                  else{
+                      alert('error'+response.data.message)
+                  }
+              })
+      },
+ changeText: function(){
      this.$nextTick(function () {
 let datepickerFooter = document.getElementsByClassName('md-datepicker-body-footer')[0]
 let buttonDatepicker = datepickerFooter.getElementsByClassName('md-button-content')[0]
 buttonDatepicker.innerText = 'Отмена'
   })
 
-// for(var i=0; i < test.length; i++) { 
-//   console.log(test[i])
-// }
-//  test.innerText = 'dfdf'
+ },
+      getValidationClass (fieldName) {
+          const field = this.$v.form[fieldName]
 
- }
+          if (field) {
+              return {
+                  'md-invalid': field.$invalid && field.$dirty
+              }
+          }
+      },
   },
+
+    validations: {
+        form: {
+            title: {
+                required,
+                minLength: minLength(3)
+            }
+        },
+        sending: false
+    },
   data() {
     return {
+      response:[],
+      form: {
+            title: null,
+            category: null,
+          description: null,
+          priority: null,
+          tag: null,
+          file: null,
+          dateEnd: null,
+          dateStart: null,
+          amount: 0
+        },
+        sending:false,
       amount:10,
-      content: "<h1>Some initial content</h1>",
       dateStart: null,
       dateEnd: null,
       file: null,
-      parent: [
-         {
-          name: "Род1",
-          value: 1
-        },
-        {
-          name: "Род2",
-          value: 2
-        }
-      ],
-
       tag: [
          {
           name: "Таг1",
@@ -191,66 +216,14 @@ buttonDatepicker.innerText = 'Отмена'
           value: 2
         }
       ],
-      priority: [
-        {
-          name: "Низкий",
-          value: 1
-        },
-        {
-          name: "Средний",
-          value: 2
-        },
-        {
-          name: "Высокий",
-          value: 3
-        },
-        {
-          name: "Наивысший",
-          value: 4
-        }
-      ],
-      category:  [
-        {
-          name: "Перв",
-          value: "1"
-        },
-        {
-          name: "Втор",
-          value: "2"
-        }
-      ],
-      username: null,
-      title: null,
-      emailadress: null,
-      lastname: null,
-      firstname: null,
-      address: null,
-      city: null,
-      country: null,
-      code: null,
+
       description: "Пиши"
     };
   },
    mounted() {
-// console.log(this.$refs.datePicker)
-// console.log(this.$refs.datePicker)
-// console.dir(this.$children);
-        Vue.material.locale = {
-          mdCancelText:'sdsd',
-    // range for datepicker
-    startYear: 1900,
-    endYear: 2099,
-    // date format for date picker
-    dateFormat: 'dd.MM.yyyy',
-    // i18n strings
-    days: ['Воскреенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
-    shortDays: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-    shorterDays: ['В', 'П', 'В', 'Ср', 'Ч', 'П', 'Сб'],
-    months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-    shortMonths: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июнь', 'Июль', 'Авг', 'Сент', 'Окт', 'Нояб', 'Дек'],
-    shorterMonths: ['Я', 'Ф', 'М', 'А', 'М', 'Ин', 'Ил', 'Ав', 'Се', 'О', 'Н', 'Д'],
- firstDayOfAWeek: 1
-  }
+       axios.get(repository.API+'task/edit').then(response => {
+           this.response = response.data
+       })
     },
 
     updated: function () {

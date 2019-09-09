@@ -103,13 +103,6 @@ export default {
       saveUser () {
           this.sending = true
           this.projectReview()
-          // Instead of this timeout, here you can call your API
-          // window.setTimeout(() => {
-          //     this.lastUser = `${this.form.title}`
-          //     this.userSaved = true
-          //     this.sending = false
-          //     this.clearForm()
-          // }, 1500)
       },
       validateFields () {
           this.$v.$touch()
@@ -126,11 +119,6 @@ export default {
       axios.post(repository.API+'project/create',
     formData)
     .then(function(response){
-       console.log(response.data)
-      // return
-      // let data = JSON.parse(response.data);
-  // console.log(data)
-      //redirect logic
       if (response.data.result) {
        _this.$router.push('/project/view/'+response.data.id);
       }
@@ -138,8 +126,6 @@ export default {
           alert('error'+response.data.message)
      }
     })
-
-      // console.log(this.$refs.description.value);
     },
 
   },

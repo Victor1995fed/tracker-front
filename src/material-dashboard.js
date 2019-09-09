@@ -5,6 +5,7 @@ import SideBar from "./components/SidebarPlugin";
 import VueMaterial from "vue-material";
 import "vue-material/dist/vue-material.min.css";
 import "./assets/scss/material-dashboard.scss";
+// import 'vue-material/dist/theme/default-dark.css' // This line here
 
 // library auto imports
 import "es6-promise/auto";

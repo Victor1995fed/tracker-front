@@ -46,6 +46,24 @@ Vue.use(GlobalComponents);
 Vue.use(GlobalDirectives);
 Vue.use(Notifications);
 
+//settings dateformat
+Vue.material.locale = {
+  mdCancelText:'sdsd',
+  // range for datepicker
+  startYear: 1900,
+  endYear: 2099,
+  // date format for date picker
+  dateFormat: 'dd.MM.yyyy',
+  // i18n strings
+  days: ['Воскреенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
+  shortDays: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+  shorterDays: ['В', 'П', 'В', 'Ср', 'Ч', 'П', 'Сб'],
+  months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+  shortMonths: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июнь', 'Июль', 'Авг', 'Сент', 'Окт', 'Нояб', 'Дек'],
+  shorterMonths: ['Я', 'Ф', 'М', 'А', 'М', 'Ин', 'Ил', 'Ав', 'Се', 'О', 'Н', 'Д'],
+  firstDayOfAWeek: 1
+}
+
 /* eslint-disable no-new */
 new Vue({
   el: "#app",

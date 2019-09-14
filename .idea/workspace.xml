@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6e239849-0685-47fe-a502-1a2637ab8794" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Task/View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/View.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Tests/Test.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Tests/Test.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +71,8 @@
       <workItem from="1568024750166" duration="4549000" />
       <workItem from="1568200799083" duration="1322000" />
       <workItem from="1568293638600" duration="22000" />
-      <workItem from="1568437841963" duration="14116000" />
+      <workItem from="1568437841963" duration="14211000" />
+      <workItem from="1568461697261" duration="5901000" />
     </task>
     <task id="LOCAL-00001" summary="add validations for EditProject">
       <created>1567775730521</created>
@@ -99,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568029439220</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add download files">
+      <created>1568457686930</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1568457686930</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,6 +133,7 @@
     <MESSAGE value="create Project/List.vue" />
     <MESSAGE value="choice Project" />
     <MESSAGE value="functional development for EditTask.vue" />
-    <option name="LAST_COMMIT_MESSAGE" value="functional development for EditTask.vue" />
+    <MESSAGE value="add download files" />
+    <option name="LAST_COMMIT_MESSAGE" value="add download files" />
   </component>
 </project>

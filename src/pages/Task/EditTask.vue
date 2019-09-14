@@ -9,6 +9,19 @@
             <md-card-content>
                 <div class="md-layout">
                     <div class="md-layout-item md-small-size-100 md-size-100">
+                        <md-field>
+                            <label>Проект</label>
+                            <md-select name="project" id="project" v-model="form.project">
+                                <md-option
+                                        v-for="one in response.project"
+                                        :value="one.id"
+                                        v-bind:key="one.id"
+                                >{{ one.title }}
+                                </md-option>
+                            </md-select>
+                        </md-field>
+                    </div>
+                    <div class="md-layout-item md-small-size-100 md-size-100">
                         <md-field :class="getValidationClass('title')">
                             <label>Название задачи</label>
                             <md-input v-model="form.title" autocomplete="given-name" :disabled="sending"></md-input>
@@ -71,7 +84,7 @@
                     <div class="md-layout-item md-small-size-100 md-size-33">
 
 
-                        <md-datepicker ref="datePicker" v-on:md-opened="changeText" v-model="form.dateStart"
+                        <md-datepicker ref="datePicker"  v-on:md-opened="changeText" v-model="form.dateStart"
                                        :md-open-on-focus="false" :md-immediately="true"><label>Дата начала</label>
                         </md-datepicker>
 
@@ -79,7 +92,7 @@
 
                     <div class="md-layout-item md-small-size-100 md-size-33">
 
-                        <md-datepicker v-model="form.dateEnd" v-on:md-opened="changeText" :md-open-on-focus="false"
+                        <md-datepicker v-model="form.dateEnd"  v-on:md-opened="changeText" :md-open-on-focus="false"
                                        :md-immediately="true"><label>Дата завершения</label></md-datepicker>
 
                     </div>
@@ -115,7 +128,7 @@
     import axios from 'axios';
     import repository from '@/settings.js';
     import {VueEditor} from "vue2-editor";
-    import Vue from 'vue'
+    import format from 'date-fns/format'
     import {validationMixin} from 'vuelidate'
     import {
         required,
@@ -137,7 +150,10 @@
         methods: {
             onFileChange(e) {
                 this.form.dataFile = e.target.files
-                console.log("FILE", e.target.files);
+                // let now = new Date()
+                // let dateStart= format(this.form.dateStart,"YYYY-MM-DD")
+                // let dateStart = new Date(this.form.dateStart)
+                // console.log("date", dateStart);
             },
             validateFields() {
                 this.$v.$touch()
@@ -156,6 +172,12 @@
                 formData.append('title', (this.form.title == null) ? '' : this.form.title);
                 formData.append('description', this.form.description);
                 formData.append('priority_id', this.form.priority);
+                formData.append('project_id', this.form.project);
+                formData.append('category_id', this.form.category);
+                formData.append('readiness', this.form.amount);
+                formData.append('date_end', format(this.form.dateEnd,"YYYY-MM-DD"));
+                formData.append('date_start', format(this.form.dateStart,"YYYY-MM-DD"));
+
                 console.log('FILE', this.form.dataFile);
                 // formData.append('file', this.form.dataFile[0]);
                 for (var i = 0; i < this.form.dataFile.length; i++) {
@@ -208,6 +230,8 @@
             sending: false
         },
         data() {
+            let dateFormat = this.$material.locale.dateFormat || 'yyyy-MM-dd'
+            let now = new Date()
             return {
                 response: [],
                 form: {

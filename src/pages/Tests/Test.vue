@@ -1,68 +1,38 @@
 <template>
     <div>
-        <md-card v-for="(item, index) in response" md-medium>
-            <md-card-header>
-                <md-card-header-text>
-                    <div class="md-title">{{item.title}}</div>
-                    <div class="md-subhead">{{item.desc}}</div>
-                </md-card-header-text>
-                <md-card-media>
-                    <img src="/assets/examples/avatar-2.jpg" alt="People">
-                </md-card-media>
-            </md-card-header>
 
-            <md-card-actions>
-                <md-button>Перейти</md-button>
-            </md-card-actions>
-        </md-card>
+        <md-divider />
+        <div class="block">
+            <h3>String</h3>
+            <md-datepicker v-model="string"  :md-open-on-focus="false"
+                           :md-immediately="true" />
+            <div class="value">value: {{string}}</div>
+        </div>
+        <md-divider />
 
+        <md-divider />
+
+        <md-divider />
 
     </div>
 </template>
 
-<style lang="scss" scoped>
-    .md-card {
-        width: 320px;
-        margin: 4px;
-        display: inline-block;
-        vertical-align: top;
-    }
-</style>
-
 <script>
+    import format from 'date-fns/format'
     export default {
-        name: 'Media',
-        data: () => ({
-            response:[
-                {
-                    title: "Текст1",
-                    desc:"Описанией1"
-                },
-                {
-                    title: "Текст2",
-                    desc:"Описание2"
-                },
-                {
-                    title: "Текст3",
-                    desc:"Описание3"
-                },
-                {
-                    title: "Текст3",
-                    desc:"Описание3"
-                },
+        data () {
+            let dateFormat = this.$material.locale.dateFormat || 'yyyy-MM-dd'
+            let now = new Date()
+            return {
+                string: format(now, dateFormat),
+            }
+        },
+        computed: {
+            dateFormat () {
+                return this.$material.locale.dateFormat || 'yyyy-MM-dd'
+            },
 
-            ]
+        },
 
-        }),
     }
 </script>
-
-<style>
-    .md-card {
-        width: 320px;
-        margin: 4px;
-        display: inline-block;
-        vertical-align: top;
-        margin-bottom: 50px!important;
-    }
-</style>

@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6e239849-0685-47fe-a502-1a2637ab8794" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scss/md/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/md/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/material-dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/material-dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Project/EditProject.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Project/EditProject.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Task/View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/View.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +26,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules" />
+    <property name="last_opened_file_path" value="D:/Web-разработка/Тестовые задания/Клуб" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/node_modules/eslint" />
@@ -69,7 +66,10 @@
       <workItem from="1567774603648" duration="1260000" />
       <workItem from="1567828051869" duration="9581000" />
       <workItem from="1567850975366" duration="7040000" />
-      <workItem from="1568024750166" duration="4426000" />
+      <workItem from="1568024750166" duration="4549000" />
+      <workItem from="1568200799083" duration="1322000" />
+      <workItem from="1568293638600" duration="22000" />
+      <workItem from="1568437841963" duration="14116000" />
     </task>
     <task id="LOCAL-00001" summary="add validations for EditProject">
       <created>1567775730521</created>
@@ -92,7 +92,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567858266563</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="functional development for EditTask.vue">
+      <created>1568029439220</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1568029439220</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,6 +122,7 @@
     <MESSAGE value="add validations for EditProject" />
     <MESSAGE value="create Project/List.vue" />
     <MESSAGE value="choice Project" />
-    <option name="LAST_COMMIT_MESSAGE" value="choice Project" />
+    <MESSAGE value="functional development for EditTask.vue" />
+    <option name="LAST_COMMIT_MESSAGE" value="functional development for EditTask.vue" />
   </component>
 </project>

@@ -98,12 +98,13 @@
                     <div class="md-layout">
                     <div class="md-layout-item">
                         <h4>Приложенные файлы:</h4>
-                        <p>
-                        <a href="#">Links1</a>
-                        </p>
-                        <p>
-                        <a href="#">Links2</a>
-                        </p>
+                        <div class="link-files"  v-for="(data,index) in task.files" :key="index">
+                            <p>
+                                <a :href="url+data.uuid">{{data.title}}</a>
+                            </p>
+
+                        </div>
+
                     </div>
                     </div>
                     <hr />
@@ -136,6 +137,7 @@
     },
     data: () => ({
         task: [],
+        url: 'http://tracker.zz/files/download?uuid=',
         priority: "Высокий",
         dateStart: "23.08.2019",
         dateEnd: "23.08.2019",

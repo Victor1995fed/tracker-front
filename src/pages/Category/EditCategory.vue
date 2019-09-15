@@ -112,11 +112,6 @@
                     })
             },
 
-        },
-        mounted() {
-            axios.get(repository.API+'category/create').then(response => {
-                this.rules = response.data
-            })
         }
 
 

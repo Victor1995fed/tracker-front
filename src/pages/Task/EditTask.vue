@@ -180,10 +180,13 @@
 
                 console.log('FILE', this.form.dataFile);
                 // formData.append('file', this.form.dataFile[0]);
-                for (var i = 0; i < this.form.dataFile.length; i++) {
-                    let file = this.form.dataFile[i];
-                    formData.append('file[]', file);
+                if(this.form.dataFile != null){
+                    for (var i = 0; i < this.form.dataFile.length; i++) {
+                        let file = this.form.dataFile[i];
+                        formData.append('file[]', file);
+                    }
                 }
+
                 // formData.append('file', this.form.dataFile);
                 axios.post(repository.API + 'task/create',
                     formData,

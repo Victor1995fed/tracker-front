@@ -4,8 +4,8 @@
         <div class="md-layout-item">
             <md-card>
             <md-card-header data-background-color="green">
-                <h4 class="title">Название проекта #878</h4>
-                <p class="category">{{task.task.title}}</p>
+                <h4 class="title">{{response.task.title}}</h4>
+                <p class="category">{{response.category.title}}</p>
             </md-card-header>
             <md-card-content>
                 <div id="typography">
@@ -33,7 +33,7 @@
                     <div class="md-layout-item">
                         <p>
                         <span class="md-body-2">Дата начала:</span>
-                        {{task.task.date}}
+                        {{response.task.date_start}}
                         </p>
                     </div>
                     </div>
@@ -41,13 +41,13 @@
                     <div class="md-layout-item">
                         <p>
                         <span class="md-body-2">Приоритет:</span>
-                        {{task.priority.title}}
+                        {{response.priority.title}}
                         </p>
                     </div>
                     <div class="md-layout-item">
                         <p>
                         <span class="md-body-2">Дата завершения:</span>
-                        {{dateEnd}}
+                        {{response.task.date_end}}
                         </p>
                     </div>
                     </div>
@@ -66,10 +66,10 @@
                     <div class="md-layout-item">
                         <p>
                         <span class="md-body-2">Потрачено(ч):</span>
-                        5
+                            {{response.task.spending}}
                         </p>
                     </div>
-                 
+
                     </div>
 
 
@@ -77,12 +77,12 @@
                        <div class="md-layout-item">
                         <p>
                         <span class="md-body-2">Готовность:</span>
-                        <span>{{amount}}</span>%
+                        <span>{{response.task.readiness}}</span>%
                         </p>
                         <md-progress-bar
                         class="md-transparent"
                         md-mode="determinate"
-                        :md-value="amount"
+                        :md-value="response.task.readiness"
                         ></md-progress-bar>
                     </div>
                     </div>
@@ -90,7 +90,7 @@
                     <div class="md-layout">
                     <div class="md-layout-item">
                         <h4>Описание</h4>
-                        <span v-html="task.task.description"></span>
+                        <span v-html="response.task.description"></span>
                     </div>
                     </div>
                     <hr />
@@ -98,7 +98,7 @@
                     <div class="md-layout">
                     <div class="md-layout-item">
                         <h4>Приложенные файлы:</h4>
-                        <div class="link-files"  v-for="(data,index) in task.files" :key="index">
+                        <div class="link-files"  v-for="(data,index) in response.files" :key="index">
                             <p>
                                 <a :href="url+data.uuid">{{data.title}}</a>
                             </p>
@@ -136,7 +136,12 @@
         }
     },
     data: () => ({
-        task: [],
+        response: {
+            task:{},
+            category:{},
+            files:{},
+            priority:{},
+        },
         url: 'http://tracker.zz/files/download?uuid=',
         priority: "Высокий",
         dateStart: "23.08.2019",
@@ -150,7 +155,7 @@
         // console.log(Vue.material.locale.dateFormat);
         let id = this.$route.params.id;
         axios.get(repository.API + "task/view?id=" + id).then(response => {
-        this.task = response.data;
+        this.response = response.data;
         });
     }
     };

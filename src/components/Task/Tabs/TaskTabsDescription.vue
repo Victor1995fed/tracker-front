@@ -2,7 +2,6 @@
     <div>
         <div class="md-layout">
             <div class="md-layout-item">
-                <h3>Описание</h3>
         <span v-html="prop"></span>
             </div>
         </div>

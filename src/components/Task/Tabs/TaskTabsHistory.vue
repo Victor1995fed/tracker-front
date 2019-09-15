@@ -2,7 +2,7 @@
     <div>
         <div class="md-layout">
             <div class="md-layout-item">
-        <h3>История</h3>
+        <p>Какой-то контент</p>
             </div>
         </div>
     </div>

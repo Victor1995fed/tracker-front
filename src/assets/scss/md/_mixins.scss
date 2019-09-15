@@ -217,7 +217,7 @@
     .open > &.dropdown-toggle:focus,
     .open > &.dropdown-toggle:hover {
       background-color: $btn-color !important;
-      color: $black-color !important; //TODO:: Проаерить, не сломалось ли чего)
+      color: $white-color !important; //TODO:: Проаерить, не сломалось ли чего)
 
       i{
         color: #000000 !important;

@@ -2,7 +2,6 @@
     <div>
         <div class="md-layout">
             <div class="md-layout-item">
-                <h3>Приложенные файлы:</h3>
                 <div class="link-files"  v-for="(data,index) in prop" :key="index">
                     <p>
                         <a :href="url+data.uuid">{{data.title}}</a>

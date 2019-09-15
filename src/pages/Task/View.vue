@@ -88,8 +88,8 @@
                     <div class="md-layout layout-height-min">
                         <nav-tabs-card>
                             <template slot="content">
-                                <md-tabs>
-                                    <md-tab   id="tab-description" md-label="Описание" >
+                                <md-tabs class="md-color-red">
+                                    <md-tab    id="tab-description" md-label="Описание" exact>
                                         <task-tabs-description :prop="response.task.description"></task-tabs-description>
                                     </md-tab>
 
@@ -171,10 +171,14 @@
         /*.box-shadow-none {*/
         /*    box-shadow: none;*/
         /*}*/
-        /*.color-tabs .md-tab-label {*/
-        /*    color: #000 !important;*/
+        /*.color-tabs  {*/
+        /*    color: #f00000 !important;*/
         /*}*/
         /*#viewTab {*/
         /*    color: #000000;*/
         /*}*/
+
+        .md-tabs-navigation{
+            box-shadow: none !important;
+        }
     </style>

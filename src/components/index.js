@@ -8,6 +8,11 @@ import NavTabsTable from "./Tables/NavTabsTable.vue";
 import OrderedTable from "./Tables/OrderedTable.vue";
 import SimpleTable from "./Tables/SimpleTable.vue";
 import Icons from "./Tables/icons.vue";
+//Task
+import TaskTabsDescription from "./Task/Tabs/TaskTabsDescription.vue";
+import TaskTabsFiles from "./Task/Tabs/TaskTabsFiles.vue";
+import TaskTabsHistory from "./Task/Tabs/TaskTabsHistory.vue";
+
 export {
   ChartCard,
   NavTabsCard,
@@ -15,5 +20,8 @@ export {
   NavTabsTable,
   OrderedTable,
   SimpleTable,
-  Icons
+  Icons,
+  TaskTabsDescription,
+  TaskTabsFiles,
+  TaskTabsHistory
 };

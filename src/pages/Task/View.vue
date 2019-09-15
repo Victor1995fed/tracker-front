@@ -59,8 +59,6 @@
                         <md-chip md-clickable>Clickable1</md-chip>
                         <md-chip md-clickable>Clickable2</md-chip>
                         <md-chip md-clickable>Clickable3</md-chip>
-                        <md-chip md-clickable>Clickable4</md-chip>
-                        <md-chip md-clickable>Clickable5</md-chip>
                         </p>
                     </div>
                     <div class="md-layout-item">
@@ -87,34 +85,24 @@
                     </div>
                     </div>
                     <hr />
-                    <div class="md-layout">
-                    <div class="md-layout-item">
-                        <h4>Описание</h4>
-                        <span v-html="response.task.description"></span>
-                    </div>
-                    </div>
-                    <hr />
+                    <div class="md-layout layout-height-min">
+                        <nav-tabs-card>
+                            <template slot="content">
+                                <md-tabs>
+                                    <md-tab   id="tab-description" md-label="Описание" >
+                                        <task-tabs-description :prop="response.task.description"></task-tabs-description>
+                                    </md-tab>
 
-                    <div class="md-layout">
-                    <div class="md-layout-item">
-                        <h4>Приложенные файлы:</h4>
-                        <div class="link-files"  v-for="(data,index) in response.files" :key="index">
-                            <p>
-                                <a :href="url+data.uuid">{{data.title}}</a>
-                            </p>
+                                    <md-tab id="tab-files" md-label="Файлы" >
+                                        <task-tabs-files :prop="response.files"></task-tabs-files>
+                                    </md-tab>
 
-                        </div>
-
-                    </div>
-                    </div>
-                    <hr />
-                    <div class="md-layout">
-                    <div class="md-layout-item">
-                        <h4>История</h4>
-                        <p>Действие 1 1 1 1</p>
-                        <hr />
-                        <p>Действие 22</p>
-                    </div>
+                                    <md-tab  id="tab-history" md-label="История">
+                                        <task-tabs-history></task-tabs-history>
+                                    </md-tab>
+                                </md-tabs>
+                            </template>
+                        </nav-tabs-card>
                     </div>
                 </div>
                 </div>
@@ -128,7 +116,19 @@
     <script>
     import axios from "axios";
     import repository from "@/settings.js";
+    import {
+        TaskTabsDescription,
+        NavTabsCard,
+        TaskTabsFiles,
+        TaskTabsHistory
+    } from "@/components";
     export default {
+        components: {
+            NavTabsCard,
+            TaskTabsDescription,
+            TaskTabsFiles,
+            TaskTabsHistory
+        },
     props: {
         dataBackgroundColor: {
         type: String,
@@ -165,4 +165,16 @@
     small {
     display: block;
     }
+        .layout-height-min {
+            min-height: 400px;
+        }
+        /*.box-shadow-none {*/
+        /*    box-shadow: none;*/
+        /*}*/
+        /*.color-tabs .md-tab-label {*/
+        /*    color: #000 !important;*/
+        /*}*/
+        /*#viewTab {*/
+        /*    color: #000000;*/
+        /*}*/
     </style>

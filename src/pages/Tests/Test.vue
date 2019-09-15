@@ -1,38 +1,52 @@
 <template>
-    <div>
+    <div class="content">
+        <div class="md-layout">
+            <div
+                    class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
+            >
+                <nav-tabs-card>
+                    <template slot="content">
+                        <span class="md-nav-tabs-title">Tasks:</span>
+                        <md-tabs class="md-success" md-alignment="left">
+                            <md-tab id="tab-home" md-label="Bugs" md-icon="bug_report">
+                                <task-tabs-description :prop="param1"></task-tabs-description>
+                            </md-tab>
 
-        <md-divider />
-        <div class="block">
-            <h3>String</h3>
-            <md-datepicker v-model="string"  :md-open-on-focus="false"
-                           :md-immediately="true" />
-            <div class="value">value: {{string}}</div>
+                            <md-tab id="tab-pages" md-label="Website" md-icon="code">
+                                <task-tabs-description :prop="param1"></task-tabs-description>
+                            </md-tab>
+
+                            <md-tab id="tab-posts" md-label="server" md-icon="cloud">
+                                <task-tabs-description :prop="param1"></task-tabs-description>
+                            </md-tab>
+                        </md-tabs>
+                    </template>
+                </nav-tabs-card>
+            </div>
         </div>
-        <md-divider />
-
-        <md-divider />
-
-        <md-divider />
-
     </div>
 </template>
 
 <script>
-    import format from 'date-fns/format'
+    import axios from 'axios';
+    import repository from '@/settings.js';
+    // const url = "https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH&tsyms=USD,EUR";
+    // console.log(repository.API);
+    import {
+        TaskTabsDescription,
+        NavTabsCard,
+    } from "@/components";
+
     export default {
-        data () {
-            let dateFormat = this.$material.locale.dateFormat || 'yyyy-MM-dd'
-            let now = new Date()
+        components: {
+            NavTabsCard,
+            TaskTabsDescription
+        },
+        data() {
             return {
-                string: format(now, dateFormat),
-            }
-        },
-        computed: {
-            dateFormat () {
-                return this.$material.locale.dateFormat || 'yyyy-MM-dd'
-            },
-
-        },
-
-    }
+                results:[],
+                param1:'sdsdds'
+            };
+        }
+    };
 </script>

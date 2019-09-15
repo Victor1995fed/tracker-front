@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e239849-0685-47fe-a502-1a2637ab8794" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Task/Tabs/TaskTabsDescription.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Task/Tabs/TaskTabsFiles.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Task/Tabs/TaskTabsHistory.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Category/EditCategory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Category/EditCategory.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/md/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/md/_mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/md/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/md/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Task/View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/View.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Tests/Test.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Tests/Test.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +77,8 @@
       <workItem from="1568293638600" duration="22000" />
       <workItem from="1568437841963" duration="14211000" />
       <workItem from="1568461697261" duration="6410000" />
-      <workItem from="1568519055847" duration="5244000" />
+      <workItem from="1568519055847" duration="5311000" />
+      <workItem from="1568535643007" duration="10020000" />
     </task>
     <task id="LOCAL-00001" summary="add validations for EditProject">
       <created>1567775730521</created>
@@ -116,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568467966980</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="refactor EditTask">
+      <created>1568525664203</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1568525664203</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

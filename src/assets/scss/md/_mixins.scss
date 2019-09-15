@@ -217,10 +217,10 @@
     .open > &.dropdown-toggle:focus,
     .open > &.dropdown-toggle:hover {
       background-color: $btn-color !important;
-      color: $white-color !important;
+      color: $black-color !important; //TODO:: Проаерить, не сломалось ли чего)
 
       i{
-        color: $white-color !important;
+        color: #000000 !important;
       }
     }
 

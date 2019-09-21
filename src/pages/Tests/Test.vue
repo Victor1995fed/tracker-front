@@ -1,52 +1,70 @@
 <template>
-    <div class="content">
-        <div class="md-layout">
-            <div
-                    class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
-            >
-                <nav-tabs-card>
-                    <template slot="content">
-                        <span class="md-nav-tabs-title">Tasks:</span>
-                        <md-tabs class="md-success" md-alignment="left">
-                            <md-tab id="tab-home" md-label="Bugs" md-icon="bug_report">
-                                <task-tabs-description :prop="param1"></task-tabs-description>
-                            </md-tab>
+    <div class="pagination-custom">
+    <paginate
 
-                            <md-tab id="tab-pages" md-label="Website" md-icon="code">
-                                <task-tabs-description :prop="param1"></task-tabs-description>
-                            </md-tab>
-
-                            <md-tab id="tab-posts" md-label="server" md-icon="cloud">
-                                <task-tabs-description :prop="param1"></task-tabs-description>
-                            </md-tab>
-                        </md-tabs>
-                    </template>
-                </nav-tabs-card>
-            </div>
-        </div>
+            :page-count="page"
+            :page-range="3"
+            :margin-pages="2"
+            :click-handler="clickCallback"
+            :prev-text="'Предыдущая'"
+            :next-text="'Следующая'"
+            :container-class="'pagination'"
+            :page-class="'page-item'">
+    </paginate>
     </div>
 </template>
 
 <script>
-    import axios from 'axios';
-    import repository from '@/settings.js';
-    // const url = "https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH&tsyms=USD,EUR";
-    // console.log(repository.API);
-    import {
-        TaskTabsDescription,
-        NavTabsCard,
-    } from "@/components";
+    import Paginate from 'vuejs-paginate'
 
     export default {
+        name: 'App',
         components: {
-            NavTabsCard,
-            TaskTabsDescription
+            Paginate
         },
-        data() {
+        data: function () {
             return {
-                results:[],
-                param1:'sdsdds'
-            };
-        }
-    };
+                page:5,
+                arrayData: [
+                    {
+                        data: 'Page № 1'
+                    },
+                    {
+                        data: 'Page № 2'
+                    },
+                    {
+                        data: 'Page № 3'
+                    },
+                    {
+                        data: 'Page № 3'
+                    },
+                    {
+                        data: 'Page № 3'
+                    },
+                ]
+            }
+        },
+        computed: {
+            settings: function () {
+                return {
+                    arrayData: this.arrayData,
+                    PaginationControlSettings:{maxButtons:2}
+                }
+            },
+
+            set :function () {
+                return {
+                    arrayData: this.arrayData,
+                    PaginationControlSettings:{maxButtons:2, color:"#57af5b"}
+                }
+            },
+
+        },
+        methods:{
+            clickCallback: function(page) {
+                console.log(page)
+                this.$router.push('/test/' + page);
+            }
+        },
+    }
 </script>

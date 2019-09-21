@@ -13,6 +13,9 @@ import TaskTabsDescription from "./Task/Tabs/TaskTabsDescription.vue";
 import TaskTabsFiles from "./Task/Tabs/TaskTabsFiles.vue";
 import TaskTabsHistory from "./Task/Tabs/TaskTabsHistory.vue";
 
+//tools
+import Pagination from "./Tools/Pagination.vue";
+
 export {
   ChartCard,
   NavTabsCard,
@@ -23,5 +26,6 @@ export {
   Icons,
   TaskTabsDescription,
   TaskTabsFiles,
-  TaskTabsHistory
+  TaskTabsHistory,
+  Pagination
 };

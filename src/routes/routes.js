@@ -25,20 +25,26 @@ import Maps from "@/pages/Maps.vue";
 import Notifications from "@/pages/Notifications.vue";
 import UpgradeToPRO from "@/pages/UpgradeToPRO.vue";
 
+//404
+
+import EmptyPage from "@/pages/404.vue";
+
 const routes = [
   {
+
     path: "/",
     component: DashboardLayout,
     redirect: "/dashboard",
 
     children: [
+
       {
         path: "dashboard",
         name: "Dashboard",
         component: Dashboard
       },
       {
-        path:'test',
+        path:'test/:id?',
         name: "Тестирование",
         component: PageTest,
       },
@@ -127,7 +133,11 @@ const routes = [
         path: "upgrade",
         name: "Upgrade to PRO",
         component: UpgradeToPRO
-      }
+      },
+      {
+        path: '*',
+        component: EmptyPage
+      },
     ]
   }
 ];

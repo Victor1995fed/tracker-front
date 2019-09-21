@@ -14,7 +14,7 @@
 
 <script>
 import axios from 'axios';
-import repository from '@/settings.js'; 
+import repository from '@/settings.js';
 export default {
   name: "simple-table",
   props: {

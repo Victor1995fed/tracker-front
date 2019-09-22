@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <md-table v-model="task" :table-header-color="tableHeaderColor">
             <md-table-row slot="md-table-row" slot-scope="{ item }">
                 <md-table-cell md-label="#">{{ item.id }}</md-table-cell>
@@ -64,7 +63,8 @@
             // this.$refs.paginate.selected = currentPage
             axios.get(repository.API+'task/index?page='+this.currentPage).then(response => {
 
-                this.task = response.data
+                this.task = response.data.task
+                this.pageCount = response.data.countPage
 
             })
         },
@@ -72,7 +72,11 @@
             clickCallback: function(page) {
                 console.log(page)
                 this.$router.push('/task/' + page);
-                location.reload()
+                 axios.get(repository.API+'task/index?page='+page).then(response => {
+                this.task = response.data.task
+                this.pageCount = response.data.countPage
+            })
+                // location.reload()
             }
         },
     };

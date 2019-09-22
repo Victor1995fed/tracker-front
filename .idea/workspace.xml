@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6e239849-0685-47fe-a502-1a2637ab8794" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Task/Table/List.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Task/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Layout/DashboardLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Layout/DashboardLayout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Tests/Test.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Tests/Test.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
-    </list>
+    <list default="true" id="6e239849-0685-47fe-a502-1a2637ab8794" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +73,7 @@
       <workItem from="1568802990395" duration="984000" />
       <workItem from="1568889386554" duration="5176000" />
       <workItem from="1569062472794" duration="5019000" />
-      <workItem from="1569132926298" duration="6487000" />
+      <workItem from="1569132926298" duration="6654000" />
     </task>
     <task id="LOCAL-00001" summary="add validations for EditProject">
       <created>1567775730521</created>
@@ -153,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569070697151</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="pagination task">
+      <created>1569141311918</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1569141311918</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,6 +182,7 @@
     <MESSAGE value="add tabs for View Task" />
     <MESSAGE value="setting style for tabs" />
     <MESSAGE value="pagination test" />
-    <option name="LAST_COMMIT_MESSAGE" value="pagination test" />
+    <MESSAGE value="pagination task" />
+    <option name="LAST_COMMIT_MESSAGE" value="pagination task" />
   </component>
 </project>

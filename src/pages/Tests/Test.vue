@@ -2,9 +2,10 @@
     <div class="pagination-custom">
     <paginate
 
+            v-model="currentPage"
             :page-count="page"
             :page-range="3"
-            :margin-pages="2"
+            :margin-pages="1"
             :click-handler="clickCallback"
             :prev-text="'Предыдущая'"
             :next-text="'Следующая'"
@@ -25,6 +26,7 @@
         data: function () {
             return {
                 page:5,
+                currentPage:3,
                 arrayData: [
                     {
                         data: 'Page № 1'
@@ -63,7 +65,8 @@
         methods:{
             clickCallback: function(page) {
                 console.log(page)
-                this.$router.push('/test/' + page);
+                // console.log(this.$refs.paginate)
+                // this.$router.push('/test/' + page);
             }
         },
     }

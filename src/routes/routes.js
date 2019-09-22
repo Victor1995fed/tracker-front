@@ -12,7 +12,7 @@ import PageTest from "@/pages/Tests/Test.vue";
 
 //Task
 import TaskView from "@/pages/Task/View.vue";
-import TableList from "@/pages/TableList.vue";
+import TableList from "@/pages/Task/List.vue";
 
 //Category
 import CategoryCreate from "@/pages/Category/Create.vue";
@@ -102,7 +102,7 @@ const routes = [
         component: UserProfile
       },
       {
-        path: "table",
+        path: "task/:page?",
         name: "Задачи",
         component: TableList
       },

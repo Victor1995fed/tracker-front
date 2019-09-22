@@ -12,6 +12,7 @@ import Icons from "./Tables/icons.vue";
 import TaskTabsDescription from "./Task/Tabs/TaskTabsDescription.vue";
 import TaskTabsFiles from "./Task/Tabs/TaskTabsFiles.vue";
 import TaskTabsHistory from "./Task/Tabs/TaskTabsHistory.vue";
+import TaskList from "./Task/Table/List.vue";
 
 //tools
 import Pagination from "./Tools/Pagination.vue";
@@ -27,5 +28,6 @@ export {
   TaskTabsDescription,
   TaskTabsFiles,
   TaskTabsHistory,
-  Pagination
+  Pagination,
+  TaskList
 };

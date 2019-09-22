@@ -16,7 +16,7 @@
         <md-icon>person</md-icon>
         <p>Профиль</p>
       </sidebar-link>
-      <sidebar-link to="/table">
+      <sidebar-link to="/task">
         <md-icon>content_paste</md-icon>
         <p>Задачи</p> 
       </sidebar-link>

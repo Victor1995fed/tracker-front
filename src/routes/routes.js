@@ -5,9 +5,12 @@ import UserProfile from "@/pages/UserProfile.vue";
 import TaskCreate from "@/pages/Task/Create.vue";
 //Project
 import ProjectCreate from "@/pages/Project/Create.vue";
+import ProjectUpdate from "@/pages/Project/Update.vue";
 import ProjectList from "@/pages/Project/List.vue";
 import ProjectView from "@/pages/Project/View.vue";
 import ProjectChoice from "@/pages/Project/Choice.vue";
+
+
 import PageTest from "@/pages/Tests/Test.vue";
 
 //Task
@@ -81,6 +84,11 @@ const routes = [
         name: "Вывод",
         component: ProjectChoice,
       },
+        {
+        path:'project/update/:id',
+        name: "Обновление",
+        component: ProjectUpdate,
+        },
       {
         path: "category/create/:id",
         name: "Редактирование проекта",

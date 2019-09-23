@@ -12,9 +12,9 @@
                 <div class="title">
                     <div class="md-layout">
                     <div class="md-layout-item">
-                        <md-button class="md-just-icon md-simple md-primary">
+                        <md-button class="md-just-icon md-simple md-primary" :href="'/#/project/update/'+this.$route.params.id">
                         <md-icon>edit</md-icon>
-                        <md-tooltip md-direction="top">Редактировать</md-tooltip>
+                        <md-tooltip  md-direction="top">Редактировать</md-tooltip>
                         </md-button>
                         <md-button class="md-just-icon md-simple md-danger">
                         <md-icon>close</md-icon>

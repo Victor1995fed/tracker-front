@@ -1,0 +1,19 @@
+<template>
+    <div class="content">
+        <div class="md-layout">
+            <div class="md-layout-item md-medium-size-100 md-size-100">
+                <edit-task data-background-color="green"> </edit-task>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+    import  {EditTask}  from "@/pages";
+
+    export default {
+        components: {
+            EditTask
+        }
+    };
+</script>

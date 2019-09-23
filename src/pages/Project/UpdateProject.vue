@@ -1,5 +1,5 @@
 <template>
-    <form novalidate method="POST" class="md-layout" :action="action" @submit.prevent="validateFields" ref="formData">
+    <form novalidate method="POST" class="md-layout" @submit.prevent="validateFields" ref="formData">
         <md-card>
             <md-card-header :data-background-color="dataBackgroundColor">
                 <h4 class="title">Название проекта</h4>
@@ -26,10 +26,10 @@
                         </md-field>
                     </div>
                     <div class="md-layout-item md-size-50 text-right">
-                        <md-button type="submit" class="md-raised md-success">Отмена</md-button>
+                        <md-button @click="back" class="md-raised md-success">Отмена</md-button>
                     </div>
                     <div class="md-layout-item md-size-50 text-right">
-                        <md-button @click="back" class="md-raised md-success">Сохранить</md-button>
+                        <md-button type="submit"  class="md-raised md-success">Сохранить</md-button>
                     </div>
 
                 </div>
@@ -70,7 +70,7 @@
                 // },
                 rules:[],
                 amount:10,
-                action:'http://tracker.zz/project/create',
+                // action:'http://tracker.zz/project/create',
                 content: "<h1>Some initial content</h1>",
                 dateStart: null,
                 dateEnd: null,
@@ -125,7 +125,7 @@
                 formData.append('title', (this.form.title == null) ? '' : this.form.title);
                 formData.append('description', this.form.description);
 
-                axios.post(repository.API+'project/create',
+                axios.post(repository.API+'project/update?id='+this.$route.params.id,
                     formData)
                     .then(function(response){
                         if (response.data.result) {

@@ -16,7 +16,7 @@
                         <md-icon>edit</md-icon>
                         <md-tooltip  md-direction="top">Редактировать</md-tooltip>
                         </md-button>
-                        <md-button class="md-just-icon md-simple md-danger">
+                        <md-button @click="deleteProject" class="md-just-icon md-simple md-danger">
                         <md-icon>close</md-icon>
                         <md-tooltip md-direction="top">Удалить</md-tooltip>
                         </md-button>
@@ -69,7 +69,21 @@
         axios.get(repository.API + "project/view?id=" + id).then(response => {
         this.response = response.data;
         });
-    }
+    },
+        methods: {
+            deleteProject() {
+                let _this = this
+                axios.get(repository.API+'project/delete?id='+this.$route.params.id)
+                    .then(function(response){
+                        if (response.data) {
+                            _this.$router.push('/project/list');
+                        }
+                        else{
+                            alert('error')
+                        }
+                    })
+            }
+        }
     };
     </script>
 

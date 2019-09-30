@@ -11,16 +11,20 @@ import ProjectView from "@/pages/Project/View.vue";
 import ProjectChoice from "@/pages/Project/Choice.vue";
 
 
+
 import PageTest from "@/pages/Tests/Test.vue";
 
 //Task
 import TaskView from "@/pages/Task/View.vue";
 import TableList from "@/pages/Task/List.vue";
+import TaskUpdate from "@/pages/Task/Update.vue";
 
 //Category
 import CategoryCreate from "@/pages/Category/Create.vue";
 import CategoryList from "@/pages/Category/List.vue";
 import CategoryView from "@/pages/Category/View.vue";
+import CategoryUpdate from "@/pages/Category/Update.vue";
+
 
 import Typography from "@/pages/Typography.vue";
 import Icons from "@/pages/Icons.vue";
@@ -94,6 +98,12 @@ const routes = [
         name: "Редактирование проекта",
         component: CategoryCreate,
       },
+    {
+        path: "category/update/:id",
+        name: "Редактирование проекта",
+        component: CategoryUpdate,
+    },
+
       {
         path: "category/view/:id",
         name: "Редактирование проекта",
@@ -114,6 +124,11 @@ const routes = [
         name: "Задачи",
         component: TableList
       },
+    {
+        path: "task/update/:id",
+        name: "Редактирование проекта",
+        component: TaskUpdate,
+    },
       {
         path: "typography",
         name: "Typography",

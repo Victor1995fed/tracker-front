@@ -1,5 +1,13 @@
 <template>
     <div class="content">
+        <md-dialog :md-active.sync="showDialog">
+            <md-dialog-title>Вы действительно хотите удалить эту категорию?</md-dialog-title>
+
+            <md-dialog-actions>
+                <md-button class="md-primary" @click="showDialog = false">Нет</md-button>
+                <md-button class="md-danger" @click="deleteCategory">Да</md-button>
+            </md-dialog-actions>
+        </md-dialog>
         <div class="md-layout">
             <div class="md-layout-item">
                 <md-card>
@@ -12,11 +20,11 @@
                             <div class="title">
                                 <div class="md-layout">
                                     <div class="md-layout-item">
-                                        <md-button class="md-just-icon md-simple md-primary">
+                                        <md-button class="md-just-icon md-simple md-primary" :href="'/#/category/update/'+this.$route.params.id">
                                             <md-icon>edit</md-icon>
                                             <md-tooltip md-direction="top">Редактировать</md-tooltip>
                                         </md-button>
-                                        <md-button class="md-just-icon md-simple md-danger">
+                                        <md-button @click="showDialog  = true" class="md-just-icon md-simple md-danger">
                                             <md-icon>close</md-icon>
                                             <md-tooltip md-direction="top">Удалить</md-tooltip>
                                         </md-button>
@@ -54,6 +62,7 @@
             }
         },
         data: () => ({
+            showDialog: false,
             response: [],
             priority: "Высокий",
             dateStart: "23.08.2019",
@@ -69,6 +78,21 @@
             axios.get(repository.API + "category/view?id=" + id).then(response => {
                 this.response = response.data;
             });
+        },
+        methods: {
+            deleteCategory() {
+                let _this = this
+                axios.get(repository.API+'category/delete?id='+this.$route.params.id)
+                    .then(function(response){
+                        if (response.data) {
+                            _this.$router.push('/project/list');
+                        }
+                        else{
+                            alert('error')
+                        }
+                    })
+            },
+
         }
     };
 </script>

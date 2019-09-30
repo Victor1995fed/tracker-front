@@ -128,12 +128,7 @@ export default {
     })
     },
 
-  },
-    mounted() {
-        axios.get(repository.API+'project/create').then(response => {
-            this.rules = response.data
-        })
-    }
+  }
 
 
 };

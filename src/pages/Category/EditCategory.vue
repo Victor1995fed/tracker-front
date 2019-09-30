@@ -39,13 +39,16 @@
             dataBackgroundColor: {
                 type: String,
                 default: ""
-            }
+            },
+            form:{},
+            action: {}
+
         },
         data() {
             return {
-                form: {
-                    title: null,
-                },
+                // form: {
+                //     title: null,
+                // },
                 rules:[],
                 amount:10,
                 content: "<h1>Some initial content</h1>",
@@ -98,8 +101,8 @@
                 const formData = new FormData();
                 formData.append('title', (this.form.title == null) ? '' : this.form.title);
                 formData.append('description', this.form.description);
-
-                axios.post(repository.API+'category/create',
+                let categoryId = this.$route.params.id;
+                axios.post(repository.API+this.action + ((categoryId !== undefined) ? '?id='+categoryId : ''),
                     formData)
                     .then(function(response){
                         console.log(response.data)

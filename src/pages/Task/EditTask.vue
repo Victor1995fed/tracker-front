@@ -11,7 +11,7 @@
                     <div class="md-layout-item md-small-size-100 md-size-100">
                         <md-field>
                             <label>Проект</label>
-                            <md-select name="project" id="project" v-model="form.project">
+                            <md-select name="project" id="project" v-model="form.project_id">
                                 <md-option
                                         v-for="one in response.project"
                                         :value="one.id"
@@ -43,8 +43,9 @@
                     <div class="md-layout-item md-small-size-100 md-size-33">
                         <md-field>
                             <label>Приоритет</label>
-                            <md-select name="priority" id="priority" v-model="form.priority">
+                            <md-select name="priority" id="priority" v-model="form.priority_id">
                                 <md-option
+
                                         v-for="one in response.priority"
                                         :value="one.id"
                                         v-bind:key="one.id"
@@ -57,7 +58,7 @@
                     <div class="md-layout-item md-small-size-100 md-size-33">
                         <md-field>
                             <label>Категория</label>
-                            <md-select name="category" id="category" v-model="form.category">
+                            <md-select name="category" id="category" v-model="form.category_id">
                                 <md-option
                                         v-for="one in response.category"
                                         :value="one.id"
@@ -84,7 +85,7 @@
                     <div class="md-layout-item md-small-size-100 md-size-33">
 
 
-                        <md-datepicker ref="datePicker"  v-on:md-opened="changeText" v-model="form.dateStart"
+                        <md-datepicker ref="datePicker"  v-on:md-opened="changeText" v-model="form.date_start"
                                        :md-open-on-focus="false" :md-immediately="true"><label>Дата начала</label>
                         </md-datepicker>
 
@@ -92,7 +93,7 @@
 
                     <div class="md-layout-item md-small-size-100 md-size-33">
 
-                        <md-datepicker v-model="form.dateEnd"  v-on:md-opened="changeText" :md-open-on-focus="false"
+                        <md-datepicker v-model="form.date_end"  v-on:md-opened="changeText" :md-open-on-focus="false"
                                        :md-immediately="true"><label>Дата завершения</label></md-datepicker>
 
                     </div>
@@ -103,7 +104,7 @@
                         <md-field>
 
                             <!-- <md-input v-model="file" type='file'></md-input> -->
-                            <input type="range" v-model.number="form.amount"> {{ form.amount }}%
+                            <input type="range" v-model.number="form.readiness"> {{ form.readiness }}%
 
                         </md-field>
                     </div>
@@ -145,7 +146,23 @@
             dataBackgroundColor: {
                 type: String,
                 default: ""
-            }
+            },
+            form:{
+                default: {
+                        title: null,
+                        category_id: null,
+                        description: '',
+                        priority_id: null,
+                        tag: null,
+                        file: null,
+                        date_end: null,
+                        date_start: null,
+                        amount: 0,
+                        dataFile: null,
+                }
+            },
+            action: {}
+
         },
         methods: {
             onFileChange(e) {
@@ -171,12 +188,12 @@
                 //TODO: Положить добавление в цикл
                 formData.append('title', (this.form.title == null) ? '' : this.form.title);
                 formData.append('description', this.form.description);
-                formData.append('priority_id', this.form.priority);
-                formData.append('project_id', this.form.project);
-                formData.append('category_id', this.form.category);
-                formData.append('readiness', this.form.amount);
-                formData.append('date_end', format(this.form.dateEnd,"YYYY-MM-DD"));
-                formData.append('date_start', format(this.form.dateStart,"YYYY-MM-DD"));
+                formData.append('priority_id', this.form.priority_id);
+                formData.append('project_id', this.form.project_id);
+                formData.append('category_id', this.form.category_id);
+                formData.append('readiness', this.form.readiness);
+                formData.append('date_end', format(this.form.date_end,"YYYY-MM-DD"));
+                formData.append('date_start', format(this.form.date_start,"YYYY-MM-DD"));
 
                 console.log('FILE', this.form.dataFile);
                 // formData.append('file', this.form.dataFile[0]);
@@ -186,9 +203,9 @@
                         formData.append('file[]', file);
                     }
                 }
-
+                let taskId = this.$route.params.id;
                 // formData.append('file', this.form.dataFile);
-                axios.post(repository.API + 'task/create',
+                axios.post(repository.API+this.action + ((taskId !== undefined) ? '?id='+taskId : ''),
                     formData,
                     {
                         headers: {
@@ -237,18 +254,7 @@
             let now = new Date()
             return {
                 response: [],
-                form: {
-                    title: null,
-                    category: null,
-                    description: '',
-                    priority: null,
-                    tag: null,
-                    file: null,
-                    dateEnd: null,
-                    dateStart: null,
-                    amount: 0,
-                    dataFile: null,
-                },
+
                 sending: false,
                 amount: 10,
                 dateStart: null,

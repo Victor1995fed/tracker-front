@@ -1,5 +1,13 @@
     <template>
     <div class="content">
+        <md-dialog :md-active.sync="showDialog">
+            <md-dialog-title>Вы действительно хотите удалить этот проект?</md-dialog-title>
+
+            <md-dialog-actions>
+                <md-button class="md-primary" @click="showDialog = false">Нет</md-button>
+                <md-button class="md-danger" @click="deleteProject">Да</md-button>
+            </md-dialog-actions>
+        </md-dialog>
         <div class="md-layout">
         <div class="md-layout-item">
             <md-card>
@@ -16,7 +24,8 @@
                         <md-icon>edit</md-icon>
                         <md-tooltip  md-direction="top">Редактировать</md-tooltip>
                         </md-button>
-                        <md-button @click="deleteProject" class="md-just-icon md-simple md-danger">
+<!--                        <md-button @click="deleteProject" class="md-just-icon md-simple md-danger">-->
+                        <md-button @click="showDialog  = true" class="md-just-icon md-simple md-danger">
                         <md-icon>close</md-icon>
                         <md-tooltip md-direction="top">Удалить</md-tooltip>
                         </md-button>
@@ -55,6 +64,7 @@
     },
     data: () => ({
         response: [],
+        showDialog : false,
         priority: "Высокий",
         dateStart: "23.08.2019",
         dateEnd: "23.08.2019",
@@ -67,7 +77,16 @@
         // console.log(Vue.material.locale.dateFormat);
         let id = this.$route.params.id;
         axios.get(repository.API + "project/view?id=" + id).then(response => {
-        this.response = response.data;
+            if (response.data) {
+                this.response = response.data;
+            }
+            else
+                {
+                    this.$router.push('/404');
+            }
+        }).catch((error) => {
+            console.warn('Ошибка' + error);
+            this.$router.push('/404');
         });
     },
         methods: {
@@ -82,7 +101,8 @@
                             alert('error')
                         }
                     })
-            }
+            },
+
         }
     };
     </script>

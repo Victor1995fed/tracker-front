@@ -159,6 +159,7 @@
                         date_start: null,
                         amount: 0,
                         dataFile: null,
+                        project_id:null
                 }
             },
             action: {}
@@ -185,15 +186,21 @@
             taskSend() {
                 let _this = this
                 const formData = new FormData();
+                for (var key in this.form) {
+                    if(this.form[key] !== undefined && this.form[key] !== null){
+                        formData.append(key, (key == 'date_end' || key == 'date_start') ? format(this.form[key],"YYYY-MM-DD")  : this.form[key]);
+                    }
+                }
+                console.warn(this.form.project_id);
                 //TODO: Положить добавление в цикл
-                formData.append('title', (this.form.title == null) ? '' : this.form.title);
-                formData.append('description', this.form.description);
-                formData.append('priority_id', this.form.priority_id);
-                formData.append('project_id', this.form.project_id);
-                formData.append('category_id', this.form.category_id);
-                formData.append('readiness', this.form.readiness);
-                formData.append('date_end', format(this.form.date_end,"YYYY-MM-DD"));
-                formData.append('date_start', format(this.form.date_start,"YYYY-MM-DD"));
+                // formData.append('title', (this.form.title == null) ? '' : this.form.title);
+                // formData.append('description', this.form.description);
+                // formData.append('priority_id', this.form.priority_id);
+                // formData.append('project_id', this.form.project_id);
+                // formData.append('category_id', this.form.category_id);
+                // formData.append('readiness', this.form.readiness);
+                // formData.append('date_end', format(this.form.date_end,"YYYY-MM-DD"));
+                // formData.append('date_start', format(this.form.date_start,"YYYY-MM-DD"));
 
                 console.log('FILE', this.form.dataFile);
                 // formData.append('file', this.form.dataFile[0]);

@@ -2,7 +2,7 @@
     <div>
         <div class="md-layout">
             <div class="md-layout-item">
-        <span v-html="prop"></span>
+                <div class="ql-editor" v-html="prop"></div>
             </div>
         </div>
     </div>

@@ -4,7 +4,7 @@
             <md-dialog-title>Вы действительно хотите удалить эту задачу?</md-dialog-title>
 
             <md-dialog-actions>
-                <md-button class="md-primary" @click="showDialog = false">Нет</md-button>
+                <md-button  @click="showDialog = false">Нет</md-button>
                 <md-button class="md-danger" @click="deleteTask">Да</md-button>
             </md-dialog-actions>
         </md-dialog>
@@ -13,7 +13,7 @@
             <md-card>
             <md-card-header data-background-color="green">
                 <h4 class="title">{{response.task.title}}</h4>
-                <p class="category">{{response.category.title}}</p>
+                <p class="category" v-if="response.category !== null">{{response.category.title}}</p>
             </md-card-header>
             <md-card-content>
                 <div id="typography">

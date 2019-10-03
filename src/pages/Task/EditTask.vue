@@ -108,6 +108,19 @@
 
                         </md-field>
                     </div>
+                    <div v-if="action == 'task/update'" class="md-layout-item md-small-size-100 md-size-33">
+                        <md-field>
+                            <label>Статус</label>
+                            <md-select name="category" id="category" v-model="form.status_id">
+                                <md-option
+                                        v-for="one in response.status"
+                                        :value="one.id"
+                                        v-bind:key="one.id"
+                                >{{ one.title }}
+                                </md-option>
+                            </md-select>
+                        </md-field>
+                    </div>
                     <div class="md-layout-item md-small-size-100 md-size-100">
 
                         <md-field>
@@ -159,7 +172,9 @@
                         date_start: null,
                         amount: 0,
                         dataFile: null,
-                        project_id:null
+                        project_id:null,
+                        status_id: null,
+
                 }
             },
             action: {}

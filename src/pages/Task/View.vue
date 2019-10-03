@@ -35,7 +35,7 @@
                     <div class="md-layout">
                     <div class="md-layout-item">
                         <p>
-                        <span class="md-body-2">Статус:</span> Новая
+                        <span class="md-body-2">Статус:</span> {{response.status.title}}
                         </p>
                     </div>
                     <div class="md-layout-item">

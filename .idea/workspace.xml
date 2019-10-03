@@ -3,9 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="6e239849-0685-47fe-a502-1a2637ab8794" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Tables/SimpleTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tables/SimpleTable.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Task/Table/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Task/Table/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Task/Tabs/TaskTabsDescription.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Task/Tabs/TaskTabsDescription.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/app.d7f9bef7.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-vendors.3d52a018.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/app.86538262.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/app.86538262.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-vendors.1a721f88.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-vendors.1a721f88.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Task/View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/View.vue" afterDir="false" />
     </list>
@@ -93,7 +97,8 @@
       <workItem from="1569643984498" duration="2585000" />
       <workItem from="1569747910007" duration="116000" />
       <workItem from="1569838511633" duration="4334000" />
-      <workItem from="1569921813545" duration="6598000" />
+      <workItem from="1569921813545" duration="6754000" />
+      <workItem from="1570103528112" duration="2106000" />
     </task>
     <task id="LOCAL-00001" summary="add validations for EditProject">
       <created>1567775730521</created>
@@ -193,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569842770600</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="relations task-&gt;project">
+      <created>1569932333338</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1569932333338</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,6 +239,7 @@
     <MESSAGE value="create Update.vue" />
     <MESSAGE value="add function deleteProject for View.vue" />
     <MESSAGE value="update task" />
-    <option name="LAST_COMMIT_MESSAGE" value="update task" />
+    <MESSAGE value="relations task-&gt;project" />
+    <option name="LAST_COMMIT_MESSAGE" value="relations task-&gt;project" />
   </component>
 </project>

@@ -57,8 +57,8 @@ const routes = [
       },
 
       {
-        path: "task/create/:id?/:project_id?",
-        name: "Редактирование задачи",
+        path: "task/create/:parent_id?",
+        name: "Создание задачи",
         component: TaskCreate,
         props: true
       },

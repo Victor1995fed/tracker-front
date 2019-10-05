@@ -3,7 +3,7 @@
     <md-card>
             <md-card-header :data-background-color="dataBackgroundColor">
                 <h4 class="title">Название проекта</h4>
-                <p class="category">Название задачи если есть</p>
+                <p v-if="isChild">Родительская задача : {{parentTask.title}} </p>
       </md-card-header>
 
             <md-card-content>
@@ -33,7 +33,6 @@
                     <div class="md-layout-item md-size-100">
                         <label>Описание</label>
                         <md-field maxlength="5">
-
                             <div id="app">
                                 <vue-editor v-model="form.description"></vue-editor>
                             </div>
@@ -110,6 +109,15 @@
                     </div>
                     <div v-if="action == 'task/update'" class="md-layout-item md-small-size-100 md-size-33">
                         <md-field>
+
+                            <md-field>
+                                <label>Трудозатраты</label>
+                                <md-input v-model="form.spending" ref="spending"  @change="checkValue" max="100" type="number"></md-input>
+                            </md-field>
+                        </md-field>
+                    </div>
+                    <div v-if="action == 'task/update'" class="md-layout-item md-small-size-100 md-size-33">
+                        <md-field>
                             <label>Статус</label>
                             <md-select name="category" id="category" v-model="form.status_id">
                                 <md-option
@@ -174,19 +182,28 @@
                         dataFile: null,
                         project_id:null,
                         status_id: null,
-
+                        parent_id: null
                 }
             },
-            action: {}
+            action: {},
+            parent_id:{
+                default:null
+            }
 
         },
         methods: {
+            checkValue(){
+                // let form.spending = this.$refs.spending
+                console.log(this.form.spending)
+                if(this.form.spending > 100){
+                    this.form.spending = 100
+                }
+                else if(this.form.spending <= 0.1 && this.form.spending != 0){
+                    this.form.spending= 0.1
+                }
+            },
             onFileChange(e) {
                 this.form.dataFile = e.target.files
-                // let now = new Date()
-                // let dateStart= format(this.form.dateStart,"YYYY-MM-DD")
-                // let dateStart = new Date(this.form.dateStart)
-                // console.log("date", dateStart);
             },
             validateFields() {
                 this.$v.$touch()
@@ -208,17 +225,8 @@
                 }
                 console.warn(this.form.project_id);
                 //TODO: Положить добавление в цикл
-                // formData.append('title', (this.form.title == null) ? '' : this.form.title);
-                // formData.append('description', this.form.description);
-                // formData.append('priority_id', this.form.priority_id);
-                // formData.append('project_id', this.form.project_id);
-                // formData.append('category_id', this.form.category_id);
-                // formData.append('readiness', this.form.readiness);
-                // formData.append('date_end', format(this.form.date_end,"YYYY-MM-DD"));
-                // formData.append('date_start', format(this.form.date_start,"YYYY-MM-DD"));
 
                 console.log('FILE', this.form.dataFile);
-                // formData.append('file', this.form.dataFile[0]);
                 if(this.form.dataFile != null){
                     for (var i = 0; i < this.form.dataFile.length; i++) {
                         let file = this.form.dataFile[i];
@@ -226,7 +234,6 @@
                     }
                 }
                 let taskId = this.$route.params.id;
-                // formData.append('file', this.form.dataFile);
                 axios.post(repository.API+this.action + ((taskId !== undefined) ? '?id='+taskId : ''),
                     formData,
                     {
@@ -275,8 +282,9 @@
             let dateFormat = this.$material.locale.dateFormat || 'yyyy-MM-dd'
             let now = new Date()
             return {
+                isChild:false,
+                parentTask:{},
                 response: [],
-
                 sending: false,
                 amount: 10,
                 dateStart: null,
@@ -297,9 +305,23 @@
             };
         },
         mounted() {
+            let parent_id = this.$route.params.parent_id;
+            // console.warn(this.$route.params.parent_id);
             axios.get(repository.API + 'task/edit').then(response => {
                 this.response = response.data
             })
+
+            if(parent_id !== null && parent_id !== undefined){
+                this.isChild = true;
+                this.form.parent_id = parent_id
+                axios.get(repository.API + 'task/view?id='+parent_id).then(response => {
+                    this.parentTask = response.data.task
+                    this.form.project_id = response.data.task.project_id
+                    this.form.category_id = response.data.task.category_id
+                })
+            }
+
+
         },
 
         updated: function () {

@@ -8,7 +8,7 @@
                         <div class="md-layout-item">{{data.title}}</div>
                         <div class="md-layout-item">{{data.date_create}}</div>
                         <div class="md-layout-item"><a class="download" :href="url+data.uuid" title="скачать"></a></div>
-                        <div class="md-layout-item"><a class="delete" title="удалить"></a></div>
+                        <div class="md-layout-item"><a class="delete" title="удалить" @click="deleteFile(data.uuid)"></a></div>
                     </div>
 
                 </div>
@@ -18,16 +18,27 @@
 </template>
 
 <script>
+    import axios from 'axios';
+    import repository from '@/settings.js';
     export default {
         name: "task-tabs-files",
         props: ['prop'],
         data() {
             return {
-                url: 'http://tracker.zz/files/download?uuid=',
+                url: 'http://tracker.zz/file/download?uuid=',
                 selected: [],
                 users: [
                 ]
             };
+        },
+        methods:{
+            deleteFile(uuid){
+
+                axios.get(repository.API + 'file/delete?uuid='+uuid).then(response => {
+                    this.response = response.data
+                    this.$router.go()
+                })
+            }
         }
     };
 </script>

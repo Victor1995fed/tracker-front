@@ -13,6 +13,7 @@
             <md-card>
             <md-card-header data-background-color="green">
                 <h4 class="title">{{response.task.title}}</h4>
+                <p v-if="response.task.parent_id != null && response.parent_task != null">Основная задача: <a :href="'/#/task/view/'+response.task.parent_id" target="_blank">{{response.parent_task.title}} </a></p>
                 <p class="category" v-if="response.category !== null">{{response.category.title}}</p>
             </md-card-header>
             <md-card-content>
@@ -113,6 +114,9 @@
                         </nav-tabs-card>
                     </div>
                 </div>
+                    <div class="md-layout-item md-size-100 text-right">
+                        <md-button :href="urlChildTask"  class="md-raised md-success">Добавить подзадачу</md-button>
+                    </div>
                 </div>
             </md-card-content>
             </md-card>
@@ -145,6 +149,7 @@
     },
     data: () => ({
         showDialog: false,
+        urlChildTask:'task/create',
         response: {
             task:{},
             category:{},
@@ -166,6 +171,7 @@
         axios.get(repository.API + "task/view?id=" + id).then(response => {
         this.response = response.data;
         });
+        this.urlChildTask = '#/task/create/'+id;
     },
         methods: {
             deleteTask() {
@@ -192,16 +198,6 @@
         .layout-height-min {
             min-height: 400px;
         }
-        /*.box-shadow-none {*/
-        /*    box-shadow: none;*/
-        /*}*/
-        /*.color-tabs  {*/
-        /*    color: #f00000 !important;*/
-        /*}*/
-        /*#viewTab {*/
-        /*    color: #000000;*/
-        /*}*/
-
         .md-tabs-navigation{
             box-shadow: none !important;
         }

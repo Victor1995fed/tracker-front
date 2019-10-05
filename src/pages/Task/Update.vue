@@ -27,6 +27,8 @@
             let id = this.$route.params.id;
             axios.get(repository.API+'task/update?id='+id).then(response => {
                 this.form = response.data
+                //Сброс трудозатрат
+                this.form.spending = 0
             })
 
         },

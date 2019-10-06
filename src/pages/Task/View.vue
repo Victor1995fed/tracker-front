@@ -13,6 +13,7 @@
             <md-card>
             <md-card-header data-background-color="green">
                 <h4 class="title">{{response.task.title}}</h4>
+                <!-- FIXME: меняется url, указанный в href, но страница не обновляется, не стал долго возиться, воткнул             target="_blank"    -->
                 <p v-if="response.task.parent_id != null && response.parent_task != null">Основная задача: <a :href="'/#/task/view/'+response.task.parent_id" target="_blank">{{response.parent_task.title}} </a></p>
                 <p class="category" v-if="response.category !== null">{{response.category.title}}</p>
             </md-card-header>

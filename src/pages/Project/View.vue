@@ -12,7 +12,7 @@
         <div class="md-layout-item">
             <md-card>
             <md-card-header data-background-color="green">
-                <h4 class="title">Проект:  <span>{{response.title}}</span></h4>
+                <h4 class="title">Проект:  <span>{{response.project.title}}</span></h4>
                 <!-- <p class="category">{{task.task.title}}</p> -->
             </md-card-header>
             <md-card-content>
@@ -33,12 +33,27 @@
                     </div>
                 </div>
                 <div class="row">
+                    <div class="md-layout">
+                        <div class="md-layout-item">
+                            <p>
+                                <span class="md-body-2">Дата создания:</span>
+                                {{response.project.date}}
+                            </p>
+                        </div>
+                        <div class="md-layout-item">
+                            <p>
+                                <span class="md-body-2">Статус:</span>
+                                {{response.status.title}}
+                            </p>
+                        </div>
+
+                    </div>
                     <hr />
                     <div class="md-layout">
                     <div class="md-layout-item">
                         <h4>Описание</h4>
 <!--                        <vue-editor v-model="response.description"></vue-editor>-->
-                        <div class="ql-editor" v-html="response.description"></div>
+                        <div class="ql-editor" v-html="response.project.description"></div>
                     </div>
                     </div>
                     <hr />

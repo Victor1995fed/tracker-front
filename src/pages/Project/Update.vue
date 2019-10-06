@@ -2,22 +2,23 @@
     <div class="content">
         <div class="md-layout">
             <div class="md-layout-item md-medium-size-100 md-size-100">
-                <update-project data-background-color="green" :form="form"> </update-project>
+                <edit-project data-background-color="green" :form="form" :action="action"> </edit-project>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    import  {UpdateProject}  from "@/pages";
+    import  {EditProject}  from "@/pages";
     import axios from 'axios';
     import repository from '@/settings.js';
     export default {
         components: {
-            UpdateProject
+            EditProject
         },
         data() {
             return {
+                action:'project/update',
                 form:[]
             };
         },

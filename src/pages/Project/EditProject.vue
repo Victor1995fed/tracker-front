@@ -1,5 +1,5 @@
 <template>
-  <form novalidate method="POST" class="md-layout" :action="action" @submit.prevent="validateFields" ref="formData">
+  <form novalidate method="POST" class="md-layout" @submit.prevent="validateFields" ref="formData">
     <md-card>
       <md-card-header :data-background-color="dataBackgroundColor">
         <h4 class="title">Название проекта </h4>
@@ -15,13 +15,26 @@
                 <span class="md-error" v-else-if="!$v.form.title.minlength">Минимум 3 символа</span>
             </md-field>
           </div>
+            <div v-if="action == 'project/update'" class="md-layout-item md-small-size-100 md-size-33">
+                <md-field>
+                    <label>Статус</label>
+                    <md-select v-model="form.status_id">
+                        <md-option
+                                v-for="one in status"
+                                :value="one.id"
+                                v-bind:key="one.id"
+                        >{{ one.title }}
+                        </md-option>
+                    </md-select>
+                </md-field>
+            </div>
           <div class="md-layout-item md-size-100">
             <label>Описание</label>
             <md-field maxlength="5">
-     <div id="app">
-    <vue-editor  v-model="form.description" ref="description"></vue-editor>
-    <!-- <textarea style="display:none" v-model="description" name="description" id="description" > </textarea> -->
-  </div>
+                     <div id="app">
+                    <vue-editor  v-model="form.description" ref="description"></vue-editor>
+                    <!-- <textarea style="display:none" v-model="description" name="description" id="description" > </textarea> -->
+                  </div>
               <!-- <md-textarea v-model="description"></md-textarea> -->
             </md-field>
           </div>
@@ -54,27 +67,45 @@ export default {
     dataBackgroundColor: {
       type: String,
       default: ""
-    }
+    },
+      form:{
+        default:
+            {
+                title: null,
+                description: ""
+            }
+      },
+      action:{}
   },
-  data() {
-    return {
-        form: {
-            title: null,
-            description: ""
-        },
+    data: () => ({
         rules:[],
-      amount:10,
-      action:'http://tracker.zz/project/create',
-      content: "<h1>Some initial content</h1>",
-      dateStart: null,
-      dateEnd: null,
-      file: null,
-      username: null,
-      title: null,
-      description: "Пиши",
+        status:{},
+        amount:10,
+        // action:'http://tracker.zz/project/create',
+        content: "<h1>Some initial content</h1>",
+        dateStart: null,
+        dateEnd: null,
+        file: null,
+        username: null,
+        title: null,
+        description: "Пиши",
         sending:false
-    };
-  },
+    }),
+    mounted() {
+        console.warn(this)
+        let _this = this
+        // this.status = {id:1,title:'ere'};
+        axios.get(repository.API+'project/status')
+            .then(function(response){
+                if (response.data) {
+                    console.warn(this)
+                    _this.status = response.data;
+                }
+                else{
+                    alert('error')
+                }
+            })
+    },
     validations: {
         form: {
             title: {
@@ -112,11 +143,15 @@ export default {
       },
     projectReview(){
       let _this = this
+      let projectId = this.$route.params.id;
       const formData = new FormData();
-      formData.append('title', (this.form.title == null) ? '' : this.form.title);
-      formData.append('description', this.form.description);
+        for (var key in this.form) {
+            if(this.form[key] !== undefined && this.form[key] !== null){
+                formData.append(key, this.form[key]);
+            }
+        }
 
-      axios.post(repository.API+'project/create',
+      axios.post(repository.API+this.action+((projectId !== undefined) ? '?id='+projectId : ''),
     formData)
     .then(function(response){
       if (response.data.result) {
@@ -126,9 +161,12 @@ export default {
           alert('error'+response.data.message)
      }
     })
+
     },
 
-  }
+  },
+
+
 
 
 };

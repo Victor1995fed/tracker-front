@@ -119,7 +119,7 @@
                     <div v-if="action == 'task/update'" class="md-layout-item md-small-size-100 md-size-33">
                         <md-field>
                             <label>Статус</label>
-                            <md-select name="category" id="category" v-model="form.status_id">
+                            <md-select name="status" id="status" v-model="form.status_id">
                                 <md-option
                                         v-for="one in response.status"
                                         :value="one.id"

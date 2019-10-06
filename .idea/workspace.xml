@@ -3,11 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="6e239849-0685-47fe-a502-1a2637ab8794" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Task/Tabs/TaskTabsFiles.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Task/Tabs/TaskTabsFiles.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Task/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/Create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Category/EditCategory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Category/EditCategory.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Category/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Category/List.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Category/View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Category/View.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Project/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Project/Create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Project/EditProject.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Project/EditProject.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Project/Update.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Project/Update.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Project/View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Project/View.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Task/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Task/Update.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/Update.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Task/View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/View.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
     </list>
@@ -98,7 +103,8 @@
       <workItem from="1569921813545" duration="6754000" />
       <workItem from="1570103528112" duration="2499000" />
       <workItem from="1570187294174" duration="2627000" />
-      <workItem from="1570247720356" duration="12405000" />
+      <workItem from="1570247720356" duration="12975000" />
+      <workItem from="1570332524564" duration="9710000" />
     </task>
     <task id="LOCAL-00001" summary="add validations for EditProject">
       <created>1567775730521</created>
@@ -212,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570106798353</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="parent task and field spending">
+      <created>1570262857415</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1570262857415</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,6 +261,7 @@
     <MESSAGE value="update task" />
     <MESSAGE value="relations task-&gt;project" />
     <MESSAGE value="add select for statuses" />
-    <option name="LAST_COMMIT_MESSAGE" value="add select for statuses" />
+    <MESSAGE value="parent task and field spending" />
+    <option name="LAST_COMMIT_MESSAGE" value="parent task and field spending" />
   </component>
 </project>

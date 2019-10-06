@@ -3,7 +3,7 @@
         <md-card>
             <md-card-header :data-background-color="dataBackgroundColor">
                 <h4 class="title">Название категории </h4>
-                <p class="category">Название задачи если есть</p>
+                <p v-if="isChild">Родительская задача : {{parentCategory.title}} </p>
             </md-card-header>
             <md-card-content>
                 <div class="md-layout">
@@ -49,6 +49,8 @@
                 // form: {
                 //     title: null,
                 // },
+                isChild:false,
+                parentCategory:{},
                 rules:[],
                 amount:10,
                 content: "<h1>Some initial content</h1>",
@@ -99,8 +101,13 @@
             projectReview(){
                 let _this = this
                 const formData = new FormData();
-                formData.append('title', (this.form.title == null) ? '' : this.form.title);
-                formData.append('description', this.form.description);
+                for (var key in this.form) {
+                    if(this.form[key] !== undefined && this.form[key] !== null){
+                        formData.append(key, this.form[key]);
+                    }
+                }
+                // formData.append('title', (this.form.title == null) ? '' : this.form.title);
+                // formData.append('description', this.form.description);
                 let categoryId = this.$route.params.id;
                 axios.post(repository.API+this.action + ((categoryId !== undefined) ? '?id='+categoryId : ''),
                     formData)
@@ -115,7 +122,22 @@
                     })
             },
 
-        }
+        },
+        mounted() {
+            let parent_id = this.$route.params.parent_id;
+            if(parent_id !== null && parent_id !== undefined){
+                this.isChild = true;
+                this.form.parent_id = parent_id
+                axios.get(repository.API + 'category/view?id='+parent_id).then(response => {
+                    this.parentCategory = response.data.category
+                    this.form.parent_id = parent_id
+                    // this.form.project_id = response.data.task.project_id
+                    // this.form.category_id = response.data.task.category_id
+                })
+            }
+
+
+        },
 
 
     };

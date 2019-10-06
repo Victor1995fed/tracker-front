@@ -68,13 +68,13 @@ const routes = [
         component: TaskView,
       },
       {
-        path: "project/create/:id",
-        name: "Редактирование проекта",
+        path: "project/create/",
+        name: "Новый проект",
         component: ProjectCreate,
       },
       {
         path: "project/view/:id",
-        name: "Редактирование проекта",
+        name: "Просмотр проекта",
         component: ProjectView,
       },
 
@@ -94,7 +94,7 @@ const routes = [
         component: ProjectUpdate,
         },
       {
-        path: "category/create/:id",
+        path: "category/create/:parent_id?",
         name: "Редактирование проекта",
         component: CategoryCreate,
       },

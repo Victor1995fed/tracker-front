@@ -12,7 +12,8 @@
             <div class="md-layout-item">
                 <md-card>
                     <md-card-header data-background-color="green">
-                        <h4 class="title">Категория:  <span>{{response.title}}</span></h4>
+                        <h4 class="title">Категория:  <span>{{response.category.title}}</span></h4>
+                        <p v-if="response.category.parent_id != null && response.parentCategory != null">Основная категория: <a :href="'/#/category/view/'+response.category.parent_id" target="_blank">{{response.parentCategory.title}} </a></p>
                         <!-- <p class="category">{{task.task.title}}</p> -->
                     </md-card-header>
                     <md-card-content>
@@ -37,7 +38,7 @@
                                     <div class="md-layout-item">
                                         <h4>Описание</h4>
                                         <!--                        <vue-editor v-model="response.description"></vue-editor>-->
-                                        <div class="ql-editor" v-html="response.description"></div>
+                                        <div class="ql-editor" v-html="response.category.description"></div>
                                     </div>
                                 </div>
                                 <hr />

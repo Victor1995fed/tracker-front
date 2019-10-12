@@ -5,16 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Category/EditCategory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Category/EditCategory.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Category/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Category/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Category/View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Category/View.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Project/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Project/Create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Project/EditProject.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Project/EditProject.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Project/Update.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Project/Update.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Project/View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Project/View.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Task/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Task/View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/View.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Category/Update.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Category/Update.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +95,9 @@
       <workItem from="1570103528112" duration="2499000" />
       <workItem from="1570187294174" duration="2627000" />
       <workItem from="1570247720356" duration="12975000" />
-      <workItem from="1570332524564" duration="9710000" />
+      <workItem from="1570332524564" duration="10428000" />
+      <workItem from="1570706182156" duration="264000" />
+      <workItem from="1570854642938" duration="11211000" />
     </task>
     <task id="LOCAL-00001" summary="add validations for EditProject">
       <created>1567775730521</created>
@@ -225,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570262857415</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="view status for project, parent category">
+      <created>1570346542841</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1570346542841</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,6 +262,7 @@
     <MESSAGE value="relations task-&gt;project" />
     <MESSAGE value="add select for statuses" />
     <MESSAGE value="parent task and field spending" />
-    <option name="LAST_COMMIT_MESSAGE" value="parent task and field spending" />
+    <MESSAGE value="view status for project, parent category" />
+    <option name="LAST_COMMIT_MESSAGE" value="view status for project, parent category" />
   </component>
 </project>

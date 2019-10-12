@@ -73,6 +73,15 @@
             sending: false
         },
         methods:{
+            responseEvent (response,_this){
+                console.log(response.data)
+                if (response.data.result) {
+                    _this.$router.push('/category/view/'+response.data.id);
+                }
+                else{
+                    alert('error'+response.data.message)
+                }
+            },
             getValidationClass (fieldName) {
                 const field = this.$v.form[fieldName]
 
@@ -109,17 +118,21 @@
                 // formData.append('title', (this.form.title == null) ? '' : this.form.title);
                 // formData.append('description', this.form.description);
                 let categoryId = this.$route.params.id;
-                axios.post(repository.API+this.action + ((categoryId !== undefined) ? '?id='+categoryId : ''),
-                    formData)
-                    .then(function(response){
-                        console.log(response.data)
-                        if (response.data.result) {
-                            _this.$router.push('/category/view/'+response.data.id);
-                        }
-                        else{
-                            alert('error'+response.data.message)
-                        }
-                    })
+                if(this.action == 'category/create'){
+                    axios.post(repository.API+this.action + ((categoryId !== undefined) ? '?id='+categoryId : ''),
+                        formData)
+                        .then(function(response){
+                            _this.responseEvent(response,_this)
+                        })
+                }
+                else {
+                    axios.put(repository.API+this.action + ((categoryId !== undefined) ? '?id='+categoryId : ''),
+                        formData)
+                        .then(function(response){
+                            _this.responseEvent(response,_this)
+                        })
+                }
+
             },
 
         },

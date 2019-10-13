@@ -24,7 +24,6 @@
     </form>
 </template>
 <script>
-    // import Vue from 'vue'
     import axios from 'axios';
     import repository from '@/settings.js';
     import { validationMixin } from 'vuelidate'
@@ -46,9 +45,6 @@
         },
         data() {
             return {
-                // form: {
-                //     title: null,
-                // },
                 isChild:false,
                 parentCategory:{},
                 rules:[],
@@ -73,15 +69,6 @@
             sending: false
         },
         methods:{
-            responseEvent (response,_this){
-                console.log(response.data)
-                if (response.data.result) {
-                    _this.$router.push('/category/view/'+response.data.id);
-                }
-                else{
-                    alert('error'+response.data.message)
-                }
-            },
             getValidationClass (fieldName) {
                 const field = this.$v.form[fieldName]
 
@@ -99,7 +86,7 @@
             },
             saveUser () {
                 this.sending = true
-                this.projectReview()
+                this.getRequest()
             },
             validateFields () {
                 this.$v.$touch()
@@ -107,7 +94,7 @@
                     this.saveUser()
                 }
             },
-            projectReview(){
+            getRequest(){
                 let _this = this
                 const formData = new FormData();
                 for (var key in this.form) {
@@ -115,26 +102,25 @@
                         formData.append(key, this.form[key]);
                     }
                 }
-                // formData.append('title', (this.form.title == null) ? '' : this.form.title);
-                // formData.append('description', this.form.description);
                 let categoryId = this.$route.params.id;
-                if(this.action == 'category/create'){
-                    axios.post(repository.API+this.action + ((categoryId !== undefined) ? '?id='+categoryId : ''),
-                        formData)
-                        .then(function(response){
-                            _this.responseEvent(response,_this)
-                        })
-                }
-                else {
-                    axios.put(repository.API+this.action + ((categoryId !== undefined) ? '?id='+categoryId : ''),
-                        formData)
-                        .then(function(response){
-                            _this.responseEvent(response,_this)
-                        })
-                }
-
+                let method = (this.action == 'category/create') ? 'post' : 'put';
+                const options = {
+                    method: method,
+                    responseType:'json',
+                    url: repository.API + this.action + ((categoryId !== undefined) ? '?id='+categoryId : ''),
+                    data: formData,
+                    transformResponse: [(data) => {
+                        console.log(data)
+                        if (data.result) {
+                            _this.$router.push('/category/view/'+data.id);
+                        }
+                        else{
+                            alert('error'+data.message)
+                        }
+                    }]
+                };
+                axios(options);
             },
-
         },
         mounted() {
             let parent_id = this.$route.params.parent_id;
@@ -144,8 +130,6 @@
                 axios.get(repository.API + 'category/view?id='+parent_id).then(response => {
                     this.parentCategory = response.data.category
                     this.form.parent_id = parent_id
-                    // this.form.project_id = response.data.task.project_id
-                    // this.form.category_id = response.data.task.category_id
                 })
             }
 

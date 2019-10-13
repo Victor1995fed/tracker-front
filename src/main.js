@@ -26,6 +26,9 @@ import GlobalComponents from "./globalComponents";
 import GlobalDirectives from "./globalDirectives";
 import Notifications from "./components/NotificationPlugin";
 
+//helper
+import {helpers} from "./helpers";
+
 // MaterialDashboard plugin
 import MaterialDashboard from "./material-dashboard";
 
@@ -66,6 +69,7 @@ Vue.material.locale = {
 
 /* eslint-disable no-new */
 new Vue({
+  mixins: [helpers],
   el: "#app",
   render: h => h(App),
   router,

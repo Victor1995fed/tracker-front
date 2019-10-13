@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e239849-0685-47fe-a502-1a2637ab8794" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/helpers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Category/EditCategory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Category/EditCategory.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Category/Update.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Category/Update.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -97,7 +98,8 @@
       <workItem from="1570247720356" duration="12975000" />
       <workItem from="1570332524564" duration="10428000" />
       <workItem from="1570706182156" duration="264000" />
-      <workItem from="1570854642938" duration="11211000" />
+      <workItem from="1570854642938" duration="11372000" />
+      <workItem from="1570936988578" duration="6178000" />
     </task>
     <task id="LOCAL-00001" summary="add validations for EditProject">
       <created>1567775730521</created>
@@ -225,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570346542841</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="refactor category update">
+      <created>1570870792173</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1570870792173</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,6 +272,7 @@
     <MESSAGE value="add select for statuses" />
     <MESSAGE value="parent task and field spending" />
     <MESSAGE value="view status for project, parent category" />
-    <option name="LAST_COMMIT_MESSAGE" value="view status for project, parent category" />
+    <MESSAGE value="refactor category update" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor category update" />
   </component>
 </project>

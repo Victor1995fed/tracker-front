@@ -120,8 +120,6 @@ export default {
        const field = this.$v.form[fieldName]
 
           if (field) {
-              console.log("INVA",field.$invalid);
-              console.log("DIR",field.$dirty);
               return {
                   'md-invalid': field.$invalid && field.$dirty
               }
@@ -150,17 +148,23 @@ export default {
                 formData.append(key, this.form[key]);
             }
         }
+        let method = (this.action == 'project/create') ? 'post' : 'put';
+        const options = {
+            method: method,
+            responseType:'json',
+            url: repository.API + this.action + ((projectId !== undefined) ? '?id='+projectId : ''),
+            data: formData,
+            transformResponse: [(data) => {
+                if (data.result) {
+                    _this.$router.push('/project/view/'+data.id);
+                }
+                else{
+                    alert('error'+data.message)
+                }
+            }]
+        };
 
-      axios.post(repository.API+this.action+((projectId !== undefined) ? '?id='+projectId : ''),
-    formData)
-    .then(function(response){
-      if (response.data.result) {
-       _this.$router.push('/project/view/'+response.data.id);
-      }
-      else{
-          alert('error'+response.data.message)
-     }
-    })
+        axios(options);
 
     },
 

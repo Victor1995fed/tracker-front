@@ -107,7 +107,7 @@
         methods: {
             deleteProject() {
                 let _this = this
-                axios.get(repository.API+'project/delete?id='+this.$route.params.id)
+                axios.delete(repository.API+'project/delete?id='+this.$route.params.id)
                     .then(function(response){
                         if (response.data) {
                             _this.$router.push('/project/list');

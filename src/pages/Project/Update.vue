@@ -24,8 +24,8 @@
         },
         mounted() {
             let id = this.$route.params.id;
-            axios.get(repository.API+'project/update?id='+id).then(response => {
-                this.form = response.data
+            axios.get(repository.API+'project/view?id='+id).then(response => {
+                this.form = response.data.project
             })
 
         },

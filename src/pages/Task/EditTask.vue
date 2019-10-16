@@ -224,7 +224,6 @@
                     }
                 }
                 console.warn(this.form.project_id);
-                //TODO: Положить добавление в цикл
 
                 console.log('FILE', this.form.dataFile);
                 if(this.form.dataFile != null){
@@ -234,21 +233,23 @@
                     }
                 }
                 let taskId = this.$route.params.id;
-                axios.post(repository.API+this.action + ((taskId !== undefined) ? '?id='+taskId : ''),
-                    formData,
-                    {
-                        headers: {
-                            'Content-Type': 'multipart/form-data'
+                let method = (this.action == 'task/create') ? 'post' : 'put';
+
+                const options = {
+                    method: method,
+                    responseType:'json',
+                    url: repository.API + this.action + ((taskId !== undefined) ? '?id='+taskId : ''),
+                    data: formData,
+                    transformResponse: [(data) => {
+                        if (data.result) {
+                            _this.$router.push('/task/view/'+data.id);
                         }
-                    })
-                    .then(function (response) {
-                        console.log(response.data)
-                        if (response.data.result) {
-                            _this.$router.push('/task/view/' + response.data.id);
-                        } else {
-                            alert('error' + response.data.message)
+                        else{
+                            alert('error'+data.message)
                         }
-                    })
+                    }]
+                };
+                axios(options);
             },
             changeText: function () {
                 this.$nextTick(function () {

@@ -177,7 +177,7 @@
         methods: {
             deleteTask() {
                 let _this = this
-                axios.get(repository.API+'task/delete?id='+this.$route.params.id)
+                axios.delete(repository.API+'task/delete?id='+this.$route.params.id)
                     .then(function(response){
                         if (response.data) {
                             _this.$router.push('/task/list');

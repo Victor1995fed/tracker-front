@@ -14,7 +14,6 @@
                     <md-card-header data-background-color="green">
                         <h4 class="title">Категория:  <span>{{response.category.title}}</span></h4>
                         <p v-if="response.category.parent_id != null && response.parentCategory != null">Основная категория: <a :href="'/#/category/view/'+response.category.parent_id" target="_blank">{{response.parentCategory.title}} </a></p>
-                        <!-- <p class="category">{{task.task.title}}</p> -->
                     </md-card-header>
                     <md-card-content>
                         <div id="typography">
@@ -37,7 +36,6 @@
                                 <div class="md-layout">
                                     <div class="md-layout-item">
                                         <h4>Описание</h4>
-                                        <!--                        <vue-editor v-model="response.description"></vue-editor>-->
                                         <div class="ql-editor" v-html="response.category.description"></div>
                                     </div>
                                 </div>
@@ -65,16 +63,8 @@
         data: () => ({
             showDialog: false,
             response: [],
-            priority: "Высокий",
-            dateStart: "23.08.2019",
-            dateEnd: "23.08.2019",
-            amount: 90,
-            content: "gives the styles and works fine with dark themes. Look:"
         }),
         mounted() {
-
-            // Vue.material.locale.dateFormat = 'dd/MM/yyyy'
-            // console.log(Vue.material.locale.dateFormat);
             let id = this.$route.params.id;
             axios.get(repository.API + "category/view?id=" + id).then(response => {
                 this.response = response.data;
@@ -100,7 +90,6 @@
 
 <style lang="css">
     @import "~vue2-editor/dist/vue2-editor.css";
-    /* Import the Quill styles you want */
     @import '~quill/dist/quill.core.css';
     @import '~quill/dist/quill.bubble.css';
     @import '~quill/dist/quill.snow.css';

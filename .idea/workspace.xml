@@ -2,14 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e239849-0685-47fe-a502-1a2637ab8794" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/img/plus.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/view.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SidebarPlugin/SidebarLink.vue_back" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/constants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/material-dashboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/material-dashboard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/md/_cards.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/md/_cards.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/md/_colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/md/_colors.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/md/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/md/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SidebarPlugin/SideBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SidebarPlugin/SideBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SidebarPlugin/SidebarLink.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SidebarPlugin/SidebarLink.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SidebarPlugin/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SidebarPlugin/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Task/Table/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Task/Table/List.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/material-dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/material-dashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Category/View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Category/View.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Project/EditProject.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Project/EditProject.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Project/Update.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Project/Update.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Project/View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Project/View.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Layout/DashboardLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Layout/DashboardLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Project/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Project/List.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Task/Update.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/Update.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Task/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/List.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Task/View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/View.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings.js" afterDir="false" />
     </list>
@@ -34,17 +46,18 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/img" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/node_modules/eslint" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
     <property name="ts.external.directory.path" value="D:\Programs\WebStorm 2019.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="S:\Server\data\htdocs\tracker\front\src\assets\img" />
       <recent name="C:\Server\data\htdocs\tracker_front\src\pages\Project" />
     </key>
   </component>
@@ -107,7 +120,13 @@
       <workItem from="1570854642938" duration="11372000" />
       <workItem from="1570936988578" duration="6178000" />
       <workItem from="1570974340722" duration="51000" />
-      <workItem from="1571219292082" duration="2287000" />
+      <workItem from="1571219292082" duration="2731000" />
+      <workItem from="1571222675584" duration="96000" />
+      <workItem from="1571305904135" duration="1456000" />
+      <workItem from="1571397205769" duration="1584000" />
+      <workItem from="1571400398635" duration="4855000" />
+      <workItem from="1571405425131" duration="4137000" />
+      <workItem from="1571466286363" duration="24221000" />
     </task>
     <task id="LOCAL-00001" summary="add validations for EditProject">
       <created>1567775730521</created>
@@ -242,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570870792173</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="refactor task and project">
+      <created>1571222326913</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1571222326914</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,6 +307,7 @@
     <MESSAGE value="parent task and field spending" />
     <MESSAGE value="view status for project, parent category" />
     <MESSAGE value="refactor category update" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor category update" />
+    <MESSAGE value="refactor task and project" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor task and project" />
   </component>
 </project>

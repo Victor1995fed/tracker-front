@@ -38,7 +38,7 @@
   </div>
 </template>
 <script>
-import SidebarLink from "./SidebarLink.vue";
+import SidebarLink from "./SidebarLink";
 
 export default {
   components: {

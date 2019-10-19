@@ -4,42 +4,76 @@
 
     <side-bar>
       <mobile-menu slot="content"></mobile-menu>
-      <sidebar-link to="/dashboard">
+
+      <sidebar-link to="/dashboard" >
         <md-icon>dashboard</md-icon>
         <p>Главная</p>
       </sidebar-link>
+
+
       <sidebar-link to="/project/list">
         <md-icon>dashboard</md-icon>
         <p>Проекты</p>
       </sidebar-link>
+
+      <sidebar-link to="/task">
+        <md-icon>content_paste</md-icon>
+        <p>Задачи</p>
+      </sidebar-link>
+
+
+
+
+      <sidebar-link to="/notifications">
+        <md-icon>notifications</md-icon>
+        <p>Метки</p>
+      </sidebar-link>
+
+      <sidebar-link to="/notifications3">
+        <md-icon>notifications</md-icon>
+        <p>Шаблоны</p>
+      </sidebar-link>
+      <sidebar-link to="/notifications4">
+        <md-icon>notifications</md-icon>
+        <p>Заметки</p>
+      </sidebar-link>
+
       <sidebar-link to="/user">
         <md-icon>person</md-icon>
         <p>Профиль</p>
       </sidebar-link>
-      <sidebar-link to="/task">
-        <md-icon>content_paste</md-icon>
-        <p>Задачи</p> 
+
+      <sidebar-link to="/user4">
+        <md-icon>person</md-icon>
+        <p>Мои действия</p>
       </sidebar-link>
-      <sidebar-link to="/typography">
-        <md-icon>library_books</md-icon>
-        <p>Typography</p>
-      </sidebar-link>
-      <sidebar-link to="/icons">
-        <md-icon>bubble_chart</md-icon>
-        <p>Icons</p>
-      </sidebar-link>
+
+<!--      ############################-->
+
+
+
+<!--      Мусор!!!-->
+<!--      <sidebar-link to="/typography">-->
+<!--        <md-icon>library_books</md-icon>-->
+<!--        <p>Typography</p>-->
+<!--      </sidebar-link>-->
+<!--      <sidebar-link to="/icons">-->
+<!--        <md-icon>bubble_chart</md-icon>-->
+<!--        <p>Icons</p>-->
+<!--      </sidebar-link>-->
       <!-- <sidebar-link to="/maps">
         <md-icon>location_on</md-icon>
         <p>Maps</p>
       </sidebar-link> -->
-      <sidebar-link to="/notifications">
-        <md-icon>notifications</md-icon>
-        <p>Заметки</p>
-      </sidebar-link>
+<!--      <sidebar-link to="/notifications">-->
+<!--        <md-icon>notifications</md-icon>-->
+<!--        <p>Заметки</p>-->
+<!--      </sidebar-link>-->
       <!-- <sidebar-link to="/upgrade" class="active-pro">
         <md-icon>unarchive</md-icon>
         <p>Upgrade to PRO</p>
       </sidebar-link> -->
+
     </side-bar>
 
     <div class="main-panel">
@@ -49,6 +83,7 @@
 
       <content-footer v-if="!$route.meta.hideFooter"></content-footer>
     </div>
+
   </div>
 </template>
 <style lang="scss"></style>
@@ -63,6 +98,19 @@ export default {
     DashboardContent,
     ContentFooter,
     MobileMenu
+  },
+  methods:{
+    // projectMenu(){
+    //     alert('sds');
+    // }
   }
 };
 </script>
+
+
+
+
+  <style lang="scss" scoped>
+
+  </style>
+

@@ -27,7 +27,7 @@
                         <md-tooltip md-direction="top">Редактировать</md-tooltip>
                         </md-button>
                         <md-button  @click="showDialog  = true" class="md-just-icon md-simple md-danger">
-                        <md-icon>close</md-icon>
+                        <md-icon>delete</md-icon>
                         <md-tooltip md-direction="top">Удалить</md-tooltip>
                         </md-button>
                     </div>
@@ -165,7 +165,7 @@
         content: "gives the styles and works fine with dark themes. Look:"
     }),
     mounted() {
-      
+
         // Vue.material.locale.dateFormat = 'dd/MM/yyyy'
         // console.log(Vue.material.locale.dateFormat);
         let id = this.$route.params.id;

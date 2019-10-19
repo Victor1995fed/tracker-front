@@ -1,12 +1,23 @@
 <template>
-    <div>
+    <div class="md-table-custom">
         <md-table v-model="task" :table-header-color="tableHeaderColor">
             <md-table-row slot="md-table-row" slot-scope="{ item }">
                 <md-table-cell md-label="#">{{ item.id }}</md-table-cell>
-                <md-table-cell md-label="Тема"><a :href="'#/task/view/'+item.id">{{ item.title }}</a></md-table-cell>
-                <!-- <md-table-cell md-label="Проект">{{ item.project }}</md-table-cell> -->
-                <md-table-cell md-label="Категория" ><span v-if="item.category !== null">{{ item.category.title }}</span><span v-else>&mdash;</span> </md-table-cell>
+                <md-table-cell md-label="Действия">
+                <md-button class="md-just-icon md-simple md-primary" :href="'/#/task/update/'+ item.id">
+                    <md-icon>edit</md-icon>
+                    <md-tooltip  md-direction="top">Редактировать</md-tooltip>
+                </md-button>
+                    <md-button class="md-just-icon md-simple md-primary" :href="'/#/task/view/'+ item.id">
+                        <md-icon ><img src="@/assets/img/view.svg" alt="view"></md-icon>
+
+                        <md-tooltip  md-direction="top">Просмотреть</md-tooltip>
+                    </md-button>
+                </md-table-cell>
+                <md-table-cell md-label="Тема">{{ item.title }}</md-table-cell>
+                <md-table-cell md-label="Проект" ><span v-if="item.project !== null"><a :href="'#/project/view/'+item.project.id">{{ item.project.title }}</a></span><span v-else>&mdash;</span> </md-table-cell>
                 <md-table-cell md-label="Приоритет">{{ item.priority.title }}</md-table-cell>
+                <md-table-cell md-label="Дата завершения"><span v-if="item.date_end !== null">{{ item.date_end }}</span><span v-else>&mdash;</span> </md-table-cell>
             </md-table-row>
         </md-table>
         <div class="pagination-custom">
@@ -81,3 +92,9 @@
         },
     };
 </script>
+
+<style scoped>
+    a.title-link {
+        color: black !important;
+    }
+</style>

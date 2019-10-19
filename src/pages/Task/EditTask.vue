@@ -5,7 +5,6 @@
                 <h4 class="title">Название проекта</h4>
                 <p v-if="isChild">Родительская задача : {{parentTask.title}} </p>
       </md-card-header>
-
             <md-card-content>
                 <div class="md-layout">
                     <div class="md-layout-item md-small-size-100 md-size-100">
@@ -102,7 +101,6 @@
                         <label>Прогресс</label>
                         <md-field>
 
-                            <!-- <md-input v-model="file" type='file'></md-input> -->
                             <input type="range" v-model.number="form.readiness"> {{ form.readiness }}%
 
                         </md-field>
@@ -130,14 +128,11 @@
                         </md-field>
                     </div>
                     <div class="md-layout-item md-small-size-100 md-size-100">
-
                         <md-field>
                             <label>Приложенные файлы</label>
-                            <!-- <md-input v-model="file" type='file'></md-input> -->
                             <md-file v-model="form.file" ref='files' multiple @change="onFileChange"/>
                         </md-field>
                     </div>
-
                     <div class="md-layout-item md-size-100 text-right">
                         <md-button type="submit" class="md-raised md-success">Сохранить</md-button>
                     </div>
@@ -191,6 +186,28 @@
             }
 
         },
+        data() {
+            return {
+                isChild:false,
+                parentTask:{},
+                response: [],
+                sending: false,
+                amount: 10,
+                dateStart: null,
+                dateEnd: null,
+                file: null,
+                tag: [
+                    {
+                        name: "Таг1",
+                        value: 1
+                    },
+                    {
+                        name: "Таг12",
+                        value: 2
+                    }
+                ],
+            };
+        },
         methods: {
             checkValue(){
                 // let form.spending = this.$refs.spending
@@ -223,9 +240,6 @@
                         formData.append(key, (key == 'date_end' || key == 'date_start') ? format(this.form[key],"YYYY-MM-DD")  : this.form[key]);
                     }
                 }
-                console.warn(this.form.project_id);
-
-                console.log('FILE', this.form.dataFile);
                 if(this.form.dataFile != null){
                     for (var i = 0; i < this.form.dataFile.length; i++) {
                         let file = this.form.dataFile[i];
@@ -261,7 +275,6 @@
             },
             getValidationClass(fieldName) {
                 const field = this.$v.form[fieldName]
-
                 if (field) {
                     return {
                         'md-invalid': field.$invalid && field.$dirty
@@ -269,7 +282,6 @@
                 }
             },
         },
-
         validations: {
             form: {
                 title: {
@@ -279,39 +291,12 @@
             },
             sending: false
         },
-        data() {
-            let dateFormat = this.$material.locale.dateFormat || 'yyyy-MM-dd'
-            let now = new Date()
-            return {
-                isChild:false,
-                parentTask:{},
-                response: [],
-                sending: false,
-                amount: 10,
-                dateStart: null,
-                dateEnd: null,
-                file: null,
-                tag: [
-                    {
-                        name: "Таг1",
-                        value: 1
-                    },
-                    {
-                        name: "Таг12",
-                        value: 2
-                    }
-                ],
 
-                description: "Пиши"
-            };
-        },
         mounted() {
             let parent_id = this.$route.params.parent_id;
-            // console.warn(this.$route.params.parent_id);
             axios.get(repository.API + 'task/edit').then(response => {
                 this.response = response.data
             })
-
             if(parent_id !== null && parent_id !== undefined){
                 this.isChild = true;
                 this.form.parent_id = parent_id
@@ -324,7 +309,6 @@
 
 
         },
-
         updated: function () {
             this.$nextTick(function () {
 
@@ -333,3 +317,8 @@
     };
 
 </script>
+<style scoped>
+    .md-card-content input {
+        color: white !important;
+    }
+</style>

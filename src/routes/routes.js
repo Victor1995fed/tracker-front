@@ -32,6 +32,9 @@ import Maps from "@/pages/Maps.vue";
 import Notifications from "@/pages/Notifications.vue";
 import UpgradeToPRO from "@/pages/UpgradeToPRO.vue";
 
+//LoginForm
+
+import LoginForm from "@/pages/LoginForm.vue";
 //404
 
 import EmptyPage from "@/pages/404.vue";
@@ -49,6 +52,12 @@ const routes = [
         path: "dashboard",
         name: "Dashboard",
         component: Dashboard
+      },
+
+      {
+        path: "login",
+        name: "Авторизация",
+        component: LoginForm
       },
       {
         path:'test/:id?',

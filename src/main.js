@@ -17,6 +17,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import App from "./App";
+import Axios from 'axios'
+
 
 // router setup
 import routes from "./routes/routes";
@@ -42,6 +44,8 @@ const router = new VueRouter({
 // const url = "https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH&tsyms=USD,EUR";
 
 Vue.prototype.$Chartist = Chartist;
+import {store} from './store';
+
 
 Vue.use(VueRouter);
 Vue.use(MaterialDashboard);
@@ -51,7 +55,6 @@ Vue.use(Notifications);
 
 //settings dateformat
 Vue.material.locale = {
-  mdCancelText:'sdsd',
   // range for datepicker
   startYear: 1900,
   endYear: 2099,
@@ -67,12 +70,21 @@ Vue.material.locale = {
   firstDayOfAWeek: 1
 }
 
+Vue.prototype.$http = Axios;
+// Vue.prototype.$http.defaults.headers.common['Authorization'] = 'Bearer '+'pRN76I5AYmBoYYpkZxQuHDKf824zOOlL';
+const token = localStorage.getItem('token')
+if (token) {
+  console.warn('TOKEN!!++',token)
+  Vue.prototype.$http.defaults.headers.common['Authorization'] = 'Bearer ' + token
+}
+
 /* eslint-disable no-new */
 new Vue({
   mixins: [helpers],
   el: "#app",
   render: h => h(App),
   router,
+  store,
   data: {
     Chartist: Chartist
   }

@@ -16,6 +16,7 @@
                 </md-table-cell>
                 <md-table-cell md-label="Тема">{{ item.title }}</md-table-cell>
                 <md-table-cell md-label="Проект" ><span v-if="item.project !== null"><a :href="'#/project/view/'+item.project.id">{{ item.project.title }}</a></span><span v-else>&mdash;</span> </md-table-cell>
+                <md-table-cell md-label="Статус">{{ item.status.title }}</md-table-cell>
                 <md-table-cell md-label="Приоритет">{{ item.priority.title }}</md-table-cell>
                 <md-table-cell md-label="Дата завершения"><span v-if="item.date_end !== null">{{ item.date_end }}</span><span v-else>&mdash;</span> </md-table-cell>
             </md-table-row>
@@ -72,7 +73,7 @@
 
             console.log(this.$refs.paginate)
             // this.$refs.paginate.selected = currentPage
-            axios.get(repository.API+'task/index?page='+this.currentPage).then(response => {
+            this.$http.get(repository.API+'task/index?page='+this.currentPage).then(response => {
 
                 this.task = response.data.task
                 this.pageCount = response.data.countPage
@@ -83,7 +84,7 @@
             clickCallback: function(page) {
                 console.log(page)
                 this.$router.push('/task/' + page);
-                 axios.get(repository.API+'task/index?page='+page).then(response => {
+                this.$http.get(repository.API+'task/index?page='+page).then(response => {
                 this.task = response.data.task
                 this.pageCount = response.data.countPage
             })

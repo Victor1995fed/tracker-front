@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e239849-0685-47fe-a502-1a2637ab8794" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/LoginForm.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Register.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Task/Table/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Task/Table/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/LoginForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LoginForm.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -119,7 +114,8 @@
       <workItem from="1571544098873" duration="3090000" />
       <workItem from="1571548316122" duration="2821000" />
       <workItem from="1571555975222" duration="69000" />
-      <workItem from="1571737861918" duration="3900000" />
+      <workItem from="1571737861918" duration="4679000" />
+      <workItem from="1571824926283" duration="2180000" />
     </task>
     <task id="LOCAL-00001" summary="add validations for EditProject">
       <created>1567775730521</created>
@@ -268,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571491690510</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="add Authorization header">
+      <created>1571741964540</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1571741964540</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,6 +312,7 @@
     <MESSAGE value="refactor category update" />
     <MESSAGE value="refactor task and project" />
     <MESSAGE value="editing frontend" />
-    <option name="LAST_COMMIT_MESSAGE" value="editing frontend" />
+    <MESSAGE value="add Authorization header" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Authorization header" />
   </component>
 </project>

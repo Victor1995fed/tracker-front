@@ -41,6 +41,10 @@ import EmptyPage from "@/pages/404.vue";
 
 const routes = [
   {
+    path: "/login",
+    component: LoginForm,
+  },
+  {
 
     path: "/",
     component: DashboardLayout,
@@ -54,11 +58,11 @@ const routes = [
         component: Dashboard
       },
 
-      {
-        path: "login",
-        name: "Авторизация",
-        component: LoginForm
-      },
+      // {
+      //   path: "login",
+      //   name: "Авторизация",
+      //   component: LoginForm
+      // },
       {
         path:'test/:id?',
         name: "Тестирование",

@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e239849-0685-47fe-a502-1a2637ab8794" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Helpers/SnackbarError.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/material-dashboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/material-dashboard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/LoginForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LoginForm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +118,11 @@
       <workItem from="1571548316122" duration="2821000" />
       <workItem from="1571555975222" duration="69000" />
       <workItem from="1571737861918" duration="4679000" />
-      <workItem from="1571824926283" duration="2180000" />
+      <workItem from="1571824926283" duration="2325000" />
+      <workItem from="1571829093163" duration="516000" />
+      <workItem from="1572000427149" duration="691000" />
+      <workItem from="1572001244566" duration="174000" />
+      <workItem from="1572001549429" duration="5804000" />
     </task>
     <task id="LOCAL-00001" summary="add validations for EditProject">
       <created>1567775730521</created>
@@ -271,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571741964540</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="view loginForm">
+      <created>1571827207033</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1571827207033</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,6 +327,7 @@
     <MESSAGE value="refactor task and project" />
     <MESSAGE value="editing frontend" />
     <MESSAGE value="add Authorization header" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Authorization header" />
+    <MESSAGE value="view loginForm" />
+    <option name="LAST_COMMIT_MESSAGE" value="view loginForm" />
   </component>
 </project>

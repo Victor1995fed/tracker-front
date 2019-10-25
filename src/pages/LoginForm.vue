@@ -1,17 +1,5 @@
-<!--<template>-->
-<!--    <div>-->
-<!--        <form class="login" @submit.prevent="login">-->
-<!--            <h1>Sign in</h1>-->
-<!--            <label>Username</label>-->
-<!--            <input required v-model="username" type="text" placeholder="Name"/>-->
-<!--            <label>Password</label>-->
-<!--            <input required v-model="password" type="password" placeholder="Password"/>-->
-<!--            <hr/>-->
-<!--            <button type="submit">Login</button>-->
-<!--        </form>-->
-<!--    </div>-->
-<!--</template>-->
 <template>
+    <div>
     <form  class="md-layout md-centered login md-size-50" @submit.prevent="login"  ref="formData">
         <md-card class="md-centered ">
             <md-card-header>
@@ -23,7 +11,7 @@
                     <div class="md-layout-item md-small-size-100 md-size-50 text-center">
                         <md-field>
                             <label>Ваше имя</label>
-                            <md-input  name="username"  v-model="username"  ></md-input>
+                            <md-input  name="username"   v-model="username"  ></md-input>
                         </md-field>
                         <md-field>
                             <label>Пароль</label>
@@ -39,13 +27,23 @@
             </md-card-content>
         </md-card>
     </form>
+    <snackbar-error ref="snackbarError" :message="message"></snackbar-error>
+<!--        <div :is="componentError" :message="message" ref="componentError"></div>-->
+    </div>
 </template>
 
 
 <script>
+    import  {SnackbarError} from "@/components";
     export default {
+        components:{
+            SnackbarError
+        },
         data(){
             return {
+                showSnackbar:true,
+                componentError:null,
+                message: "Ошибка",
                 username : "",
                 password : ""
             }
@@ -53,13 +51,22 @@
 
         methods: {
             login: function () {
+
                 let username = this.username
                 let password = this.password
                 console.warn(this.$store);
 
                 this.$store.dispatch('login', { username, password })
                     .then(() => this.$router.push('/'))
-                    .catch(err => console.log(err))
+                    .catch(err => {
+                        // console.warn('ОШИБКА',err.response.status)
+                        if(err.response.status == 403){
+                            this.$refs.snackbarError.showSnackbar = true;
+                            // console.log(this.componentError);
+                            this.message = 'Неверные учетные данные'
+                        }
+
+                    })
             }
         }
     }

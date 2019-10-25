@@ -16,8 +16,11 @@ import TaskList from "./Task/Table/List.vue";
 
 //tools
 import Pagination from "./Tools/Pagination.vue";
+//helpers
+import  SnackbarError from "./Helpers/SnackbarError.vue";
 
 export {
+  SnackbarError,
   ChartCard,
   NavTabsCard,
   StatsCard,

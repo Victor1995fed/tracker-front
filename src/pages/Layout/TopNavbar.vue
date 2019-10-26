@@ -26,8 +26,20 @@
             </md-autocomplete>
           </div>
           <md-list>
-          
+
           </md-list>
+
+          <md-button href="/#/dashboard" class="md-just-icon md-simple" >
+            <md-icon>home</md-icon>
+            <md-tooltip md-direction="top">На главную</md-tooltip>
+          </md-button>
+
+          <md-button  class="md-just-icon md-simple md-danger "  @click="logout">
+            <md-icon>logout</md-icon>
+            <md-tooltip md-direction="top">Выйти</md-tooltip>
+          </md-button>
+
+
         </div>
       </div>
     </div>
@@ -54,6 +66,19 @@ export default {
   methods: {
     toggleSidebar() {
       this.$sidebar.displaySidebar(!this.$sidebar.showSidebar);
+    },
+    logout: function () {
+
+      let username = this.username
+      let password = this.password
+      console.warn(this.$store);
+
+      this.$store.dispatch('logout')
+              .then(() => this.$router.push('/login'))
+              .catch(err => {
+                console.error(err)
+
+              })
     }
   }
 };

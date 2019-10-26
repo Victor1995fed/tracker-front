@@ -5,7 +5,7 @@
             <span>{{message}}</span>
             <md-button @click="showSnackbar = false"  class="md-just-icon md-simple md-danger ">
                 <md-icon>close</md-icon>
-                <md-tooltip md-direction="top">Скрыть</md-tooltip>
+                <md-tooltip md-direction="top">закрыть</md-tooltip>
             </md-button>
         </md-snackbar>
     </form>

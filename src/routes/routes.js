@@ -35,21 +35,46 @@ import UpgradeToPRO from "@/pages/UpgradeToPRO.vue";
 //LoginForm
 
 import LoginForm from "@/pages/LoginForm.vue";
+import Register from "@/pages/Register.vue";
 //404
 
 import EmptyPage from "@/pages/404.vue";
+
+import {store} from '@/store';
+
+const ifNotAuthenticated = (to, from, next) => {
+  if (!store.getters.isLoggedIn) {
+    next()
+    return
+  }
+  next('/')
+}
+
+const ifAuthenticated = (to, from, next) => {
+  if (store.getters.isLoggedIn) {
+    next()
+    return
+  }
+  next('/login')
+}
 
 const routes = [
   {
     path: "/login",
     component: LoginForm,
+    beforeEnter: ifNotAuthenticated
+  },
+  {
+    path: "/register",
+    component: Register,
+    beforeEnter: ifNotAuthenticated
   },
   {
 
     path: "/",
     component: DashboardLayout,
     redirect: "/dashboard",
-
+    beforeEnter: ifAuthenticated,
     children: [
 
       {

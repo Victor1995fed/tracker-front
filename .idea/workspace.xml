@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e239849-0685-47fe-a502-1a2637ab8794" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Helpers/SnackbarError.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scss/material-dashboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/material-dashboard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/LoginForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LoginForm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Helpers/SnackbarError.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Helpers/SnackbarError.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Layout/TopNavbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Layout/TopNavbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Register.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +121,8 @@
       <workItem from="1571829093163" duration="516000" />
       <workItem from="1572000427149" duration="691000" />
       <workItem from="1572001244566" duration="174000" />
-      <workItem from="1572001549429" duration="5804000" />
+      <workItem from="1572001549429" duration="6061000" />
+      <workItem from="1572065529818" duration="5043000" />
     </task>
     <task id="LOCAL-00001" summary="add validations for EditProject">
       <created>1567775730521</created>
@@ -285,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571827207033</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="add snackbar-error">
+      <created>1572007458290</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1572007458290</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,6 +335,7 @@
     <MESSAGE value="editing frontend" />
     <MESSAGE value="add Authorization header" />
     <MESSAGE value="view loginForm" />
-    <option name="LAST_COMMIT_MESSAGE" value="view loginForm" />
+    <MESSAGE value="add snackbar-error" />
+    <option name="LAST_COMMIT_MESSAGE" value="add snackbar-error" />
   </component>
 </project>

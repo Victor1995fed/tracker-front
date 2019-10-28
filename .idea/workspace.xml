@@ -2,11 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e239849-0685-47fe-a502-1a2637ab8794" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Note/Table/List.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Note/Create.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Note/EditNote.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Note/List.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Note/Update.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Note/View.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Helpers/SnackbarError.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Helpers/SnackbarError.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Layout/TopNavbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Layout/TopNavbar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Register.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Task/Tabs/TaskTabsFiles.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Task/Tabs/TaskTabsFiles.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Layout/DashboardLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Layout/DashboardLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Project/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Project/List.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Task/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/List.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Task/View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/View.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,7 +40,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/Note" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/node_modules/eslint" />
@@ -41,6 +51,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="S:\Server\data\htdocs\tracker\front\src\pages\Note" />
+      <recent name="S:\Server\data\htdocs\tracker\front\src\components\Note" />
       <recent name="S:\Server\data\htdocs\tracker\front\src\assets\img" />
       <recent name="C:\Server\data\htdocs\tracker_front\src\pages\Project" />
     </key>
@@ -122,7 +134,11 @@
       <workItem from="1572000427149" duration="691000" />
       <workItem from="1572001244566" duration="174000" />
       <workItem from="1572001549429" duration="6061000" />
-      <workItem from="1572065529818" duration="5043000" />
+      <workItem from="1572065529818" duration="5087000" />
+      <workItem from="1572081453338" duration="689000" />
+      <workItem from="1572097398890" duration="477000" />
+      <workItem from="1572160672021" duration="1961000" />
+      <workItem from="1572256684979" duration="3467000" />
     </task>
     <task id="LOCAL-00001" summary="add validations for EditProject">
       <created>1567775730521</created>
@@ -292,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572007458290</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="action logout">
+      <created>1572079905873</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1572079905873</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,6 +359,7 @@
     <MESSAGE value="add Authorization header" />
     <MESSAGE value="view loginForm" />
     <MESSAGE value="add snackbar-error" />
-    <option name="LAST_COMMIT_MESSAGE" value="add snackbar-error" />
+    <MESSAGE value="action logout" />
+    <option name="LAST_COMMIT_MESSAGE" value="action logout" />
   </component>
 </project>

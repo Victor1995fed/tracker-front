@@ -14,6 +14,7 @@ import TaskTabsFiles from "./Task/Tabs/TaskTabsFiles.vue";
 import TaskTabsHistory from "./Task/Tabs/TaskTabsHistory.vue";
 import TaskList from "./Task/Table/List.vue";
 
+import NoteList from "./Note/Table/List.vue";
 //tools
 import Pagination from "./Tools/Pagination.vue";
 //helpers
@@ -32,5 +33,6 @@ export {
   TaskTabsFiles,
   TaskTabsHistory,
   Pagination,
-  TaskList
+  TaskList,
+  NoteList
 };

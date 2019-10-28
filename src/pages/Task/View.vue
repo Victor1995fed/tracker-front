@@ -157,7 +157,7 @@
             files:{},
             priority:{},
         },
-        url: 'http://tracker.zz/files/download?uuid=',
+        url: repository.API+'files/download?uuid=',
         priority: "Высокий",
         dateStart: "23.08.2019",
         dateEnd: "23.08.2019",

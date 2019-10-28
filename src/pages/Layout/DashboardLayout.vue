@@ -33,7 +33,7 @@
         <md-icon>notifications</md-icon>
         <p>Шаблоны</p>
       </sidebar-link>
-      <sidebar-link to="/notifications4">
+      <sidebar-link to="/note">
         <md-icon>notifications</md-icon>
         <p>Заметки</p>
       </sidebar-link>

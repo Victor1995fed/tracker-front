@@ -2,7 +2,6 @@ import DashboardLayout from "@/pages/Layout/DashboardLayout.vue";
 
 import Dashboard from "@/pages/Dashboard.vue";
 import UserProfile from "@/pages/UserProfile.vue";
-import TaskCreate from "@/pages/Task/Create.vue";
 //Project
 import ProjectCreate from "@/pages/Project/Create.vue";
 import ProjectUpdate from "@/pages/Project/Update.vue";
@@ -18,7 +17,14 @@ import PageTest from "@/pages/Tests/Test.vue";
 import TaskView from "@/pages/Task/View.vue";
 import TableList from "@/pages/Task/List.vue";
 import TaskUpdate from "@/pages/Task/Update.vue";
+import TaskCreate from "@/pages/Task/Create.vue";
 
+
+//Note
+import NoteView from "@/pages/Note/View.vue";
+import NoteList from "@/pages/Note/List.vue";
+import NoteUpdate from "@/pages/Note/Update.vue";
+import NoteCreate from "@/pages/Note/Create.vue";
 //Category
 import CategoryCreate from "@/pages/Category/Create.vue";
 import CategoryList from "@/pages/Category/List.vue";
@@ -81,6 +87,27 @@ const routes = [
         path: "dashboard",
         name: "Dashboard",
         component: Dashboard
+      },
+
+      {
+        path: "note/create",
+        name: "Dashboard",
+        component: NoteCreate
+      },
+      {
+        path: "note/view/:id",
+        name: "Dashboard",
+        component: NoteView
+      },
+      {
+        path: "note/update/:id",
+        name: "Редактирование заметки",
+        component: NoteUpdate,
+      },
+      {
+        path: "note/:page?",
+        name: "Задачи",
+        component: NoteList
       },
 
       // {
@@ -162,11 +189,11 @@ const routes = [
         name: "Задачи",
         component: TableList
       },
-    {
-        path: "task/update/:id",
-        name: "Редактирование проекта",
-        component: TaskUpdate,
-    },
+      {
+          path: "task/update/:id",
+          name: "Редактирование проекта",
+          component: TaskUpdate,
+      },
       {
         path: "typography",
         name: "Typography",

@@ -2,7 +2,7 @@
     <div>
 <!--        <md-progress-spinner disabled="true" :md-diameter="100" :md-stroke="10" md-mode="indeterminate"></md-progress-spinner>-->
         <div>
-            <md-button class="md-success"  href="/#/project/create" >Добавить проект</md-button>
+
         <md-card v-for="(item, index) in project" md-medium  class="md-primary" md-theme="md-theme">
             <md-card-header style=" background-color: #fff;">
                 <md-card-header-text>
@@ -10,7 +10,7 @@
                 </md-card-header-text>
                 <md-card-media>
 <!--                    <img src="/img/card-weather.png" alt="People">-->
-                    <img src="@/assets/img/card-weather.png" alt="People">
+<!--                    <img src="@/assets/img/card-weather.png" alt="People">-->
                 </md-card-media>
             </md-card-header>
 
@@ -20,6 +20,7 @@
         </md-card>
 
         </div>
+        <md-button class="md-success"  href="/#/project/create" >Добавить проект</md-button>
     </div>
 </template>
 

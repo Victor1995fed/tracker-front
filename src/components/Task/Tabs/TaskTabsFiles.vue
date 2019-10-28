@@ -25,7 +25,7 @@
         props: ['prop'],
         data() {
             return {
-                url: 'http://tracker.zz/file/download?uuid=',
+                url: repository.API+'file/download?uuid=',
                 selected: [],
                 users: [
                 ]

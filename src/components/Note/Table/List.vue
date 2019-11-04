@@ -38,8 +38,6 @@
 </template>
 
 <script>
-    import axios from 'axios';
-    import repository from '@/settings.js';
     import Paginate from 'vuejs-paginate'
     export default {
         name: "note-list",
@@ -63,15 +61,9 @@
         },
 
         mounted() {
-             this.currentPage = (this.$route.params.page !== undefined) ?  Number(this.$route.params.page) : 1;
-            console.log(this.currentPage);
-            // if(this.currentPage === undefined){
-            //     this.currentPage = 1;
-            // }
 
-            console.log(this.$refs.paginate)
-            // this.$refs.paginate.selected = currentPage
-            this.$http.get(repository.API+'note/index?page='+this.currentPage).then(response => {
+             this.currentPage = (this.$route.params.page !== undefined) ?  Number(this.$route.params.page) : 1;
+            this.$http.get(this.$settings.NOTE_LIST+'?page='+this.currentPage).then(response => {
 
                 this.note = response.data.note
                 this.pageCount = response.data.countPage
@@ -82,7 +74,7 @@
             clickCallback: function(page) {
                 console.log(page)
                 this.$router.push('/note/' + page);
-                this.$http.get(repository.API+'note/index?page='+page).then(response => {
+                this.$http.get(this.$settings.NOTE_LIST+'?page='+page).then(response => {
                 this.note = response.data.note
                 this.pageCount = response.data.countPage
             })

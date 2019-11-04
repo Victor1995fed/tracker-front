@@ -13,7 +13,7 @@
             <md-card>
             <md-card-header data-background-color="green">
                 <h4 class="title">{{response.task.title}}</h4>
-                <!-- FIXME: меняется url, указанный в href, но страница не обновляется, не стал долго возиться, воткнул             target="_blank"    -->
+                <!-- FIXME: меняется url, указанный в href, но страница не обновляется, не стал долго возиться, воткнул target="_blank"    -->
                 <p v-if="response.task.parent_id != null && response.parent_task != null">Основная задача: <a :href="'/#/task/view/'+response.task.parent_id" target="_blank">{{response.parent_task.title}} </a></p>
                 <p class="category" v-if="response.category !== null">{{response.category.title}}</p>
             </md-card-header>
@@ -128,7 +128,8 @@
 
     <script>
     import axios from "axios";
-    import repository from "@/settings.js";
+    // import repository from "@/settings.js";
+    // console.warn(window.$settings);
     import {
         TaskTabsDescription,
         NavTabsCard,
@@ -157,7 +158,6 @@
             files:{},
             priority:{},
         },
-        url: repository.API+'files/download?uuid=',
         priority: "Высокий",
         dateStart: "23.08.2019",
         dateEnd: "23.08.2019",
@@ -169,7 +169,7 @@
         // Vue.material.locale.dateFormat = 'dd/MM/yyyy'
         // console.log(Vue.material.locale.dateFormat);
         let id = this.$route.params.id;
-        axios.get(repository.API + "task/view?id=" + id).then(response => {
+        this.$http.get(this.$settings.API + "task/view?id=" + id).then(response => {
         this.response = response.data;
         });
         this.urlChildTask = '#/task/create/'+id;
@@ -177,7 +177,7 @@
         methods: {
             deleteTask() {
                 let _this = this
-                axios.delete(repository.API+'task/delete?id='+this.$route.params.id)
+                axios.delete(_this.$settings.API+'task/delete?id='+this.$route.params.id)
                     .then(function(response){
                         if (response.data) {
                             _this.$router.push('/task/list');

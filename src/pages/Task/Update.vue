@@ -10,8 +10,6 @@
 
 <script>
     import  {EditTask}  from "@/pages";
-    import axios from 'axios';
-    import repository from '@/settings.js';
 
     export default {
         components: {
@@ -20,12 +18,12 @@
         data() {
             return {
                 form:[],
-                action: 'task/update'
+                action: this.$settings.TASK_UPDATE
             };
         },
         mounted() {
             let id = this.$route.params.id;
-            axios.get(repository.API+'task/view?id='+id).then(response => {
+            this.$http.get(this.$settings.TASK_VIEW+'?id='+id).then(response => {
                 this.form = response.data.task
                 //Сброс трудозатрат
                 this.form.spending = 0

@@ -30,6 +30,7 @@ import Notifications from "./components/NotificationPlugin";
 
 //helper
 import {helpers} from "./helpers";
+import {settings} from "./settings";
 
 // MaterialDashboard plugin
 import MaterialDashboard from "./material-dashboard";
@@ -46,7 +47,7 @@ const router = new VueRouter({
 Vue.prototype.$Chartist = Chartist;
 import {store} from './store';
 
-
+Vue.prototype.$settings = settings;
 Vue.use(VueRouter);
 Vue.use(MaterialDashboard);
 Vue.use(GlobalComponents);
@@ -87,5 +88,6 @@ new Vue({
   store,
   data: {
     Chartist: Chartist
-  }
+  },
+
 });

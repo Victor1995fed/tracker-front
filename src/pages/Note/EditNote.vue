@@ -22,16 +22,8 @@
                             <div id="app">
                                 <vue-editor v-model="form.content"></vue-editor>
                             </div>
-                            <!-- <md-textarea v-model="description"></md-textarea> -->
                         </md-field>
                     </div>
-
-
-
-
-
-
-
                     <div class="md-layout-item md-size-100 text-right">
                         <md-button type="submit" class="md-raised md-success">Сохранить</md-button>
                     </div>

@@ -40,8 +40,6 @@
 </template>
 
 <script>
-    import axios from 'axios';
-    import repository from '@/settings.js';
     import Paginate from 'vuejs-paginate'
     export default {
         name: "task-list",
@@ -73,7 +71,7 @@
 
             console.log(this.$refs.paginate)
             // this.$refs.paginate.selected = currentPage
-            this.$http.get(repository.API+'task/index?page='+this.currentPage).then(response => {
+            this.$http.get(this.$settings.TASK_LIST+'?page='+this.currentPage).then(response => {
 
                 this.task = response.data.task
                 this.pageCount = response.data.countPage
@@ -84,7 +82,7 @@
             clickCallback: function(page) {
                 console.log(page)
                 this.$router.push('/task/' + page);
-                this.$http.get(repository.API+'task/index?page='+page).then(response => {
+                this.$http.get(this.$settings.TASK_LIST+'?page='+page).then(response => {
                 this.task = response.data.task
                 this.pageCount = response.data.countPage
             })

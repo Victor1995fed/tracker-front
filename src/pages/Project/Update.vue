@@ -2,7 +2,7 @@
     <div class="content">
         <div class="md-layout">
             <div class="md-layout-item md-medium-size-100 md-size-100">
-                <edit-project data-background-color="green" :form="form" :action="action"> </edit-project>
+                <edit-project data-background-color="green" :form="form" :action="this.$settings.PROJECT_UPDATE"> </edit-project>
             </div>
         </div>
     </div>
@@ -10,8 +10,7 @@
 
 <script>
     import  {EditProject}  from "@/pages";
-    import axios from 'axios';
-    import repository from '@/settings.js';
+
     export default {
         components: {
             EditProject
@@ -24,7 +23,7 @@
         },
         mounted() {
             let id = this.$route.params.id;
-            axios.get(repository.API+'project/view?id='+id).then(response => {
+            this.$http.get(this.$settings.PROJECT_VIEW+'?id='+id).then(response => {
                 this.form = response.data.project
             })
 

@@ -247,12 +247,12 @@
                     }
                 }
                 let taskId = this.$route.params.id;
-                let method = (this.action == 'task/create') ? 'post' : 'put';
+                let method = (this.action == this.$settings.TASK_CREATE) ? 'post' : 'put';
 
                 const options = {
                     method: method,
                     responseType:'json',
-                    url: repository.API + this.action + ((taskId !== undefined) ? '?id='+taskId : ''),
+                    url: this.action + ((taskId !== undefined) ? '?id='+taskId : ''),
                     data: formData,
                     transformResponse: [(data) => {
                         if (data.result) {
@@ -294,13 +294,13 @@
 
         mounted() {
             let parent_id = this.$route.params.parent_id;
-            axios.get(repository.API + 'task/edit').then(response => {
+            axios.get(this.$settings.API + 'task/edit').then(response => {
                 this.response = response.data
             })
             if(parent_id !== null && parent_id !== undefined){
                 this.isChild = true;
                 this.form.parent_id = parent_id
-                axios.get(repository.API + 'task/view?id='+parent_id).then(response => {
+                axios.get(this.$settings.API + 'task/view?id='+parent_id).then(response => {
                     this.parentTask = response.data.task
                     this.form.project_id = response.data.task.project_id
                     this.form.category_id = response.data.task.category_id

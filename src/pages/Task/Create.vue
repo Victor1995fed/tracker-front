@@ -11,14 +11,14 @@
 <script>
 import  {EditTask}  from "@/pages";
 
-export default {        
+export default {
   components: {
     EditTask
   },
   data() {
     return {
       form:[],
-      action: 'task/create',
+      action: this.$settings.TASK_CREATE,
       parent_id: null
     };
   },

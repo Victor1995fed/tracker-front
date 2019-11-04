@@ -28,6 +28,7 @@
                             <md-radio v-model="radio" value="today" class="md-primary">Сегодня</md-radio>
                             <md-radio v-model="radio" value="week" class="md-primary">Следующие 7 дней</md-radio>
                             <md-radio v-model="radio" value="all" class="md-primary">Все задачи</md-radio>
+                            <md-switch v-model="done" class="md-primary">Показать выполненные</md-switch>
                             <md-button class="md-just-icon md-simple md-primary custom-button-task" :href="'/#/task/create/'">
                                 <md-icon ><img src="@/assets/img/plus.svg" alt="plus"></md-icon>
                                 <md-tooltip  md-direction="top">Добавить задачу</md-tooltip>
@@ -68,7 +69,8 @@
             TaskList
         },
         data: () => ({
-            radio: 'today'
+            radio: 'today',
+            done: false
         })
     };
 </script>

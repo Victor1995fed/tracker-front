@@ -68,8 +68,6 @@
 
     <script>
 
-    import axios from "axios";
-    import repository from "@/settings.js";
     export default {
     props: {
         dataBackgroundColor: {
@@ -87,11 +85,8 @@
         content: "gives the styles and works fine with dark themes. Look:"
     }),
     mounted() {
-
-        // Vue.material.locale.dateFormat = 'dd/MM/yyyy'
-        // console.log(Vue.material.locale.dateFormat);
         let id = this.$route.params.id;
-        axios.get(repository.API + "project/view?id=" + id).then(response => {
+        this.$http.get(this.$settings.PROJECT_VIEW + "?id=" + id).then(response => {
             if (response.data) {
                 this.response = response.data;
             }
@@ -107,7 +102,7 @@
         methods: {
             deleteProject() {
                 let _this = this
-                axios.delete(repository.API+'project/delete?id='+this.$route.params.id)
+                this.$http.delete(_this.$settings.PROJECT_DELETE+'?id='+this.$route.params.id)
                     .then(function(response){
                         if (response.data) {
                             _this.$router.push('/project/list');

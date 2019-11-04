@@ -34,8 +34,6 @@
 </style>
 
 <script>
-    import axios from "axios";
-    import repository from "@/settings.js";
     export default {
         name: 'Media',
         data: () => ({
@@ -71,7 +69,7 @@
             // Vue.material.locale.dateFormat = 'dd/MM/yyyy'
             // console.log(Vue.material.locale.dateFormat);
             let id = this.$route.params.id;
-            axios.get(repository.API + "project/index").then(response => {
+            this.$http.get( this.$settings.PROJECT_LIST).then(response => {
                 this.project = response.data;
             });
         }

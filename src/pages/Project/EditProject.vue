@@ -50,8 +50,6 @@
 <script>
 import { VueEditor } from "vue2-editor";
 // import Vue from 'vue'
-import axios from 'axios';
-import repository from '@/settings.js';
 import { validationMixin } from 'vuelidate'
 import {
     required,
@@ -95,7 +93,7 @@ export default {
         console.warn(this)
         let _this = this
         // this.status = {id:1,title:'ere'};
-        axios.get(repository.API+'project/status')
+        _this.$http.get(this.$settings.API+'project/status')
             .then(function(response){
                 if (response.data) {
                     console.warn(this)
@@ -148,11 +146,11 @@ export default {
                 formData.append(key, this.form[key]);
             }
         }
-        let method = (this.action == 'project/create') ? 'post' : 'put';
+        let method = (this.action == this.$settings.PROJECT_CREATE) ? 'post' : 'put';
         const options = {
             method: method,
             responseType:'json',
-            url: repository.API + this.action + ((projectId !== undefined) ? '?id='+projectId : ''),
+            url: this.action + ((projectId !== undefined) ? '?id='+projectId : ''),
             data: formData,
             transformResponse: [(data) => {
                 if (data.result) {
@@ -164,14 +162,10 @@ export default {
             }]
         };
 
-        axios(options);
+        this.$http(options);
 
     },
-
   },
-
-
-
 
 };
 

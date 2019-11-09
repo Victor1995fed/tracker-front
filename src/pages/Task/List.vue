@@ -12,17 +12,6 @@
                     </md-card-header>
 
                     <md-card-content>
-<!--                        <div class="button-task">-->
-<!--                            Добавить задачу-->
-<!--                            <md-button class="md-just-icon md-simple md-primary" :href="'/#/task/create/'">-->
-<!--                                <md-icon ><img src="@/assets/img/plus.svg" alt="plus"></md-icon>-->
-<!--                                <md-tooltip  md-direction="top">Добавить задачу</md-tooltip>-->
-<!--                            </md-button>-->
-
-<!--&lt;!&ndash;                                                    <md-button class="md-success custom-button-task" href="/#/task/create">Добавить задачу</md-button>&ndash;&gt;-->
-<!--                            &lt;!&ndash;                        <md-button class="md-success" href="/#/category/create">Добавить категорию</md-button>&ndash;&gt;-->
-<!--                            &lt;!&ndash;                        <md-button class="md-success"  href="/#/category/list" >Список категорий</md-button>&ndash;&gt;-->
-<!--                        </div>-->
                         <div class="radio-task">
 
                             <md-radio v-model="radio" value="today" class="md-primary">Сегодня</md-radio>
@@ -37,16 +26,78 @@
 
 <div class="both"></div>
                         <div>
-                            <md-menu md-size="medium"  :md-offset-x="127" :md-offset-y="-36">
-                                <md-button class="md-primary" md-menu-trigger>Фильры</md-button>
+                            <form novalidate class="md-layout" @submit.prevent="validateUser">
+                                <md-card class="md-layout-item md-size-100 md-small-size-100">
+                                    <md-card-header>
+                                        <div class="md-title">Фильтры</div>
+                                    </md-card-header>
 
-                                <md-menu-content>
-                                    <md-menu-item disabled ><a href="#">Сортировать по дате</a></md-menu-item>
-                                    <md-menu-item><a href="#">Сортировать по статусу</a></md-menu-item>
-                                    <md-menu-item><a href="#">Сортировать по названию</a></md-menu-item>
-                                    <md-menu-item><a href="#">Сортировать по приоритету</a></md-menu-item>
-                                </md-menu-content>
-                            </md-menu>
+                                    <md-card-content>
+
+                                        <div class="md-layout-item md-small-size-100 md-size-100">
+                                            <md-field>
+                                                <label>Проект</label>
+                                                <md-select name="project" id="project" v-model="form.project_id">
+                                                    <md-option
+                                                            v-for="one in response.project"
+                                                            :value="one.id"
+                                                            v-bind:key="one.id"
+                                                    >{{ one.title }}
+                                                    </md-option>
+                                                </md-select>
+                                            </md-field>
+                                        </div>
+
+                                        <div class="md-layout-item md-small-size-100 md-size-100">
+                                            <md-field>
+                                                <label>Статус</label>
+                                                <md-select name="status" id="project" v-model="form.project_id">
+                                                    <md-option
+                                                            v-for="one in response.project"
+                                                            :value="one.id"
+                                                            v-bind:key="one.id"
+                                                    >{{ one.title }}
+                                                    </md-option>
+                                                </md-select>
+                                            </md-field>
+                                        </div>
+
+                                        <div class="md-layout-item md-small-size-100 md-size-100">
+                                            <md-field>
+                                                <label>Приоритет</label>
+                                                <md-select name="priority " id="project" v-model="form.project_id">
+                                                    <md-option
+                                                            v-for="one in response.project"
+                                                            :value="one.id"
+                                                            v-bind:key="one.id"
+                                                    >{{ one.title }}
+                                                    </md-option>
+                                                </md-select>
+                                            </md-field>
+                                        </div>
+
+
+                                    </md-card-content>
+
+                                    <md-progress-bar md-mode="indeterminate" v-if="sending" />
+
+                                    <md-card-actions>
+                                        <md-button type="submit" class="md-primary" :disabled="sending">Применить</md-button>
+                                    </md-card-actions>
+                                </md-card>
+
+                                <md-snackbar :md-active.sync="userSaved">The user {{ lastUser }} was saved with success!</md-snackbar>
+                            </form>
+<!--                            <md-menu md-size="medium"  :md-offset-x="127" :md-offset-y="-36">-->
+<!--                                <md-button class="md-primary" md-menu-trigger>Фильры</md-button>-->
+
+<!--                                <md-menu-content>-->
+<!--                                    <md-menu-item disabled ><a href="#">Сортировать по дате</a></md-menu-item>-->
+<!--                                    <md-menu-item><a href="#">Сортировать по статусу</a></md-menu-item>-->
+<!--                                    <md-menu-item><a href="#">Сортировать по названию</a></md-menu-item>-->
+<!--                                    <md-menu-item><a href="#">Сортировать по приоритету</a></md-menu-item>-->
+<!--                                </md-menu-content>-->
+<!--                            </md-menu>-->
                         </div>
                         <task-list table-header-color="green"></task-list>
                     </md-card-content>
@@ -70,7 +121,23 @@
         },
         data: () => ({
             radio: 'today',
-            done: false
+            done: false,
+            form: {
+                project_id: 0
+            },
+            response: {
+                project:{
+                    1:{
+                        title:'sdsd',
+                        id:1
+                    },
+                    2:{
+                        title:'sdsddfd',
+                        id:11
+                    },
+
+                }
+            }
         })
     };
 </script>

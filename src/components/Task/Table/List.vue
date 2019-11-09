@@ -1,26 +1,62 @@
 <template>
+
     <div class="md-table-custom">
-        <md-table v-model="task" :table-header-color="tableHeaderColor">
-            <md-table-row slot="md-table-row" slot-scope="{ item }">
-                <md-table-cell md-label="#">{{ item.id }}</md-table-cell>
-                <md-table-cell md-label="Действия">
-                <md-button class="md-just-icon md-simple md-primary" :href="'/#/task/update/'+ item.id">
-                    <md-icon>edit</md-icon>
-                    <md-tooltip  md-direction="top">Редактировать</md-tooltip>
-                </md-button>
+<!--        <md-table v-model="task" :table-header-color="tableHeaderColor">-->
+<!--            <md-table-row slot="md-table-row" slot-scope="{ item }">-->
+<!--                <md-table-cell md-label="#">{{ item.id }}</md-table-cell>-->
+<!--                <md-table-cell md-label="Действия">-->
+<!--                <md-button class="md-just-icon md-simple md-primary" :href="'/#/task/update/'+ item.id">-->
+<!--                    <md-icon>edit</md-icon>-->
+<!--                    <md-tooltip  md-direction="top">Редактировать</md-tooltip>-->
+<!--                </md-button>-->
+<!--                    <md-button class="md-just-icon md-simple md-primary" :href="'/#/task/view/'+ item.id">-->
+<!--                        <md-icon ><img src="@/assets/img/view.svg" alt="view"></md-icon>-->
+
+<!--                        <md-tooltip  md-direction="top">Просмотреть</md-tooltip>-->
+<!--                    </md-button>-->
+<!--                </md-table-cell>-->
+<!--                <md-table-cell md-label="Тема">{{ item.title }}</md-table-cell>-->
+<!--                <md-table-cell  md-label="Проект" ><span v-if="item.project !== null"><a :href="'#/project/view/'+item.project.id">{{ item.project.title }}</a></span><span v-else>&mdash;</span> </md-table-cell>-->
+<!--                <md-table-cell  md-label="Статус">{{ item.status.title }}</md-table-cell>-->
+<!--                <md-table-cell md-label="Приоритет">{{ item.priority.title }}</md-table-cell>-->
+<!--                <md-table-cell md-label="Дата завершения"><span v-if="item.date_end !== null">{{ item.date_end }}</span><span v-else>&mdash;</span> </md-table-cell>-->
+<!--            </md-table-row>-->
+<!--        </md-table>-->
+
+        <md-table md-card>
+            <md-table-toolbar>
+                <h1 class="md-title">Users</h1>
+            </md-table-toolbar>
+            <md-table-row>
+                <md-table-head ><span @click="applyFilter" class="label-header"> # <i class="arrow up"></i></span></md-table-head>
+                <md-table-head> <span @click="applyFilter" class="label-header">Действия <i class="arrow up"/> </span> </md-table-head>
+                <md-table-head><span @click="applyFilter" class="label-header">Тема <i class="arrow up"/></span></md-table-head>
+                <md-table-head><span @click="applyFilter" class="label-header">Проект <i class="arrow up"/></span></md-table-head>
+                <md-table-head><span @click="applyFilter" class="label-header">Приоритет <i class="arrow up"/></span></md-table-head>
+                <md-table-head><span @click="applyFilter" class="label-header">Статус <i class="arrow up"/></span></md-table-head>
+                <md-table-head><span @click="applyFilter" class="label-header">Дата завершения <i class="arrow down"/></span></md-table-head>
+            </md-table-row>
+
+            <md-table-row v-for="item in task">
+                <md-table-cell md-numeric>{{item.id}}</md-table-cell>
+                <md-table-cell>
+                    <md-button class="md-just-icon md-simple md-primary" :href="'/#/task/update/'+ item.id">
+                        <md-icon>edit</md-icon>
+                        <md-tooltip  md-direction="top">Редактировать</md-tooltip>
+                    </md-button>
                     <md-button class="md-just-icon md-simple md-primary" :href="'/#/task/view/'+ item.id">
                         <md-icon ><img src="@/assets/img/view.svg" alt="view"></md-icon>
-
                         <md-tooltip  md-direction="top">Просмотреть</md-tooltip>
                     </md-button>
                 </md-table-cell>
-                <md-table-cell md-label="Тема">{{ item.title }}</md-table-cell>
-                <md-table-cell md-label="Проект" ><span v-if="item.project !== null"><a :href="'#/project/view/'+item.project.id">{{ item.project.title }}</a></span><span v-else>&mdash;</span> </md-table-cell>
-                <md-table-cell md-label="Статус">{{ item.status.title }}</md-table-cell>
-                <md-table-cell md-label="Приоритет">{{ item.priority.title }}</md-table-cell>
-                <md-table-cell md-label="Дата завершения"><span v-if="item.date_end !== null">{{ item.date_end }}</span><span v-else>&mdash;</span> </md-table-cell>
+                <md-table-cell>{{ item.title }}</md-table-cell>
+                <md-table-cell><span v-if="item.project !== null"><a :href="'#/project/view/'+item.project.id">{{ item.project.title }}</a></span><span v-else>&mdash;</span></md-table-cell>
+                <md-table-cell>{{ item.status.title }}</md-table-cell>
+                <md-table-cell>{{ item.priority.title }}</md-table-cell>
+                <md-table-cell><span v-if="item.date_end !== null">{{ item.date_end }}</span><span v-else>&mdash;</span></md-table-cell>
             </md-table-row>
         </md-table>
+
         <div class="pagination-custom">
             <paginate
                     v-model="currentPage"
@@ -65,12 +101,8 @@
         mounted() {
              this.currentPage = (this.$route.params.page !== undefined) ?  Number(this.$route.params.page) : 1;
             console.log(this.currentPage);
-            // if(this.currentPage === undefined){
-            //     this.currentPage = 1;
-            // }
 
             console.log(this.$refs.paginate)
-            // this.$refs.paginate.selected = currentPage
             this.$http.get(this.$settings.TASK_LIST+'?page='+this.currentPage).then(response => {
 
                 this.task = response.data.task
@@ -86,7 +118,10 @@
                 this.task = response.data.task
                 this.pageCount = response.data.countPage
             })
-                // location.reload()
+            },
+            applyFilter:function () {
+                console.warn('dff')
+                alert('dfd')
             }
         },
     };
@@ -95,5 +130,28 @@
 <style scoped>
     a.title-link {
         color: black !important;
+    }
+    .label-header {
+        cursor: pointer;
+    }
+    .label-header:hover {
+        color: #2196f3;
+    }
+     i.arrow {
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+    }
+
+
+    .up {
+        transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+    }
+
+    .down {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
     }
 </style>

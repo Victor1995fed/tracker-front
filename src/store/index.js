@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
-import repository from '@/settings.js';
+// import repository from '@/settings.js';
+import {settings} from "@/settings";
 Vue.use(Vuex)
 
 export const store = new Vuex.Store({
@@ -32,7 +33,7 @@ export const store = new Vuex.Store({
             return new Promise((resolve, reject) => {
                 console.warn(user);
                 commit('auth_request')
-                axios({url: repository.API+'user/login', data: user, method: 'POST' })
+                axios({url: settings.API+'user/login', data: user, method: 'POST' })
                     .then(resp => {
                         const token = resp.data.token
                         const user = resp.data.user

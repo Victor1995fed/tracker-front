@@ -3,22 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6e239849-0685-47fe-a502-1a2637ab8794" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Note/Table/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Note/Table/List.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Task/Table/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Task/Table/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Note/EditNote.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Note/EditNote.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Project/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Project/Create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Project/EditProject.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Project/EditProject.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Project/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Project/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Project/Update.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Project/Update.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Project/View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Project/View.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Task/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/Create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Layout/TopNavbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Layout/TopNavbar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Task/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Task/Update.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/Update.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Task/View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/View.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -140,7 +128,9 @@
       <workItem from="1572097398890" duration="477000" />
       <workItem from="1572160672021" duration="1961000" />
       <workItem from="1572256684979" duration="4196000" />
-      <workItem from="1572840698847" duration="6115000" />
+      <workItem from="1572840698847" duration="6161000" />
+      <workItem from="1573124131149" duration="619000" />
+      <workItem from="1573263662652" duration="7132000" />
     </task>
     <task id="LOCAL-00001" summary="add validations for EditProject">
       <created>1567775730521</created>
@@ -324,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572260247640</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="add const URL">
+      <created>1572849110543</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1572849110543</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,7 +342,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="add validations for EditProject" />
     <MESSAGE value="create Project/List.vue" />
     <MESSAGE value="choice Project" />
     <MESSAGE value="functional development for EditTask.vue" />
@@ -370,6 +366,7 @@
     <MESSAGE value="add snackbar-error" />
     <MESSAGE value="action logout" />
     <MESSAGE value="add Note" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Note" />
+    <MESSAGE value="add const URL" />
+    <option name="LAST_COMMIT_MESSAGE" value="add const URL" />
   </component>
 </project>

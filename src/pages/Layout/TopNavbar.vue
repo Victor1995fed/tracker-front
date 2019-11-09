@@ -34,7 +34,7 @@
             <md-tooltip md-direction="top">На главную</md-tooltip>
           </md-button>
 
-          <md-button  class="md-just-icon md-simple md-danger "  @click="logout">
+          <md-button  class="md-just-icon md-simple "  @click="logout">
             <md-icon>logout</md-icon>
             <md-tooltip md-direction="top">Выйти</md-tooltip>
           </md-button>

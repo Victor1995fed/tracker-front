@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e239849-0685-47fe-a502-1a2637ab8794" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Task/Filter/TableFilter.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Task/Table/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Task/Table/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Task/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/List.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings.js" afterDir="false" />
     </list>
@@ -132,7 +131,8 @@
       <workItem from="1572840698847" duration="6161000" />
       <workItem from="1573124131149" duration="619000" />
       <workItem from="1573263662652" duration="7236000" />
-      <workItem from="1573280528698" duration="11869000" />
+      <workItem from="1573280528698" duration="12147000" />
+      <workItem from="1573355350217" duration="8531000" />
     </task>
     <task id="LOCAL-00001" summary="add validations for EditProject">
       <created>1567775730521</created>
@@ -330,7 +330,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573274624584</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="fix filter">
+      <created>1573296853736</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1573296853736</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -352,7 +359,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="choice Project" />
     <MESSAGE value="functional development for EditTask.vue" />
     <MESSAGE value="add download files" />
     <MESSAGE value="refactor EditTask" />
@@ -377,6 +383,7 @@
     <MESSAGE value="add Note" />
     <MESSAGE value="add const URL" />
     <MESSAGE value="add filters view" />
-    <option name="LAST_COMMIT_MESSAGE" value="add filters view" />
+    <MESSAGE value="fix filter" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix filter" />
   </component>
 </project>

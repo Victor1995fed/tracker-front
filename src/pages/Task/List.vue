@@ -64,11 +64,11 @@ export default {
     task: [],
     currentPage: 1,
     pageCount: 0,
-    paramsFilter:{
-      'done': 0,
-      'period': 0,
+    paramsFilter: {
+      done: 0,
+      period: 0
     },
-    sort:{}
+    sort: {}
   }),
   mounted() {
     this.currentPage =
@@ -77,55 +77,57 @@ export default {
         : 1;
     console.log(this.currentPage);
     console.log(this.$refs.paginate);
-    let url = this.genUrl(Object.assign(this.paramsFilter,this.sort));
-    this.$http
-      .get(url)
-      .then(response => {
-        this.task = response.data.task;
-        this.pageCount = response.data.countPage;
-      });
+    let url = this.genUrl(Object.assign(this.paramsFilter, this.sort));
+    this.$http.get(url).then(response => {
+      this.task = response.data.task;
+      this.pageCount = response.data.countPage;
+    });
   },
-//TODO:: Реализовать передачу параметров фильтра и сортировки  в $router
+  //TODO:: Реализовать передачу параметров фильтра и сортировки  в $router
   methods: {
     //Получаем ссылку для запроса из TaskFilter
     applyFilter: function(params) {
       this.currentPage = 1;
       this.paramsFilter = params;
-      let url = this.genUrl(Object.assign(params,this.sort));
+      let url = this.genUrl(Object.assign(params, this.sort));
       this.$router.push("/task/" + this.currentPage);
-      this.$http
-              .get(url)
-              .then(response => {
-                this.task = response.data.task;
-                this.pageCount = response.data.countPage;
-              });
+      this.$http.get(url).then(response => {
+        this.task = response.data.task;
+        this.pageCount = response.data.countPage;
+      });
       console.warn(url);
     },
     //Получаем параметры сортировки из TaskList
     applySort: function(sort) {
-      console.warn('Сортировать',sort);
+      // this.currentPage = 1;
+      this.sort = sort;
+      let url = this.genUrl(Object.assign(this.paramsFilter, this.sort));
+      // this.$router.push("/task/" + this.currentPage);
+      console.warn("Сортировать", sort);
+      this.$http.get(url).then(response => {
+        this.task = response.data.task;
+        this.pageCount = response.data.countPage;
+      });
     },
     //Генерим урл
-    genUrl: function(filter,page=this.currentPage){
+    genUrl: function(filter, page = this.currentPage) {
       let url = this.$settings.TASK_LIST + "?page=" + page;
       for (var key in filter) {
-        if(filter[key] !== 0 && filter[key] !== false){
-          url = url + '&'+key+'='+filter[key];
+        if (filter[key] !== 0 && filter[key] !== false) {
+          url = url + "&" + key + "=" + filter[key];
         }
       }
-     return url;
+      return url;
     },
     clickCallback: function(page) {
       console.log(page);
       this.$router.push("/task/" + page);
-      let url = this.genUrl(Object.assign(this.paramsFilter,this.sort),page)
-      this.$http
-        .get(url)
-        .then(response => {
-          this.task = response.data.task;
-          this.pageCount = response.data.countPage;
-          this.currentPage = page;
-        });
+      let url = this.genUrl(Object.assign(this.paramsFilter, this.sort), page);
+      this.$http.get(url).then(response => {
+        this.task = response.data.task;
+        this.pageCount = response.data.countPage;
+        this.currentPage = page;
+      });
     }
   }
 };

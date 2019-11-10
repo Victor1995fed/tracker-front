@@ -6,35 +6,54 @@
       </md-table-toolbar>
       <md-table-row>
         <md-table-head
-          ><span @click="applySort" class="label-header">
-            # <i class="arrow up"></i></span
+          ><span
+            @click="applySort"
+            name="id"
+            sort="default"
+            class="label-header unselectable"
+          >
+            # <span v-html="arrow.id"></span></span
         ></md-table-head>
-<!--          FIXME:: В firefox не отображает стрелки-->
         <md-table-head>
-          <span @click="applySort" class="label-header"
-            >Действия <i class="arrow up" />
+          <span
+            >Действия
           </span>
         </md-table-head>
         <md-table-head
-          ><span @click="applySort" class="label-header"
-            >Тема <i class="arrow up"/></span
+          ><span
+            @click="applySort"
+            name="title"
+            class="label-header unselectable"
+            >Тема<span v-html="arrow.title"></span></span
         ></md-table-head>
         <md-table-head
-          ><span @click="applySort" class="label-header"
-            >Проект <i class="arrow up"/></span
+          ><span
+            @click="applySort"
+            name="project.title"
+            class="label-header unselectable"
+            >Проект <span v-html="arrow['project.title']"></span></span
         ></md-table-head>
 
         <md-table-head
-          ><span @click="applySort" class="label-header"
-            >Статус <i class="arrow up"/></span
+          ><span
+            @click="applySort"
+            name="status.id"
+            class="label-header unselectable"
+            >Статус<span v-html="arrow['status.id']"></span> </span
         ></md-table-head>
-          <md-table-head
-          ><span @click="applySort" class="label-header"
-          >Приоритет <i class="arrow up"/></span
-          ></md-table-head>
         <md-table-head
-          ><span @click="applySort" class="label-header"
-            >Дата завершения <i class="arrow down"/></span
+          ><span
+            @click="applySort"
+            name="priority.id"
+            class="label-header unselectable"
+            >Приоритет<span v-html="arrow['priority.id']"></span> </span
+        ></md-table-head>
+        <md-table-head
+          ><span
+            @click="applySort"
+            name="date_end"
+            class="label-header unselectable"
+            >Дата завершения<span v-html="arrow['date_end']"></span></span
         ></md-table-head>
       </md-table-row>
 
@@ -88,7 +107,23 @@ export default {
   data() {
     return {
       selected: [],
-      users: []
+      users: [],
+      sortName: {
+        id: this.$settings.TASK_SORT_ID,
+        title: this.$settings.TASK_SORT_THEME,
+        project: this.$settings.TASK_SORT_PROJECT,
+        status: this.$settings.TASK_SORT_STATUS,
+        priority: this.$settings.TASK_SORT_PRIORITY,
+        dateEnd: this.$settings.TASK_SORT_DATE_END
+      },
+      arrow: {
+        id: "",
+        title: "",
+        "project.title": "",
+        "status.id": "",
+        "priority.id": "",
+        date_end: ""
+      }
     };
   },
   methods: {
@@ -102,13 +137,41 @@ export default {
           this.pageCount = response.data.countPage;
         });
     },
-    applySort: function() {
-        let sort = {
-            'sort':1,
-            'orderby':'asc'
-        }
-      console.warn("dff");
+    applySort: function(e) {
+      let sort = {};
+      let name = e.currentTarget.getAttribute("name");
+      let typeSort = e.currentTarget.getAttribute("sort");
+      console.warn(e.currentTarget.getAttribute("name"));
+      sort.sort = name;
+      //Смотрим тип сортировки
+      this.clearArrow();
+      let changeSort = this.getTypeSort(typeSort, name);
+      e.currentTarget.setAttribute("sort", changeSort);
+      sort.sort = (changeSort == "desc" ? "-" : "") + sort.sort;
       this.$emit("sort", sort);
+    },
+    getTypeSort: function(current, name) {
+      console.warn("CURRENT", current);
+      switch (current) {
+        case "asc":
+          if (this.arrow[name] !== undefined) {
+            this.arrow[name] = "&#8659;";
+          }
+          return "desc";
+        case "desc":
+          if (this.arrow[name] !== undefined) {
+            this.arrow[name] = "&#8657;";
+          }
+          return "asc";
+        default:
+          this.arrow[name] = "&#8657;";
+          return "asc";
+      }
+    },
+    clearArrow: function() {
+      for (var key in this.arrow) {
+        this.arrow[key] = "";
+      }
     }
   }
 };
@@ -124,20 +187,14 @@ a.title-link {
 .label-header:hover {
   color: #2196f3;
 }
-i.arrow {
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
-}
 
-.up {
-  transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
-}
-
-.down {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
+.unselectable {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  not supported by any browser */
 }
 </style>

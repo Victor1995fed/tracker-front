@@ -27,4 +27,13 @@ export const settings =  {
   NOTE_LIST: ApiUrl+'note/index',
   NOTE_VIEW: ApiUrl+'note/view',
   NOTE_DELETE: ApiUrl+'note/delete',
+
+
+  //Constants for sort
+  TASK_SORT_ID: 1,
+  TASK_SORT_THEME: 2,
+  TASK_SORT_PROJECT: 3,
+  TASK_SORT_STATUS: 4,
+  TASK_SORT_PRIORITY : 5,
+  TASK_SORT_DATE_END : 6,
 };

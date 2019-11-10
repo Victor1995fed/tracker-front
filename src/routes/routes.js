@@ -185,7 +185,7 @@ const routes = [
         component: UserProfile
       },
       {
-        path: "task/:page?",
+        path: "task/list/:page?",
         name: "Задачи",
         component: TableList
       },

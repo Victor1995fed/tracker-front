@@ -105,7 +105,7 @@
 
                         </md-field>
                     </div>
-                    <div v-if="action == 'task/update'" class="md-layout-item md-small-size-100 md-size-33">
+                    <div v-if="action == this.$settings.TASK_UPDATE" class="md-layout-item md-small-size-100 md-size-33">
                         <md-field>
 
                             <md-field>
@@ -114,7 +114,7 @@
                             </md-field>
                         </md-field>
                     </div>
-                    <div v-if="action == 'task/update'" class="md-layout-item md-small-size-100 md-size-33">
+                    <div v-if="action == this.$settings.TASK_UPDATE" class="md-layout-item md-small-size-100 md-size-33">
                         <md-field>
                             <label>Статус</label>
                             <md-select name="status" id="status" v-model="form.status_id">
@@ -143,7 +143,6 @@
 </template>
 <script>
     import axios from 'axios';
-    import repository from '@/settings.js';
     import {VueEditor} from "vue2-editor";
     import format from 'date-fns/format'
     import {validationMixin} from 'vuelidate'

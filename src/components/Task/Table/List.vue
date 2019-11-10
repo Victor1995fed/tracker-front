@@ -102,7 +102,10 @@ export default {
       type: String,
       default: ""
     },
-    task: {}
+    task: {},
+    sortType: {
+      default: ""
+    }
   },
   data() {
     return {
@@ -126,8 +129,12 @@ export default {
       }
     };
   },
+  created(){
+    this.setTypeSort(this.sortType)
+  },
   methods: {
     clickCallback: function(page) {
+      this.
       console.log(page);
       this.$router.push("/task/" + page);
       this.$http
@@ -167,6 +174,14 @@ export default {
           this.arrow[name] = "&#8657;";
           return "asc";
       }
+    },
+    setTypeSort: function(sortType){
+        if(sortType[0] == '-'){
+          let name =  sortType.slice(1)
+          this.arrow[name] = this.arrow[name] === undefined ? '' : "&#8659;";
+        }
+        else
+          this.arrow[sortType] = this.arrow[sortType] === undefined ? '' : "&#8657;";
     },
     clearArrow: function() {
       for (var key in this.arrow) {

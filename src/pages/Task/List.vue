@@ -11,11 +11,14 @@
           <md-card-content>
             <task-filter
               @filter="applyFilter"
+              :done="!!+paramsFilter.done"
+              :period="paramsFilter.period"
               table-header-color="green"
             ></task-filter>
             <task-list
               table-header-color="green"
               :task="task"
+              :sortType="sort.sort"
               @sort="applySort"
             ></task-list>
             <div class="pagination-custom">
@@ -56,8 +59,7 @@ export default {
     Paginate
   },
   data: () => ({
-    radio: "today",
-    done: false,
+    done: true,
     form: {
       project_id: 0
     },
@@ -66,22 +68,19 @@ export default {
     pageCount: 0,
     paramsFilter: {
       done: 0,
-      period: 0
+      period: "0"
     },
     sort: {}
   }),
-  mounted() {
+  created() {
+    this.createFilter();
     this.currentPage =
       this.$route.params.page !== undefined
         ? Number(this.$route.params.page)
         : 1;
-    console.log(this.currentPage);
-    console.log(this.$refs.paginate);
-    let url = this.genUrl(Object.assign(this.paramsFilter, this.sort));
-    this.$http.get(url).then(response => {
-      this.task = response.data.task;
-      this.pageCount = response.data.countPage;
-    });
+    let url = this.genUrl();
+    this.getTask(url);
+    console.warn("TASKLIST",this.paramsFilter.done)
   },
   //TODO:: Реализовать передачу параметров фильтра и сортировки  в $router
   methods: {
@@ -89,40 +88,47 @@ export default {
     applyFilter: function(params) {
       this.currentPage = 1;
       this.paramsFilter = params;
-      let url = this.genUrl(Object.assign(params, this.sort));
-      this.$router.push("/task/" + this.currentPage);
-      this.$http.get(url).then(response => {
-        this.task = response.data.task;
-        this.pageCount = response.data.countPage;
-      });
+      let url = this.genUrl();
+      this.getTask(url)
       console.warn(url);
+    },
+    createFilter: function(){
+      if(this.$route.query.sort !== undefined)
+          this.sort.sort = this.$route.query.sort;
+      if(this.$route.query.done !== undefined)
+        this.paramsFilter.done = this.$route.query.done;
+      if(this.$route.query.period !== undefined)
+        this.paramsFilter.period = this.$route.query.period;
     },
     //Получаем параметры сортировки из TaskList
     applySort: function(sort) {
-      // this.currentPage = 1;
       this.sort = sort;
-      let url = this.genUrl(Object.assign(this.paramsFilter, this.sort));
-      // this.$router.push("/task/" + this.currentPage);
-      console.warn("Сортировать", sort);
+      let url = this.genUrl();
+      console.warn(url);
+      this.getTask(url)
+    },
+    //Получить список задач
+    getTask: function(url){
       this.$http.get(url).then(response => {
         this.task = response.data.task;
         this.pageCount = response.data.countPage;
       });
     },
     //Генерим урл
-    genUrl: function(filter, page = this.currentPage) {
+    genUrl: function(page = this.currentPage) {
+      let sortPush = Object.assign(this.paramsFilter, this.sort);
+      this.$router.push({query: sortPush});
+
       let url = this.$settings.TASK_LIST + "?page=" + page;
-      for (var key in filter) {
-        if (filter[key] !== 0 && filter[key] !== false) {
-          url = url + "&" + key + "=" + filter[key];
-        }
+      for (var key in this.$route.query) {
+          url = url + "&" + key + "=" + this.$route.query[key];
       }
       return url;
     },
     clickCallback: function(page) {
-      console.log(page);
-      this.$router.push("/task/" + page);
-      let url = this.genUrl(Object.assign(this.paramsFilter, this.sort), page);
+      this.currentPage = page
+      this.$router.push('/task/list/' + page);
+      let url = this.genUrl();
       this.$http.get(url).then(response => {
         this.task = response.data.task;
         this.pageCount = response.data.countPage;

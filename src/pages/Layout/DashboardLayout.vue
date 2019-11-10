@@ -16,7 +16,7 @@
         <p>Проекты</p>
       </sidebar-link>
 
-      <sidebar-link to="/task">
+      <sidebar-link to="/task/list">
         <md-icon>content_paste</md-icon>
         <p>Задачи</p>
       </sidebar-link>

@@ -3,18 +3,18 @@
     <div class="radio-task" >
       <md-radio
         @change="applyFilter"
-        v-model="period"
+        v-model="isPeriod"
         value="1"
         class="md-primary"
         >Сегодня</md-radio
       >
-      <md-radio @change="applyFilter" v-model="period" value="7" class="md-primary"
+      <md-radio @change="applyFilter" v-model="isPeriod" value="7" class="md-primary"
         >Следующие 7 дней</md-radio
       >
-      <md-radio @change="applyFilter" v-model="period" value="0" class="md-primary"
+      <md-radio @change="applyFilter" v-model="isPeriod" value="0" class="md-primary"
         >Все задачи</md-radio
       >
-      <md-switch @change="applyFilter" v-model="done" class="md-primary"
+      <md-switch @change="applyFilter" v-model="isDone" class="md-primary"
         >Отображать выполненные</md-switch
       >
       <md-button
@@ -26,6 +26,7 @@
       </md-button>
     </div>
     <div class="both"></div>
+<!--    TODO:: Доработать фильтр по заданным значениям -->
     <div style="display: none">
       <form novalidate class="md-layout" @submit.prevent="validateUser">
         <md-card class="md-layout-item md-size-100 md-small-size-100">
@@ -91,10 +92,19 @@
 </template>
 <script>
 export default {
+  props: {
+    done: {
+      default: false
+    },
+    period: {
+      default: "0"
+    }
+  },
   name: "task-filter",
   data: () => ({
-    period: "0",
-    done: false,
+    isPeriod: "0",
+    isDone:false,
+    // done: false,
     form: {
       project_id: 0
     },
@@ -111,11 +121,17 @@ export default {
       }
     }
   }),
+  created() {
+    this.isDone = this.done;
+    this.isPeriod = this.period;
+    console.warn('FILTER',this.done);
+
+  },
   methods: {
     applyFilter: function() {
       let params = {
-          'done': + this.done,
-          'period':this.period,
+          'done': + this.isDone,
+          'period':this.isPeriod,
       }
       // let url = "http://tracker-api.zz/task/test?page=1&done=1&period=1";
       this.$emit("filter", params);

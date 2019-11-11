@@ -107,8 +107,8 @@
                                         <task-tabs-files :prop="response.files"></task-tabs-files>
                                     </md-tab>
 
-                                    <md-tab  id="tab-history" md-label="История">
-                                        <task-tabs-history></task-tabs-history>
+                                    <md-tab  id="tab-history" md-label="Комментарии">
+                                        <task-tabs-comment></task-tabs-comment>
                                     </md-tab>
                                 </md-tabs>
                             </template>
@@ -134,14 +134,14 @@
         TaskTabsDescription,
         NavTabsCard,
         TaskTabsFiles,
-        TaskTabsHistory
+        TaskTabsComment
     } from "@/components";
     export default {
         components: {
             NavTabsCard,
             TaskTabsDescription,
             TaskTabsFiles,
-            TaskTabsHistory
+            TaskTabsComment
         },
     props: {
         dataBackgroundColor: {
@@ -157,6 +157,7 @@
             category:{},
             files:{},
             priority:{},
+            status:{}
         },
         priority: "Высокий",
         dateStart: "23.08.2019",

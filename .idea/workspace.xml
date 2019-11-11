@@ -4,12 +4,12 @@
     <list default="true" id="6e239849-0685-47fe-a502-1a2637ab8794" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Task/Filter/TableFilter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Task/Filter/TableFilter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Task/Table/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Task/Table/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Layout/DashboardLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Layout/DashboardLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Task/Tabs/TaskTabsFiles.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Task/Tabs/TaskTabsFiles.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Task/Tabs/TaskTabsHistory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Task/Tabs/TaskTabsComment.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Task/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Task/View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/View.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -135,7 +135,10 @@
       <workItem from="1573124131149" duration="619000" />
       <workItem from="1573263662652" duration="7236000" />
       <workItem from="1573280528698" duration="12147000" />
-      <workItem from="1573355350217" duration="19646000" />
+      <workItem from="1573355350217" duration="19797000" />
+      <workItem from="1573378841221" duration="124000" />
+      <workItem from="1573390390666" duration="363000" />
+      <workItem from="1573459870447" duration="4156000" />
     </task>
     <task id="LOCAL-00001" summary="add validations for EditProject">
       <created>1567775730521</created>
@@ -347,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573365588028</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="refactor url sort">
+      <created>1573378793068</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1573378793069</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -369,7 +379,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="add download files" />
     <MESSAGE value="refactor EditTask" />
     <MESSAGE value="add tabs for View Task" />
     <MESSAGE value="setting style for tabs" />
@@ -394,6 +403,7 @@
     <MESSAGE value="add filters view" />
     <MESSAGE value="fix filter" />
     <MESSAGE value="add sort" />
-    <option name="LAST_COMMIT_MESSAGE" value="add sort" />
+    <MESSAGE value="refactor url sort" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor url sort" />
   </component>
 </project>

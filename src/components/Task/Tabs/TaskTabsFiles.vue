@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="md-layout">
+        <div class="md-layout md-centered">
             <div class="md-layout-item">
                 <div class="link-files"  v-for="(data,index) in prop" :key="index">
                     <div class="md-layout md-layout-hover">
@@ -19,22 +19,22 @@
 
 <script>
     import axios from 'axios';
-    import repository from '@/settings.js';
+    // import repository from '@/settings.js';
     export default {
         name: "task-tabs-files",
         props: ['prop'],
         data() {
             return {
-                url: repository.API+'file/download?uuid=',
+                url: this.$settings.API+'file/download?uuid=',
                 selected: [],
-                users: [
+                data: [
                 ]
             };
         },
         methods:{
             deleteFile(uuid){
 
-                axios.get(repository.API + 'file/delete?uuid='+uuid).then(response => {
+                this.$http.get(this.$settings.API + 'file/delete?uuid='+uuid).then(response => {
                     this.response = response.data
                     this.$router.go()
                 })

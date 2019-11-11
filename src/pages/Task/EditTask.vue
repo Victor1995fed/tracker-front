@@ -318,6 +318,6 @@
 </script>
 <style scoped>
     .md-card-content input {
-        color: white !important;
+        color: black !important;
     }
 </style>

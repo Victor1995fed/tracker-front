@@ -11,7 +11,7 @@ import Icons from "./Tables/icons.vue";
 //Task
 import TaskTabsDescription from "./Task/Tabs/TaskTabsDescription.vue";
 import TaskTabsFiles from "./Task/Tabs/TaskTabsFiles.vue";
-import TaskTabsHistory from "./Task/Tabs/TaskTabsHistory.vue";
+import TaskTabsComment from "./Task/Tabs/TaskTabsComment.vue";
 import TaskList from "./Task/Table/List.vue";
 import TaskFilter from "./Task/Filter/TableFilter.vue";
 
@@ -32,7 +32,7 @@ export {
   Icons,
   TaskTabsDescription,
   TaskTabsFiles,
-  TaskTabsHistory,
+  TaskTabsComment,
   Pagination,
   TaskList,
   NoteList,

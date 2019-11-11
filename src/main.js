@@ -77,6 +77,7 @@ Vue.material.locale = {
   endYear: 2099,
   // date format for date picker
   dateFormat: 'dd-MM-yyyy',
+  // dateFormat: 'yyyy-MM-dd',
   // i18n strings
   days: ['Воскреенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
   shortDays: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],

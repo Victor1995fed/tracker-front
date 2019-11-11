@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e239849-0685-47fe-a502-1a2637ab8794" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/filters/filter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scss/material-dashboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/material-dashboard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Task/Filter/TableFilter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Task/Filter/TableFilter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Task/Table/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Task/Table/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Task/Tabs/TaskTabsComment.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Task/Tabs/TaskTabsComment.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Task/Update.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/Update.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Task/View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/View.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -142,7 +136,8 @@
       <workItem from="1573355350217" duration="19797000" />
       <workItem from="1573378841221" duration="124000" />
       <workItem from="1573390390666" duration="363000" />
-      <workItem from="1573459870447" duration="16295000" />
+      <workItem from="1573459870447" duration="19946000" />
+      <workItem from="1573481070427" duration="948000" />
     </task>
     <task id="LOCAL-00001" summary="add validations for EditProject">
       <created>1567775730521</created>
@@ -368,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573464264654</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="date format">
+      <created>1573477005899</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1573477005899</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,7 +392,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="add tabs for View Task" />
     <MESSAGE value="setting style for tabs" />
     <MESSAGE value="pagination test" />
     <MESSAGE value="pagination task" />
@@ -415,6 +416,7 @@
     <MESSAGE value="add sort" />
     <MESSAGE value="refactor url sort" />
     <MESSAGE value="add comment" />
-    <option name="LAST_COMMIT_MESSAGE" value="add comment" />
+    <MESSAGE value="date format" />
+    <option name="LAST_COMMIT_MESSAGE" value="date format" />
   </component>
 </project>

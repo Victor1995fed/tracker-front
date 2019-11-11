@@ -40,6 +40,6 @@ export const settings =  {
 
 
 //  DATE FORMAT
-  DATE_FORMAT:"YYYY-MM-DD"
-
+//   DATE_FORMAT:"YYYY-MM-DD"
+  DATE_FORMAT:"DD-MM-YYYY"
 };

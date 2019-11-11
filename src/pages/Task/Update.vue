@@ -27,6 +27,10 @@
                 this.form = response.data.task
                 //Сброс трудозатрат
                 this.form.spending = 0
+                //Замена формата даты
+                // console.warn('DATA',this.$options.filters.setFormatDate(this.form.date_end))
+                this.form.date_end = this.$options.filters.setFormatDate(this.form.date_end)
+                this.form.date_start = this.$options.filters.setFormatDate(this.form.date_start)
             })
 
         },

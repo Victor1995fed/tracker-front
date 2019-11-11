@@ -236,7 +236,7 @@
                 const formData = new FormData();
                 for (var key in this.form) {
                     if(this.form[key] !== undefined && this.form[key] !== null){
-                        formData.append(key, (key == 'date_end' || key == 'date_start') ? format(this.form[key],"YYYY-MM-DD")  : this.form[key]);
+                        formData.append(key, (key == 'date_end' || key == 'date_start') ? format(this.form[key],this.$settings.DATE_FORMAT)  : this.form[key]);
                     }
                 }
                 if(this.form.dataFile != null){
@@ -293,13 +293,13 @@
 
         mounted() {
             let parent_id = this.$route.params.parent_id;
-            axios.get(this.$settings.API + 'task/edit').then(response => {
+            this.$http.get(this.$settings.API + 'task/edit').then(response => {
                 this.response = response.data
             })
             if(parent_id !== null && parent_id !== undefined){
                 this.isChild = true;
                 this.form.parent_id = parent_id
-                axios.get(this.$settings.API + 'task/view?id='+parent_id).then(response => {
+                this.$http.get(this.$settings.API + 'task/view?id='+parent_id).then(response => {
                     this.parentTask = response.data.task
                     this.form.project_id = response.data.task.project_id
                     this.form.category_id = response.data.task.category_id

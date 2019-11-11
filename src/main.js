@@ -35,6 +35,8 @@ import {settings} from "./settings";
 // MaterialDashboard plugin
 import MaterialDashboard from "./material-dashboard";
 
+
+
 import Chartist from "chartist";
 // configure router
 const router = new VueRouter({
@@ -54,13 +56,27 @@ Vue.use(GlobalComponents);
 Vue.use(GlobalDirectives);
 Vue.use(Notifications);
 
+Vue.filter('setFormatDate', function (value) {
+  //TODO:: Добавить нормальную проверку, перенести в отдельный файл
+  if(value != '' && value != null && value !== undefined){
+    let date = new Date(value);
+    let curr_date = date.getDate();
+    let curr_month = date.getMonth() + 1;
+    let curr_year = date.getFullYear();
+    return curr_date + "-" + curr_month + "-" + curr_year;
+  }
+  else
+    return null;
+
+})
+
 //settings dateformat
 Vue.material.locale = {
   // range for datepicker
   startYear: 1900,
   endYear: 2099,
   // date format for date picker
-  dateFormat: 'yyyy-MM-dd',
+  dateFormat: 'dd-MM-yyyy',
   // i18n strings
   days: ['Воскреенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
   shortDays: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
@@ -78,6 +94,7 @@ if (token) {
   console.warn('TOKEN!!++',token)
   Vue.prototype.$http.defaults.headers.common['Authorization'] = 'Bearer ' + token
 }
+
 
 /* eslint-disable no-new */
 new Vue({

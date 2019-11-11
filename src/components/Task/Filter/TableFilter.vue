@@ -1,16 +1,16 @@
 <template>
   <div>
     <div class="radio-task" >
-      <md-radio
-        @change="applyFilter"
-        v-model="isPeriod"
-        value="1"
-        class="md-primary"
-        >Сегодня</md-radio
-      >
+
       <md-radio @change="applyFilter" v-model="isPeriod" value="7" class="md-primary"
         >Следующие 7 дней</md-radio
       >
+      <md-radio
+              @change="applyFilter"
+              v-model="isPeriod"
+              value="30"
+              class="md-primary"
+      >Следующие 30 дней</md-radio>
       <md-radio @change="applyFilter" v-model="isPeriod" value="0" class="md-primary"
         >Все задачи</md-radio
       >

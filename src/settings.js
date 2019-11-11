@@ -39,4 +39,7 @@ export const settings =  {
   TASK_SORT_DATE_END : 6,
 
 
+//  DATE FORMAT
+  DATE_FORMAT:"YYYY-MM-DD"
+
 };

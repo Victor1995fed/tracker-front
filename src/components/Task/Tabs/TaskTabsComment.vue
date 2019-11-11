@@ -1,8 +1,6 @@
 <template>
     <div>
-        <div class="md-layout">
-            <div class="md-layout-item ">
-                <div v-for="one in comment" class="custom-layout clear-fix">
+         <div v-for="one in comment" class="custom-layout clear-fix">
                     <div class="clear-fix">
                         <div class="comment-icon"><md-icon>comment</md-icon></div>
                         <div class="comment-date">{{one.date_create}}</div>
@@ -22,8 +20,6 @@
                         </div>
                 </div>
             </div>
-        </div>
-    </div>
 </template>
 
 <script>
@@ -51,7 +47,7 @@
     };
 </script>
 
-<style>
+<style scoped>
     .custom-layout {
         border-bottom: 1px #ccc solid;
         margin-bottom: 40px;
@@ -78,4 +74,7 @@
         height: 0px;
         visibility: hidden;
     }
+
+
+
 </style>

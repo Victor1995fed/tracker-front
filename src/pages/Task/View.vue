@@ -43,7 +43,7 @@
                     <div class="md-layout-item">
                         <p>
                         <span class="md-body-2">Дата начала:</span>
-                        {{response.task.date_start}}
+                        {{response.task.date_start | setFormatDate}}
                         </p>
                     </div>
                     </div>
@@ -57,7 +57,7 @@
                     <div class="md-layout-item">
                         <p>
                         <span class="md-body-2">Дата завершения:</span>
-                        {{response.task.date_end}}
+                        {{response.task.date_end | setFormatDate}}
                         </p>
                     </div>
                     </div>
@@ -96,20 +96,22 @@
                     </div>
                     <hr />
                     <div class="md-layout layout-height-min">
-                        <nav-tabs-card>
+                        <div class="ql-editor" v-html="response.task.description"></div>
+                        <nav-tabs-card class="custom-tabs-view">
                             <template slot="content">
                                 <md-tabs class="md-color-red">
-                                    <md-tab    id="tab-description" md-label="Описание" exact>
-                                        <task-tabs-description :prop="response.task.description"></task-tabs-description>
+<!--                                    TODO:: Убрать описание из вкладок, оно должно всегда отображаться, ниже, по умолчанию всегда будет открыта вкладка с комментариями-->
+                                    <md-tab  id="tab-comment" md-label="Комментарии">
+                                        <task-tabs-comment></task-tabs-comment>
                                     </md-tab>
 
                                     <md-tab id="tab-files" md-label="Файлы" >
                                         <task-tabs-files :prop="response.files"></task-tabs-files>
                                     </md-tab>
-
-                                    <md-tab  id="tab-history" md-label="Комментарии">
-                                        <task-tabs-comment></task-tabs-comment>
+                                    <md-tab id="tab-history" md-label="История" >
+                                       <p>История</p>
                                     </md-tab>
+
                                 </md-tabs>
                             </template>
                         </nav-tabs-card>
@@ -131,17 +133,15 @@
     // import repository from "@/settings.js";
     // console.warn(window.$settings);
     import {
-        TaskTabsDescription,
         NavTabsCard,
         TaskTabsFiles,
-        TaskTabsComment
+        TaskTabsComment,
     } from "@/components";
     export default {
         components: {
             NavTabsCard,
-            TaskTabsDescription,
             TaskTabsFiles,
-            TaskTabsComment
+            TaskTabsComment,
         },
     props: {
         dataBackgroundColor: {
@@ -172,6 +172,7 @@
         let id = this.$route.params.id;
         this.$http.get(this.$settings.API + "task/view?id=" + id).then(response => {
         this.response = response.data;
+
         });
         this.urlChildTask = '#/task/create/'+id;
     },
@@ -203,4 +204,5 @@
         .md-tabs-navigation{
             box-shadow: none !important;
         }
+
     </style>

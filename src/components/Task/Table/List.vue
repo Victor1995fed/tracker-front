@@ -86,7 +86,7 @@
         <md-table-cell>{{ item.status.title }}</md-table-cell>
         <md-table-cell>{{ item.priority.title }}</md-table-cell>
         <md-table-cell
-          ><span v-if="item.date_end !== null">{{ item.date_end }}</span
+          ><span v-if="item.date_end !== null">{{item.date_end | setFormatDate }}</span
           ><span v-else>&mdash;</span></md-table-cell
         >
       </md-table-row>
@@ -131,6 +131,15 @@ export default {
   },
   created(){
     this.setTypeSort(this.sortType)
+  },
+  filters: {
+    // setFormatDate: function (value) {
+    //   let date = new Date(value);
+    //   let curr_date = date.getDate();
+    //   let curr_month = date.getMonth() + 1;
+    //   let curr_year = date.getFullYear();
+    //   return curr_date + "-" + curr_month + "-" + curr_year;
+    // }
   },
   methods: {
     clickCallback: function(page) {
@@ -187,7 +196,8 @@ export default {
       for (var key in this.arrow) {
         this.arrow[key] = "";
       }
-    }
+    },
+
   }
 };
 </script>

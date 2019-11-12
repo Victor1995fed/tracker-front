@@ -29,7 +29,9 @@ export const settings =  {
   NOTE_DELETE: ApiUrl+'note/delete',
   //COMMENT
   COMMENT_LIST: ApiUrl+'comment/list',
-
+  COMMENT_CREATE : ApiUrl+'comment/create',
+  COMMENT_UPDATE : ApiUrl+'comment/update',
+  COMMENT_DELETE : ApiUrl+'comment/delete',
   //Constants for sort
   TASK_SORT_ID: 1,
   TASK_SORT_THEME: 2,

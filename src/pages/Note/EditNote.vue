@@ -112,7 +112,7 @@
                 const options = {
                     method: method,
                     responseType:'json',
-                    url: repository.API + this.action + ((taskId !== undefined) ? '?id='+taskId : ''),
+                    url: this.$settings.API + this.action + ((taskId !== undefined) ? '?id='+taskId : ''),
                     data: formData,
                     transformResponse: [(data) => {
                         if (data.result) {
@@ -123,7 +123,7 @@
                         }
                     }]
                 };
-                axios(options);
+                this.$http(options);
             },
             changeText: function () {
                 this.$nextTick(function () {

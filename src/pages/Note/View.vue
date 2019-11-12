@@ -82,7 +82,7 @@
         // Vue.material.locale.dateFormat = 'dd/MM/yyyy'
         // console.log(Vue.material.locale.dateFormat);
         let id = this.$route.params.id;
-        axios.get(repository.API + "note/view?id=" + id).then(response => {
+        this.$http.get(this.$settings.API + "note/view?id=" + id).then(response => {
         this.response = response.data;
 
         });

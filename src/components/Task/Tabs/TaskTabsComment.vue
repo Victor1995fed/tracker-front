@@ -20,7 +20,7 @@
     </md-dialog>
 
       <md-dialog :md-active.sync="showDialogDel">
-          <md-dialog-title>Вы действительно хотите удалить эту задачу?</md-dialog-title>
+          <md-dialog-title>Вы действительно хотите удалить этот комментарий?</md-dialog-title>
 
           <md-dialog-actions>
               <md-button  @click="showDialogDel = false">Нет</md-button>

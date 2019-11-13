@@ -266,12 +266,11 @@ export default {
       let _this = this;
       const formData = new FormData();
       for (var key in this.form) {
-        //  FIXME:: Косяк с датой при обновлении, Invalid date
         if (this.form[key] !== undefined && this.form[key] !== null) {
           formData.append(
             key,
             key == "date_end" || key == "date_start"
-              ? format(this.form[key], this.$settings.DATE_FORMAT)
+              ? format(this.form[key], this.$settings.DATE_FORMAT_TO_SERVER)
               : this.form[key]
           );
         }

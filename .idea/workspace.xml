@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e239849-0685-47fe-a502-1a2637ab8794" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Task/Tabs/TaskTabsHistory.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Task/Tabs/TaskTabsComment.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Task/Tabs/TaskTabsComment.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Note/EditNote.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Note/EditNote.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Note/View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Note/View.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Task/View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/View.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -139,7 +141,8 @@
       <workItem from="1573459870447" duration="19946000" />
       <workItem from="1573481070427" duration="1267000" />
       <workItem from="1573488786680" duration="468000" />
-      <workItem from="1573554928021" duration="5295000" />
+      <workItem from="1573554928021" duration="6281000" />
+      <workItem from="1573617836020" duration="8301000" />
     </task>
     <task id="LOCAL-00001" summary="add validations for EditProject">
       <created>1567775730521</created>
@@ -379,7 +382,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573482246836</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="functions edit, delete for comments">
+      <created>1573560577016</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1573560577016</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -401,7 +411,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="pagination test" />
     <MESSAGE value="pagination task" />
     <MESSAGE value="create Update.vue" />
     <MESSAGE value="add function deleteProject for View.vue" />
@@ -426,6 +435,7 @@
     <MESSAGE value="add comment" />
     <MESSAGE value="date format" />
     <MESSAGE value="fix bug date format" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bug date format" />
+    <MESSAGE value="functions edit, delete for comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="functions edit, delete for comments" />
   </component>
 </project>

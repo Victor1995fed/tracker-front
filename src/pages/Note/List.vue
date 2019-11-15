@@ -11,10 +11,6 @@
 
                     <md-card-content>
                         <div class="radio-task">
-
-                            <md-radio v-model="radio" value="today" class="md-primary">Сегодня</md-radio>
-                            <md-radio v-model="radio" value="week" class="md-primary">Следующие 7 дней</md-radio>
-                            <md-radio v-model="radio" value="all" class="md-primary">Все задачи</md-radio>
                             <md-button class="md-just-icon md-simple md-primary custom-button-task" :href="'/#/note/create/'">
                                 <md-icon ><img src="@/assets/img/plus.svg" alt="plus"></md-icon>
                                 <md-tooltip  md-direction="top">Добавить заметку</md-tooltip>
@@ -22,18 +18,6 @@
                         </div>
 
 <div class="both"></div>
-                        <div>
-                            <md-menu md-size="medium"  :md-offset-x="127" :md-offset-y="-36">
-                                <md-button class="md-primary" md-menu-trigger>Фильры</md-button>
-
-                                <md-menu-content>
-                                    <md-menu-item disabled ><a href="#">Сортировать по дате</a></md-menu-item>
-                                    <md-menu-item><a href="#">Сортировать по статусу</a></md-menu-item>
-                                    <md-menu-item><a href="#">Сортировать по названию</a></md-menu-item>
-                                    <md-menu-item><a href="#">Сортировать по приоритету</a></md-menu-item>
-                                </md-menu-content>
-                            </md-menu>
-                        </div>
                         <note-list table-header-color="green"></note-list>
                     </md-card-content>
                 </md-card>

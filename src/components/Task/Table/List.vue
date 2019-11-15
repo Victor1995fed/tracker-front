@@ -1,8 +1,13 @@
 <template>
+  <div>
+  <div class="md-layout md-gutter preloader" v-if="loader" :class="`md-alignment-center-center`">
+      <DoubleBounce></DoubleBounce>
+  </div>
   <div class="md-table-custom">
-    <md-table md-card>
+
+    <md-table md-card v-show="!loader">
       <md-table-toolbar>
-        <h1 class="md-title">Users</h1>
+<!--        <h1 class="md-title">Users</h1>-->
       </md-table-toolbar>
       <md-table-row>
         <md-table-head
@@ -92,11 +97,16 @@
       </md-table-row>
     </md-table>
   </div>
+  </div>
 </template>
 
 <script>
+  import {DoubleBounce} from 'vue-loading-spinner'
 export default {
   name: "task-list",
+  components: {
+    DoubleBounce
+  },
   props: {
     tableHeaderColor: {
       type: String,
@@ -105,6 +115,9 @@ export default {
     task: {},
     sortType: {
       default: ""
+    },
+    loader : {
+      default:true
     }
   },
   data() {
@@ -133,13 +146,6 @@ export default {
     this.setTypeSort(this.sortType)
   },
   filters: {
-    // setFormatDate: function (value) {
-    //   let date = new Date(value);
-    //   let curr_date = date.getDate();
-    //   let curr_month = date.getMonth() + 1;
-    //   let curr_year = date.getFullYear();
-    //   return curr_date + "-" + curr_month + "-" + curr_year;
-    // }
   },
   methods: {
     clickCallback: function(page) {
@@ -222,4 +228,8 @@ a.title-link {
   user-select: none; /* Non-prefixed version, currently
                                   not supported by any browser */
 }
+
+  .preloader {
+    margin:100px 0 20px 0;
+  }
 </style>

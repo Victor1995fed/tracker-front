@@ -48,6 +48,8 @@ import EmptyPage from "@/pages/404.vue";
 
 import {store} from '@/store';
 
+
+
 const ifNotAuthenticated = (to, from, next) => {
   if (!store.getters.isLoggedIn) {
     next()
@@ -64,7 +66,10 @@ const ifAuthenticated = (to, from, next) => {
   next('/login')
 }
 
+
+
 const routes = [
+
   {
     path: "/login",
     component: LoginForm,
@@ -229,5 +234,6 @@ const routes = [
     ]
   }
 ];
+
 
 export default routes;

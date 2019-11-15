@@ -1,5 +1,8 @@
 <template>
   <div class="content">
+    <div class="md-layout md-gutter preloader-view" v-if="loader" :class="`md-alignment-center-center`">
+      <DoubleBounce></DoubleBounce>
+    </div>
     <md-dialog :md-active.sync="showDialog">
       <md-dialog-title
         >Вы действительно хотите удалить эту задачу?</md-dialog-title
@@ -10,7 +13,8 @@
         <md-button class="md-danger" @click="deleteTask">Да</md-button>
       </md-dialog-actions>
     </md-dialog>
-    <div class="md-layout">
+
+    <div class="md-layout" v-if="!loader">
       <div class="md-layout-item">
         <md-card>
           <md-card-header data-background-color="green">
@@ -157,6 +161,7 @@
 
 <script>
 import axios from "axios";
+import {DoubleBounce} from 'vue-loading-spinner'
 // import repository from "@/settings.js";
 // console.warn(window.$settings);
 import {
@@ -170,7 +175,8 @@ export default {
     NavTabsCard,
     TaskTabsFiles,
     TaskTabsComment,
-    TaskTabsHistory
+    TaskTabsHistory,
+    DoubleBounce
   },
   props: {
     dataBackgroundColor: {
@@ -181,6 +187,7 @@ export default {
   data: () => ({
     showDialog: false,
     urlChildTask: "task/create",
+    loader:true,
     response: {
       task: {},
       category: {},
@@ -199,6 +206,7 @@ export default {
     // console.log(Vue.material.locale.dateFormat);
     let id = this.$route.params.id;
     this.$http.get(this.$settings.API + "task/view?id=" + id).then(response => {
+      this.loader = false
       this.response = response.data;
     });
     this.urlChildTask = "#/task/create/" + id;

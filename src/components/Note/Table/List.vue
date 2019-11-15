@@ -24,6 +24,7 @@
                     v-model="currentPage"
                     ref="paginate"
                     :force-page="2"
+                    v-if="pageCount > 1"
                     :page-count="pageCount"
                     :page-range="3"
                     :margin-pages="3"

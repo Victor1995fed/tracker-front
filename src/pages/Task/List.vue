@@ -19,19 +19,21 @@
               table-header-color="green"
               :task="task"
               :sortType="sort.sort"
+              :loader = "loader"
               @sort="applySort"
             ></task-list>
             <div class="pagination-custom">
               <paginate
                 v-model="currentPage"
+                v-if="!loader && pageCount > 1"
                 ref="paginate"
                 :force-page="2"
                 :page-count="pageCount"
                 :page-range="3"
                 :margin-pages="3"
                 :click-handler="clickCallback"
-                :prev-text="'Предыдущая'"
-                :next-text="'Следующая'"
+                :prev-text="'&#8656;'"
+                :next-text="'&#8658;'"
                 :container-class="'pagination'"
                 :page-class="'page-item'"
               >
@@ -56,13 +58,14 @@ export default {
   components: {
     TaskList,
     TaskFilter,
-    Paginate
+    Paginate,
   },
   data: () => ({
     done: true,
     form: {
       project_id: 0
     },
+    loader:true,
     task: [],
     currentPage: 1,
     pageCount: 0,
@@ -109,13 +112,24 @@ export default {
     },
     //Получить список задач
     getTask: function(url){
+      this.loader = true
+      let _this = this
       this.$http.get(url).then(response => {
-        this.task = response.data.task;
-        this.pageCount = response.data.countPage;
+
+        setTimeout(function () {
+          _this.loader = false
+          _this.task = response.data.task;
+          _this.pageCount = response.data.countPage;
+        }, 500);
+
+      }).catch(error => {
+        console.log(error)
+        throw new Error(`Something wrong happens`);
       });
     },
     //Генерим урл
     genUrl: function(page = this.currentPage) {
+
       let sortPush = Object.assign(this.paramsFilter, this.sort);
       this.$router.push({query: sortPush});
 
@@ -129,11 +143,12 @@ export default {
       this.currentPage = page
       this.$router.push('/task/list/' + page);
       let url = this.genUrl();
-      this.$http.get(url).then(response => {
-        this.task = response.data.task;
-        this.pageCount = response.data.countPage;
-        this.currentPage = page;
-      });
+      this.getTask(url);
+      // this.$http.get(url).then(response => {
+      //   this.task = response.data.task;
+      //   this.pageCount = response.data.countPage;
+      //   this.currentPage = page;
+      // });
     }
   }
 };

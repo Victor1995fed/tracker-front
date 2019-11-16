@@ -1,6 +1,10 @@
 <template>
   <div class="content">
-    <div class="md-layout md-gutter preloader-view" v-if="loader" :class="`md-alignment-center-center`">
+    <div
+      class="md-layout md-gutter preloader-view"
+      v-if="loader"
+      :class="`md-alignment-center-center`"
+    >
       <DoubleBounce></DoubleBounce>
     </div>
     <md-dialog :md-active.sync="showDialog">
@@ -128,18 +132,29 @@
                   <nav-tabs-card class="custom-tabs-view">
                     <template slot="content">
                       <md-tabs class="md-color-red">
-                        <!--                                    TODO:: Убрать описание из вкладок, оно должно всегда отображаться, ниже, по умолчанию всегда будет открыта вкладка с комментариями-->
-                        <md-tab id="tab-comment" md-label="Комментарии">
-                          <task-tabs-comment></task-tabs-comment>
+                        <template slot="md-tab" slot-scope="{ tab }">
+                          {{ tab.label }}
+                          <i class="badge noHover" v-if="tab.data.badge">{{
+                            tab.data.badge
+                          }}</i>
+                        </template>
+                        <md-tab
+                          id="tab-comment"
+                          md-label="Комментарии"
+                          :md-template-data="{ badge: countComment }"
+                        >
+                          <task-tabs-comment
+                            @countComment="setCount"
+                          ></task-tabs-comment>
                         </md-tab>
 
-                        <md-tab id="tab-files" md-label="Файлы">
+                        <md-tab id="tab-files" md-label="Файлы" :md-template-data="{ badge: response.files.length }">
                           <task-tabs-files
                             :prop="response.files"
                           ></task-tabs-files>
                         </md-tab>
-                        <md-tab id="tab-history" md-label="История">
-                            <task-tabs-history></task-tabs-history>
+                        <md-tab id="tab-history" md-label="История" :md-template-data="{ badge: countHistory }">
+                          <task-tabs-history @countHistory="setCount"></task-tabs-history>
                         </md-tab>
                       </md-tabs>
                     </template>
@@ -161,7 +176,7 @@
 
 <script>
 import axios from "axios";
-import {DoubleBounce} from 'vue-loading-spinner'
+import { DoubleBounce } from "vue-loading-spinner";
 // import repository from "@/settings.js";
 // console.warn(window.$settings);
 import {
@@ -187,7 +202,7 @@ export default {
   data: () => ({
     showDialog: false,
     urlChildTask: "task/create",
-    loader:true,
+    loader: true,
     response: {
       task: {},
       category: {},
@@ -195,6 +210,8 @@ export default {
       priority: {},
       status: {}
     },
+    countComment:0,
+    countHistory:0,
     priority: "Высокий",
     dateStart: "23.08.2019",
     dateEnd: "23.08.2019",
@@ -206,7 +223,7 @@ export default {
     // console.log(Vue.material.locale.dateFormat);
     let id = this.$route.params.id;
     this.$http.get(this.$settings.API + "task/view?id=" + id).then(response => {
-      this.loader = false
+      this.loader = false;
       this.response = response.data;
     });
     this.urlChildTask = "#/task/create/" + id;
@@ -223,8 +240,24 @@ export default {
             alert("error");
           }
         });
+    },
+    setCount: function(countObj) {
+      switch (countObj.field) {
+        case "comment":
+          this.countComment = countObj.count;
+          break;
+
+        case "file":
+          this.countFile = countObj.count;
+          break;
+
+        case "history":
+          this.countHistory = countObj.count;
+          break;
+      }
     }
   }
+
 };
 </script>
 
@@ -237,5 +270,26 @@ small {
 }
 .md-tabs-navigation {
   box-shadow: none !important;
+}
+.badge {
+  width: 19px;
+  height: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  /*top: 2px;*/
+  right: 2px;
+  /*background: gray;*/
+  border-radius: 100%;
+  color: #ccc !important;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  font-family: "Roboto Mono", monospace;
+}
+.badge:hover {
+  color: #ccc !important;
 }
 </style>

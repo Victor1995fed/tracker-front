@@ -49,6 +49,7 @@ const router = new VueRouter({
 Vue.prototype.$Chartist = Chartist;
 import {store} from './store';
 
+
 Vue.prototype.$settings = settings;
 Vue.use(VueRouter);
 Vue.use(MaterialDashboard);
@@ -95,6 +96,22 @@ if (token) {
   console.warn('TOKEN!!++',token)
   Vue.prototype.$http.defaults.headers.common['Authorization'] = 'Bearer ' + token
 }
+
+Vue.prototype.$http.interceptors.response.use(
+    function(response) {
+      return response;
+    },
+    function(error) {
+      if (error.response.status == 401) {
+        store.dispatch('logout')
+            .then(() => router.push('/login'))
+            .catch(err => {
+              console.error(err)
+            })
+        throw new Error('Invalid token detected')
+      }
+    }
+);
 
 
 /* eslint-disable no-new */

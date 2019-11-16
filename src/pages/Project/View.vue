@@ -4,7 +4,7 @@
             <md-dialog-title>Вы действительно хотите удалить этот проект?</md-dialog-title>
 
             <md-dialog-actions>
-                <md-button class="md-primary" @click="showDialog = false">Нет</md-button>
+                <md-button class="md-default" @click="showDialog = false">Нет</md-button>
                 <md-button class="md-danger" @click="deleteProject">Да</md-button>
             </md-dialog-actions>
         </md-dialog>
@@ -12,7 +12,7 @@
         <div class="md-layout-item">
             <md-card>
             <md-card-header data-background-color="green">
-                <h4 class="title">Проект:  <span>{{response.project.title}}</span></h4>
+                <h4 class="title"><span>{{response.project.title}}</span></h4>
                 <!-- <p class="category">{{task.task.title}}</p> -->
             </md-card-header>
             <md-card-content>

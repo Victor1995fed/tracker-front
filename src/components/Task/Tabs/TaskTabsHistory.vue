@@ -35,6 +35,10 @@ export default {
     let id = this.$route.params.id;
     this.$http.get(this.$settings.TASK_GET_HISTORY + "?id=" + id).then(response => {
       this.history = response.data;
+      this.$emit("countHistory", {
+        field:'history',
+        count:this.history.length
+      });
     });
   },
   methods: {}

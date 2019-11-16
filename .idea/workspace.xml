@@ -4,15 +4,13 @@
     <list default="true" id="6e239849-0685-47fe-a502-1a2637ab8794" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/scss/material-dashboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/material-dashboard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Note/Table/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Note/Table/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Task/Table/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Task/Table/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Note/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Note/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Project/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Project/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Task/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/List.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Task/Tabs/TaskTabsComment.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Task/Tabs/TaskTabsComment.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Task/Tabs/TaskTabsFiles.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Task/Tabs/TaskTabsFiles.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Task/Tabs/TaskTabsHistory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Task/Tabs/TaskTabsHistory.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Project/View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Project/View.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Task/View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/View.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -150,7 +148,8 @@
       <workItem from="1573631120643" duration="614000" />
       <workItem from="1573798957891" duration="6976000" />
       <workItem from="1573806161113" duration="3776000" />
-      <workItem from="1573812645633" duration="4982000" />
+      <workItem from="1573812645633" duration="5090000" />
+      <workItem from="1573880546102" duration="5159000" />
     </task>
     <task id="LOCAL-00001" summary="add validations for EditProject">
       <created>1567775730521</created>
@@ -404,7 +403,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573631057635</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="preloader">
+      <created>1573819561206</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1573819561206</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -426,7 +432,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="create Update.vue" />
     <MESSAGE value="add function deleteProject for View.vue" />
     <MESSAGE value="update task" />
     <MESSAGE value="relations task-&gt;project" />
@@ -451,6 +456,7 @@
     <MESSAGE value="fix bug date format" />
     <MESSAGE value="functions edit, delete for comments" />
     <MESSAGE value="history task" />
-    <option name="LAST_COMMIT_MESSAGE" value="history task" />
+    <MESSAGE value="preloader" />
+    <option name="LAST_COMMIT_MESSAGE" value="preloader" />
   </component>
 </project>

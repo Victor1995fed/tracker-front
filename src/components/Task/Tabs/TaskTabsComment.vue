@@ -36,7 +36,7 @@
         <div class="comment-date">{{ one.date_create }}</div>
       </div>
       <div class="clear-fix">
-        <div class="comment-content ql-editor" v-html="one.content">
+        <div class="comment-content" v-html="one.content">
           <!--          <p>{{ one.content }}</p>-->
         </div>
       </div>
@@ -83,6 +83,10 @@ export default {
     let id = this.$route.params.id;
     this.$http.get(this.$settings.COMMENT_LIST + "?id=" + id).then(response => {
       this.comment = response.data;
+      this.$emit("countComment", {
+        field:'comment',
+        count:this.comment.length
+      });
     });
   },
   methods: {

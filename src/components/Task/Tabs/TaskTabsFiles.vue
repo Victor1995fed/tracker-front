@@ -1,8 +1,8 @@
 <template>
     <div>
         <div class="md-layout md-centered">
-            <div class="md-layout-item">
-                <div class="link-files"  v-for="(data,index) in prop" :key="index">
+            <div class="md-layout-item" v-if="prop.length > 0">
+                <div class="link-files"   v-for="(data,index) in prop" :key="index">
                     <div class="md-layout md-layout-hover">
                         <div class="md-layout-item">{{index}}</div>
                         <div class="md-layout-item">{{data.title}}</div>
@@ -13,13 +13,19 @@
 
                 </div>
             </div>
+
+            <div class="md-layout-item" v-if="prop.length < 1">
+                <div class="link-files">
+                    <h6>Файлы не загружены</h6>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
-    import axios from 'axios';
-    // import repository from '@/settings.js';
     export default {
         name: "task-tabs-files",
         props: ['prop'],
@@ -72,6 +78,10 @@
         background-position: center center;
         margin-top: 6px;
 
+    }
+
+    .link-files {
+        min-height: 300px;
     }
 
 </style>

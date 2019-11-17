@@ -27,9 +27,11 @@
               <md-button class="md-danger" @click="deleteComment">Да</md-button>
           </md-dialog-actions>
       </md-dialog>
-    <md-button class="md-primary md-raised" @click="addComment"
-      >Добавить комментарий</md-button
-    >
+<!--    <md-button class="md-primary md-raised" @click="addComment"-->
+<!--      >Добавить комментарий</md-button-->
+<!--    >-->
+
+
     <div v-for="one in comment" class="custom-layout clear-fix">
       <div class="clear-fix">
         <div class="comment-icon"><md-icon>comment</md-icon></div>
@@ -54,6 +56,14 @@
         </md-button>
       </div>
     </div>
+    <md-button
+            @click="addComment"
+            class=" md-primary md-simple md-just-icon clear-fix"
+    >
+<!--      <md-icon class="md-size-5x">add_comment</md-icon>-->
+            <md-icon>add_comment</md-icon>
+      <md-tooltip md-direction="top">Добавить комментарий</md-tooltip>
+    </md-button>
   </div>
 </template>
 
@@ -128,7 +138,7 @@ export default {
           data => {
             if (data) {
               this.showDialog = false;
-              //TODO:: Добавить динамическое обновление кмпонента с комментариями
+              //TODO:: Добавить динамическое обновление компонента с комментариями
                 _this.$router.go(_this.$router.path)
             } else {
               alert("error" + data.message);
@@ -191,4 +201,8 @@ export default {
   height: 0px;
   visibility: hidden;
 }
+
+  .add-comment {
+    float: left !important;
+  }
 </style>

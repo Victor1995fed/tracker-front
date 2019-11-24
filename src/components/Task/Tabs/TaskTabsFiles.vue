@@ -44,7 +44,7 @@
                 </div>
             </div>
         </div>
-    </div>
+<!--    </div>-->
 </template>
 
 <script>
@@ -67,7 +67,7 @@
                 this.showDialogDel = true
             },
             deleteFile(){
-                this.$http.get(this.$settings.API + 'file/delete?uuid='+this.uuidFile).then(response => {
+                this.$http.delete(this.$settings.TASK_FILE_DELETE + '?uuid='+this.uuidFile+'&id='+this.$route.params.id).then(response => {
                     this.response = response.data
                     this.$router.go()
                 })

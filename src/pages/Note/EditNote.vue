@@ -115,11 +115,11 @@
                     url: this.$settings.API + this.action + ((taskId !== undefined) ? '?id='+taskId : ''),
                     data: formData,
                     transformResponse: [(data) => {
-                        if (data.result) {
-                            _this.$router.push('/note/view/'+data.id);
+                        if (data) {
+                            _this.$router.push('/note/view/'+data);
                         }
                         else{
-                            alert('error'+data.message)
+                            alert('error')
                         }
                     }]
                 };

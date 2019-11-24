@@ -2,12 +2,14 @@ const ApiUrl = "http://tracker-api.zz/";
 
 export const settings = {
   API: ApiUrl,
+
   TASK_CREATE: ApiUrl + "task/create",
   TASK_UPDATE: ApiUrl + "task/update",
   TASK_LIST: ApiUrl + "task/index",
   TASK_VIEW: ApiUrl + "task/view",
   TASK_DELETE: ApiUrl + "task/delete",
   TASK_GET_HISTORY: ApiUrl + "task/get-history",
+  TASK_FILE_DELETE:ApiUrl+"task/file-delete",
 
   PROJECT_CREATE: ApiUrl + "project/create",
   PROJECT_UPDATE: ApiUrl + "project/update",
@@ -30,7 +32,7 @@ export const settings = {
   COMMENT_LIST: ApiUrl + "comment/list",
   COMMENT_CREATE: ApiUrl + "comment/create",
   COMMENT_UPDATE: ApiUrl + "comment/update",
-  COMMENT_DELETE: ApiUrl + "comment/delete",
+  COMMENT_DELETE: ApiUrl + "C",
 
   //Constants for sort
   TASK_SORT_ID: 1,
@@ -40,6 +42,8 @@ export const settings = {
   TASK_SORT_PRIORITY: 5,
   TASK_SORT_DATE_END: 6,
 
+
+  //Files
   //  DATE FORMAT
   //   DATE_FORMAT:"YYYY-MM-DD"
   DATE_FORMAT: "DD-MM-YYYY",

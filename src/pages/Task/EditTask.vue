@@ -291,8 +291,8 @@ export default {
         data: formData,
         transformResponse: [
           data => {
-            if (data.result) {
-              _this.$router.push("/task/view/" + data.id);
+            if (data) {
+              _this.$router.push("/task/view/" + data);
             } else {
               alert("error" + data.message);
             }

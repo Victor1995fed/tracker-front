@@ -3,6 +3,16 @@
   <div class="md-layout md-gutter preloader" v-if="loader" :class="`md-alignment-center-center`">
       <DoubleBounce></DoubleBounce>
   </div>
+    <md-dialog :md-active.sync="showDialog">
+      <md-dialog-title
+      >Вы действительно хотите удалить эту задачу?</md-dialog-title
+      >
+
+      <md-dialog-actions>
+        <md-button @click="showDialog = false">Нет</md-button>
+        <md-button class="md-danger" @click="deleteTask">Да</md-button>
+      </md-dialog-actions>
+    </md-dialog>
   <div class="md-table-custom">
 
     <md-table md-card v-show="!loader">
@@ -94,6 +104,13 @@
           ><span v-if="item.date_end !== null">{{item.date_end | setFormatDate }}</span
           ><span v-else>&mdash;</span></md-table-cell
         >
+        <md-table-cell> <md-button
+                @click="taskSetId(item.id)"
+                class="md-just-icon md-simple md-danger"
+        >
+          <md-icon>delete</md-icon>
+          <md-tooltip md-direction="top">удалить</md-tooltip>
+        </md-button></md-table-cell>
       </md-table-row>
     </md-table>
   </div>
@@ -124,6 +141,7 @@ export default {
     return {
       selected: [],
       users: [],
+      showDialog:false,
       sortName: {
         id: this.$settings.TASK_SORT_ID,
         title: this.$settings.TASK_SORT_THEME,
@@ -148,6 +166,22 @@ export default {
   filters: {
   },
   methods: {
+    deleteTask: function(){
+      let _this = this;
+      this.$http
+              .delete(this.$settings.TASK_DELETE + "?id=" + this.taskId)
+              .then(function(response) {
+                if (response.data) {
+                  _this.$router.go(_this.$router.path)
+                } else {
+                  alert("error");
+                }
+              });
+    },
+    taskSetId:function(uuid){
+      this.taskId = uuid
+      this.showDialog = true;
+    },
     clickCallback: function(page) {
       this.
       console.log(page);

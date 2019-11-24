@@ -10,8 +10,6 @@
 
 <script>
     import  {EditNote}  from "@/pages";
-    import axios from 'axios';
-    import repository from '@/settings.js';
 
     export default {
         components: {
@@ -25,7 +23,7 @@
         },
         mounted() {
             let id = this.$route.params.id;
-            axios.get(repository.API+'note/view?id='+id).then(response => {
+            this.$http.get(this.$settings.NOTE_VIEW+'?id='+id).then(response => {
                 this.form = response.data.note
                 //Сброс трудозатрат
             })

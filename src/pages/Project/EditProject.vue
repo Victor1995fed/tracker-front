@@ -153,8 +153,8 @@ export default {
             url: this.action + ((projectId !== undefined) ? '?id='+projectId : ''),
             data: formData,
             transformResponse: [(data) => {
-                if (data.result) {
-                    _this.$router.push('/project/view/'+data.id);
+                if (data) {
+                    _this.$router.push('/project/view/'+data);
                 }
                 else{
                     alert('error'+data.message)

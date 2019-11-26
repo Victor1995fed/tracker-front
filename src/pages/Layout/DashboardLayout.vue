@@ -12,7 +12,7 @@
 
 
       <sidebar-link to="/project/list">
-        <md-icon>dashboard</md-icon>
+        <md-icon>developer_board</md-icon>
         <p>Проекты</p>
       </sidebar-link>
 
@@ -25,27 +25,28 @@
 
 
       <sidebar-link to="/notifications">
-        <md-icon>notifications</md-icon>
+        <md-icon>bookmarks</md-icon>
         <p>Метки</p>
       </sidebar-link>
 
-      <sidebar-link to="/notifications3">
-        <md-icon>notifications</md-icon>
-        <p>Шаблоны</p>
-      </sidebar-link>
-      <sidebar-link to="/note">
-        <md-icon>notifications</md-icon>
-        <p>Заметки</p>
-      </sidebar-link>
+<!--      <sidebar-link to="/notifications3">-->
+<!--        <md-icon>notifications</md-icon>-->
+<!--        <p>Шаблоны</p>-->
+<!--      </sidebar-link>-->
 
       <sidebar-link to="/user">
         <md-icon>person</md-icon>
         <p>Профиль</p>
       </sidebar-link>
+      <sidebar-link to="/note">
+        <md-icon>menu_book</md-icon>
+        <p>Заметки</p>
+      </sidebar-link>
+
 
       <sidebar-link to="/user4">
-        <md-icon>person</md-icon>
-        <p>Мои действия</p>
+        <md-icon>show_chart</md-icon>
+        <p>Статистика</p>
       </sidebar-link>
 
 <!--      ############################-->

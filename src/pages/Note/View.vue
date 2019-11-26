@@ -91,7 +91,7 @@
         methods: {
             deleteTask() {
                 let _this = this
-                axios.delete(repository.API+'note/delete?id='+this.$route.params.id)
+                axios.delete(this.$settings.NOTE_DELETE+'?id='+this.$route.params.id)
                     .then(function(response){
                         if (response.data) {
                             _this.$router.push('/note/list');

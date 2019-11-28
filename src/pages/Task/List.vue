@@ -15,6 +15,8 @@
               :period="paramsFilter.period"
               table-header-color="green"
             ></task-filter>
+
+            <task-tag></task-tag>
             <task-list
               table-header-color="green"
               :task="task"
@@ -50,8 +52,9 @@
 </template>
 
 <script>
-import { TaskList } from "@/components";
-import { TaskFilter } from "@/components";
+import { TaskList, TaskFilter,TaskTag  } from "@/components";
+// import {  } from "@/components";
+// import { TaskTag } from "@/components";
 import Paginate from "vuejs-paginate";
 
 export default {
@@ -59,6 +62,7 @@ export default {
     TaskList,
     TaskFilter,
     Paginate,
+    TaskTag
   },
   data: () => ({
     done: true,

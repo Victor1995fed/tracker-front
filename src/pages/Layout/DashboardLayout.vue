@@ -21,13 +21,16 @@
         <p>Задачи</p>
       </sidebar-link>
 
-
-
-
-      <sidebar-link to="/notifications">
-        <md-icon>bookmarks</md-icon>
-        <p>Метки</p>
+      <sidebar-link to="/note">
+        <md-icon>menu_book</md-icon>
+        <p>Заметки</p>
       </sidebar-link>
+
+
+<!--      <sidebar-link to="/notifications">-->
+<!--        <md-icon>bookmarks</md-icon>-->
+<!--        <p>Метки</p>-->
+<!--      </sidebar-link>-->
 
 <!--      <sidebar-link to="/notifications3">-->
 <!--        <md-icon>notifications</md-icon>-->
@@ -38,10 +41,7 @@
         <md-icon>person</md-icon>
         <p>Профиль</p>
       </sidebar-link>
-      <sidebar-link to="/note">
-        <md-icon>menu_book</md-icon>
-        <p>Заметки</p>
-      </sidebar-link>
+
 
 
       <sidebar-link to="/user4">
@@ -50,7 +50,10 @@
       </sidebar-link>
 
 <!--      ############################-->
-
+      <sidebar-link to="/user5">
+        <md-icon>school</md-icon>
+        <p>wiki</p>
+      </sidebar-link>
 
 
 <!--      Мусор!!!-->

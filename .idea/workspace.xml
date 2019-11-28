@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e239849-0685-47fe-a502-1a2637ab8794" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Task/Tags/TaskTag.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/material-dashboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/material-dashboard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SidebarPlugin/SideBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SidebarPlugin/SideBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Layout/DashboardLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Layout/DashboardLayout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Note/View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Note/View.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Task/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/List.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="XSLT Stylesheet" />
         <option value="Vue Single File Component" />
       </list>
     </option>
@@ -152,7 +157,9 @@
       <workItem from="1574418798612" duration="662000" />
       <workItem from="1574584777024" duration="3261000" />
       <workItem from="1574675160049" duration="709000" />
-      <workItem from="1574767352357" duration="595000" />
+      <workItem from="1574767352357" duration="2114000" />
+      <workItem from="1574852390127" duration="843000" />
+      <workItem from="1574937585207" duration="1640000" />
     </task>
     <task id="LOCAL-00001" summary="add validations for EditProject">
       <created>1567775730521</created>
@@ -434,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574588338106</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="icons">
+      <created>1574767992306</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1574767992306</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -456,7 +470,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="add select for statuses" />
     <MESSAGE value="parent task and field spending" />
     <MESSAGE value="view status for project, parent category" />
     <MESSAGE value="refactor category update" />
@@ -481,6 +494,7 @@
     <MESSAGE value="code refactor" />
     <MESSAGE value="refactor style #1" />
     <MESSAGE value="change url for delete file" />
-    <option name="LAST_COMMIT_MESSAGE" value="change url for delete file" />
+    <MESSAGE value="icons" />
+    <option name="LAST_COMMIT_MESSAGE" value="icons" />
   </component>
 </project>

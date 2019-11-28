@@ -15,6 +15,7 @@ import TaskTabsComment from "./Task/Tabs/TaskTabsComment.vue";
 import TaskTabsHistory from "./Task/Tabs/TaskTabsHistory.vue";
 import TaskList from "./Task/Table/List.vue";
 import TaskFilter from "./Task/Filter/TableFilter.vue";
+import TaskTag from "./Task/Tags/TaskTag";
 
 import NoteList from "./Note/Table/List.vue";
 //tools
@@ -38,5 +39,6 @@ export {
   TaskList,
   NoteList,
   TaskFilter,
-  TaskTabsHistory
+  TaskTabsHistory,
+  TaskTag
 };

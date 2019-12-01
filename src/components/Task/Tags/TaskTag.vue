@@ -3,15 +3,9 @@
 <div>
     <div class="tag-list">
 <!--    <h4>Ваши метки</h4>-->
-    <md-chip md-clickable md-deletable>Clickable1</md-chip>
-    <md-chip md-clickable md-deletable>Clickable2</md-chip>
-    <md-chip md-clickable md-deletable>Clickable3</md-chip>
-        <md-button
-                class="md-just-icon md-simple md-primary"
-        >
-            <md-icon>add</md-icon>
-            <md-tooltip md-direction="top">Добавить метку</md-tooltip>
-        </md-button>
+    <md-chip md-clickable>Clickable1</md-chip>
+    <md-chip md-clickable>Clickable2</md-chip>
+    <md-chip md-clickable>Clickable3</md-chip>
     </div>
 
     <div class="tag-choice">

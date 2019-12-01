@@ -32,8 +32,13 @@ export const settings = {
   COMMENT_LIST: ApiUrl + "comment/list",
   COMMENT_CREATE: ApiUrl + "comment/create",
   COMMENT_UPDATE: ApiUrl + "comment/update",
-  COMMENT_DELETE: ApiUrl + "C",
+  COMMENT_DELETE: ApiUrl + "comment/delete",
 
+  //Tags
+  TAG_LIST: ApiUrl+"tag/list",
+  TAG_CREATE: ApiUrl+"tag/create",
+  TAG_UPDATE: ApiUrl+"tag/update",
+  TAG_DELETE: ApiUrl + "tag/delete",
   //Constants for sort
   TASK_SORT_ID: 1,
   TASK_SORT_THEME: 2,
@@ -41,6 +46,7 @@ export const settings = {
   TASK_SORT_STATUS: 4,
   TASK_SORT_PRIORITY: 5,
   TASK_SORT_DATE_END: 6,
+
 
 
   //Files

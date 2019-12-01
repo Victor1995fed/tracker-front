@@ -22,6 +22,7 @@ import NoteList from "./Note/Table/List.vue";
 import Pagination from "./Tools/Pagination.vue";
 //helpers
 import  SnackbarError from "./Helpers/SnackbarError.vue";
+import  SnackbarSuccess from "./Helpers/SnackbarSuccess";
 
 export {
   SnackbarError,
@@ -40,5 +41,6 @@ export {
   NoteList,
   TaskFilter,
   TaskTabsHistory,
-  TaskTag
+  TaskTag,
+  SnackbarSuccess
 };

@@ -27,10 +27,10 @@
       </sidebar-link>
 
 
-<!--      <sidebar-link to="/notifications">-->
-<!--        <md-icon>bookmarks</md-icon>-->
-<!--        <p>Метки</p>-->
-<!--      </sidebar-link>-->
+      <sidebar-link to="/tag/list">
+        <md-icon>bookmarks</md-icon>
+        <p>Метки</p>
+      </sidebar-link>
 
 <!--      <sidebar-link to="/notifications3">-->
 <!--        <md-icon>notifications</md-icon>-->

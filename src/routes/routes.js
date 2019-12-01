@@ -19,6 +19,8 @@ import TableList from "@/pages/Task/List.vue";
 import TaskUpdate from "@/pages/Task/Update.vue";
 import TaskCreate from "@/pages/Task/Create.vue";
 
+//Tag
+import TagList from "@/pages/Tag/List.vue";
 
 //Note
 import NoteView from "@/pages/Note/View.vue";
@@ -199,6 +201,12 @@ const routes = [
           name: "Редактирование проекта",
           component: TaskUpdate,
       },
+      {
+        path: "tag/list",
+        name: "Метки",
+        component: TagList
+      },
+
       {
         path: "typography",
         name: "Typography",

@@ -95,10 +95,8 @@
                 <div class="md-layout">
                   <div class="md-layout-item">
                     <p>
-                      <span class="md-body-2">Метки:</span>
-                      <md-chip md-clickable>Clickable1</md-chip>
-                      <md-chip md-clickable>Clickable2</md-chip>
-                      <md-chip md-clickable>Clickable3</md-chip>
+                      <span class="md-body-2">Метки: </span>
+                      <md-chip v-for="(item, index) in response.tag" md-clickable>{{item.title}}</md-chip>
                     </p>
                   </div>
                   <div class="md-layout-item">
@@ -208,7 +206,8 @@ export default {
       category: {},
       files: {},
       priority: {},
-      status: {}
+      status: {},
+      tag:{}
     },
     countComment:0,
     countHistory:0,

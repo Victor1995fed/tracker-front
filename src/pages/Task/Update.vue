@@ -25,6 +25,12 @@
             let id = this.$route.params.id;
             this.$http.get(this.$settings.TASK_VIEW+'?id='+id).then(response => {
                 this.form = response.data.task
+                let tagId = [];
+                //Возаращаем только id для меток
+                for (var key in response.data.tag) {
+                     tagId.push(String(response.data.tag[key]['id']))
+                }
+                this.form.tag = tagId
                 //Сброс трудозатрат
                 this.form.spending = 0
                 //Замена формата даты

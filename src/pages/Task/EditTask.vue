@@ -36,7 +36,7 @@
               >
             </md-field>
           </div>
-
+        <!-- TODO: Возможно, отказаться от стандартной валидации на vue material, ошибки показывать через подсвечивание поля и всплывающий текст-->
           <div class="md-layout-item md-size-100">
             <label>Описание</label>
             <md-field maxlength="5">
@@ -46,7 +46,7 @@
               <!-- <md-textarea v-model="description"></md-textarea> -->
             </md-field>
           </div>
-          <div class="md-layout-item md-small-size-100 md-size-33">
+          <div class="md-layout-item md-small-size-100 md-size-50">
             <md-field>
               <label>Приоритет</label>
               <md-select
@@ -64,33 +64,18 @@
             </md-field>
           </div>
 
-          <div class="md-layout-item md-small-size-100 md-size-33">
-            <md-field>
-              <label>Категория</label>
-              <md-select
-                name="category"
-                id="category"
-                v-model="form.category_id"
-              >
-                <md-option
-                  v-for="one in response.category"
-                  :value="one.id"
-                  v-bind:key="one.id"
-                  >{{ one.title }}
-                </md-option>
-              </md-select>
-            </md-field>
-          </div>
 
-          <div class="md-layout-item md-small-size-100 md-size-33">
+        <!--TODO: Добавить возможность создания и поиска меток прямо из формы-->
+          <div class="md-layout-item md-small-size-100 md-size-50">
             <md-field>
               <label>Метки</label>
-              <md-select name="tag" id="tag" v-model="form.tag">
+<!--              FIXME: Бага со значением по умолчанию, в поле значения подставились, а чекбоксы не отмечены-->
+              <md-select name="tag" id="tag" v-model="form.tag" multiple>
                 <md-option
-                  v-for="one in tag"
-                  :value="one.value"
+                  v-for="one in response.tag"
+                  :value="one.id"
                   v-bind:key="one.value"
-                  >{{ one.name }}
+                  >{{ one.title }}
                 </md-option>
               </md-select>
             </md-field>
@@ -209,7 +194,8 @@ export default {
         dataFile: null,
         project_id: null,
         status_id: null,
-        parent_id: null
+        parent_id: null,
+        readiness: null
       }
     },
     action: {},
@@ -227,16 +213,7 @@ export default {
       dateStart: null,
       dateEnd: null,
       file: null,
-      tag: [
-        {
-          name: "Таг1",
-          value: 1
-        },
-        {
-          name: "Таг12",
-          value: 2
-        }
-      ]
+      tag: []
     };
   },
   methods: {
@@ -276,9 +253,16 @@ export default {
         }
       }
       if (this.form.dataFile != null) {
-        for (var i = 0; i < this.form.dataFile.length; i++) {
+        for (let i = 0; i < this.form.dataFile.length; i++) {
           let file = this.form.dataFile[i];
           formData.append("file[]", file);
+        }
+      }
+      //Добавление меток
+      if (this.form.tag != null) {
+        for (let i = 0; i < this.form.tag.length; i++) {
+          let tag = this.form.tag[i];
+          formData.append("tagArray[]", tag);
         }
       }
       let taskId = this.$route.params.id;

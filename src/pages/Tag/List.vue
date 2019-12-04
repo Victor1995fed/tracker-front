@@ -110,7 +110,7 @@
         },
         methods: {
             saveTag: function () {
-                //TODO:: Вынести функцию в глобальный объект
+                //TODO:: Вынести функцию в глобальный объект, избавиться от дублирования
                 let _this = this;
                 let formData = new FormData();
                 for (var key in this.newTagForm) {

@@ -101,3 +101,9 @@
 .tag-list button, .tag-choice button {
   border-radius: 50% ;
 }
+
+//Баг с мультиселектом
+.md-ripple .md-list-item-text
+{
+  position: relative !important;
+}

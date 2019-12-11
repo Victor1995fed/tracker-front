@@ -42,6 +42,7 @@
                                 <md-input
                                         @focus="edit(data)"
                                         @blur="update(data)"
+
                                         v-model="data.title"
                                         autocomplete="given-name"
                                 ></md-input>
@@ -52,6 +53,7 @@
                         <div class="md-layout-item custom-layout">
                             <md-button
                                     class="md-just-icon md-simple md-primary"
+                                    :href="'/#/task/list' + '?tags='+data.id"
                             >
                                 <md-icon>list_alt</md-icon>
                                 <md-tooltip md-direction="top">Показать задачи</md-tooltip>

@@ -53,8 +53,6 @@
 
 <script>
 import { TaskList, TaskFilter,TaskTag  } from "@/components";
-// import {  } from "@/components";
-// import { TaskTag } from "@/components";
 import Paginate from "vuejs-paginate";
 
 export default {
@@ -77,7 +75,8 @@ export default {
       done: 0,
       period: "0"
     },
-    sort: {}
+    sort: {},
+    tags: [1,6]
   }),
   created() {
     this.createFilter();
@@ -133,14 +132,23 @@ export default {
     },
     //Генерим урл
     genUrl: function(page = this.currentPage) {
-
-      let sortPush = Object.assign(this.paramsFilter, this.sort);
+      this.tags = this.$route.query.tags;
+      if(this.tags !== undefined)
+          this.tags = this.tags.split(',')
+      console.warn('tags',this.$route.query.tags)
+      let sortPush = Object.assign(this.paramsFilter, this.sort,{tags:this.$route.query.tags});
+      //TODO:: Причесать код
       this.$router.push({query: sortPush});
-
       let url = this.$settings.TASK_LIST + "?page=" + page;
-      for (var key in this.$route.query) {
+      for (let key in this.$route.query) {
           url = url + "&" + key + "=" + this.$route.query[key];
       }
+      //Добавление меток
+      for (let key in this.tags){
+        url = url + "&" + 'tag[]' + "=" + this.tags[key];
+      }
+        //Пример формирования строки для передачи параметров
+       // url = url+'&'+'tag[]' + '=' + 6 + '&'+'tag[]' + '=' + 1;
       return url;
     },
     clickCallback: function(page) {
@@ -148,11 +156,6 @@ export default {
       this.$router.push('/task/list/' + page);
       let url = this.genUrl();
       this.getTask(url);
-      // this.$http.get(url).then(response => {
-      //   this.task = response.data.task;
-      //   this.pageCount = response.data.countPage;
-      //   this.currentPage = page;
-      // });
     }
   }
 };

@@ -69,7 +69,6 @@
           <div class="md-layout-item md-small-size-100 md-size-50">
             <md-field>
               <label>Метки</label>
-<!--              FIXME: Бага со значением по умолчанию, в поле значения подставились, а чекбоксы не отмечены-->
               <md-select name="tag" id="tag" v-model="form.tag" multiple>
                 <md-option
                   v-for="one in response.tag"

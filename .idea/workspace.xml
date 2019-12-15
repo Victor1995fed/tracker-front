@@ -4,8 +4,7 @@
     <list default="true" id="6e239849-0685-47fe-a502-1a2637ab8794" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Tag/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Tag/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Task/Tags/TaskTag.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Task/Tags/TaskTag.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Task/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/List.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,7 +41,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="D:\Programs\WebStorm 2019.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
@@ -167,7 +166,9 @@
       <workItem from="1575206387761" duration="81000" />
       <workItem from="1575456784332" duration="9479000" />
       <workItem from="1575708375875" duration="1374000" />
-      <workItem from="1576061791579" duration="1806000" />
+      <workItem from="1576061791579" duration="2170000" />
+      <workItem from="1576147403976" duration="1454000" />
+      <workItem from="1576378662844" duration="7796000" />
     </task>
     <task id="LOCAL-00001" summary="add validations for EditProject">
       <created>1567775730521</created>
@@ -477,7 +478,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575466348415</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="search by tags">
+      <created>1576063721834</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1576063721834</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -499,7 +507,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="refactor task and project" />
     <MESSAGE value="editing frontend" />
     <MESSAGE value="add Authorization header" />
     <MESSAGE value="view loginForm" />
@@ -524,6 +531,7 @@
     <MESSAGE value="add tags" />
     <MESSAGE value="tags CRUD" />
     <MESSAGE value="task-tags relations" />
-    <option name="LAST_COMMIT_MESSAGE" value="task-tags relations" />
+    <MESSAGE value="search by tags" />
+    <option name="LAST_COMMIT_MESSAGE" value="search by tags" />
   </component>
 </project>

@@ -16,7 +16,11 @@
               table-header-color="green"
             ></task-filter>
 
-            <task-tag></task-tag>
+            <task-tag
+                    @filter="tagFilter"
+                    :tagsUrl = "tags"
+            >
+            </task-tag>
             <task-list
               table-header-color="green"
               :task="task"
@@ -76,7 +80,7 @@ export default {
       period: "0"
     },
     sort: {},
-    tags: [1,6]
+    tags: []
   }),
   created() {
     this.createFilter();
@@ -98,6 +102,12 @@ export default {
       this.getTask(url)
       console.warn(url);
     },
+    tagFilter: function(params) {
+      console.warn('PARAMS',params.id)
+      this.tags = params.id
+      console.warn('TAGS',this.tags)
+      this.getTask(this.genUrl())
+    },
     createFilter: function(){
       if(this.$route.query.sort !== undefined)
           this.sort.sort = this.$route.query.sort;
@@ -105,6 +115,8 @@ export default {
         this.paramsFilter.done = this.$route.query.done;
       if(this.$route.query.period !== undefined)
         this.paramsFilter.period = this.$route.query.period;
+      if(this.$route.query.tags !== undefined)
+        this.tags = this.$route.query.tags.split(',')
     },
     //Получаем параметры сортировки из TaskList
     applySort: function(sort) {
@@ -132,11 +144,12 @@ export default {
     },
     //Генерим урл
     genUrl: function(page = this.currentPage) {
-      this.tags = this.$route.query.tags;
-      if(this.tags !== undefined)
-          this.tags = this.tags.split(',')
-      console.warn('tags',this.$route.query.tags)
-      let sortPush = Object.assign(this.paramsFilter, this.sort,{tags:this.$route.query.tags});
+      // this.tags = this.$route.query.tags;
+      // if(this.tags !== undefined)
+      //     this.tags = this.tags.split(',')
+      // console.warn('tags',this.$route.query.tags)
+      // let sortPush = Object.assign(this.paramsFilter, this.sort,{tags:this.$route.query.tags});
+      let sortPush = Object.assign(this.paramsFilter, this.sort,{tags:this.tags.join()});
       //TODO:: Причесать код
       this.$router.push({query: sortPush});
       let url = this.$settings.TASK_LIST + "?page=" + page;

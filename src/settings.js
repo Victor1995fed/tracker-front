@@ -53,5 +53,8 @@ export const settings = {
   //  DATE FORMAT
   //   DATE_FORMAT:"YYYY-MM-DD"
   DATE_FORMAT: "DD-MM-YYYY",
-  DATE_FORMAT_TO_SERVER: "YYYY-MM-DD"
+  DATE_FORMAT_TO_SERVER: "YYYY-MM-DD",
+
+  //PRIORITY
+
 };

@@ -66,28 +66,42 @@
                 <div class="md-layout">
                   <div class="md-layout-item">
                     <p>
-                      <span class="md-body-2">Статус:</span>
-                      {{ response.status.title }}
+
+                      <span class="md-body-2" style="color:#5b80a3">
+                        <md-tooltip md-direction="top">Статус</md-tooltip>
+                        <md-icon>event_note</md-icon> {{ response.status.title }}</span>
+
                     </p>
                   </div>
                   <div class="md-layout-item">
                     <p>
-                      <span class="md-body-2">Дата начала:</span>
-                      {{ response.task.date_start | setFormatDate }}
+                      <span class="md-body-2">
+                         <md-tooltip md-direction="top">Дата начала</md-tooltip>
+                        <md-icon>event</md-icon>
+                        {{ response.task.date_start | setFormatDate }}</span>
+
                     </p>
                   </div>
                 </div>
                 <div class="md-layout">
                   <div class="md-layout-item">
                     <p>
-                      <span class="md-body-2">Приоритет:</span>
-                      {{ response.priority.title }}
+                      <span class="md-body-2">
+                        <md-tooltip md-direction="top">Приоритет</md-tooltip>
+                        <md-icon>warning</md-icon>
+                     <span > {{ response.priority.title }}</span>
+                      </span>
+
                     </p>
                   </div>
                   <div class="md-layout-item">
                     <p>
-                      <span class="md-body-2">Дата завершения:</span>
-                      {{ response.task.date_end | setFormatDate }}
+                      <span class="md-body-2">
+                        <md-tooltip md-direction="top">Дата завершения</md-tooltip>
+                        <md-icon>event_busy</md-icon>
+                        {{ response.task.date_end | setFormatDate }}
+                        </span>
+
                     </p>
                   </div>
                 </div>
@@ -95,14 +109,23 @@
                 <div class="md-layout">
                   <div class="md-layout-item">
                     <p>
-                      <span class="md-body-2">Метки: </span>
+                      <span class="md-body-2">
+                          <md-tooltip md-direction="top">Метки</md-tooltip>
+                        <md-icon>bookmarks</md-icon>
+                        </span>
                       <md-chip v-for="(item, index) in response.tag" md-clickable>{{item.title}}</md-chip>
+
+
                     </p>
                   </div>
                   <div class="md-layout-item">
                     <p>
-                      <span class="md-body-2">Потрачено(ч):</span>
+                      <span class="md-body-2">
+                         <md-tooltip md-direction="top">Потрачено(ч)</md-tooltip>
+                        <md-icon>access_time</md-icon>
                       {{ response.task.spending }}
+                      </span>
+
                     </p>
                   </div>
                 </div>
@@ -110,7 +133,11 @@
                 <div class="md-layout">
                   <div class="md-layout-item">
                     <p>
-                      <span class="md-body-2">Готовность:</span>
+                      <span class="md-body-2">
+                          <md-tooltip md-direction="top">Готовность</md-tooltip>
+                        <md-icon>done_outline</md-icon>
+
+                      </span>
                       <span>{{ response.task.readiness }}</span
                       >%
                     </p>

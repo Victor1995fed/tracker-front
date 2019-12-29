@@ -1,9 +1,9 @@
 <template>
   <div>
-    <md-dialog :md-active.sync="showDialog">
+    <md-dialog class="md-scrollbar" :md-active.sync="showDialog">
+      <md-dialog-content>
       <md-dialog-title>Комментарий</md-dialog-title>
       <div class="md-layout-item md-size-100">
-        <label>Описание</label>
         <md-field maxlength="5">
           <div id="app">
             <vue-editor v-model="form.content"></vue-editor>
@@ -17,6 +17,7 @@
         >
         <md-button class="md-primary" @click="saveComment">Сохранить</md-button>
       </md-dialog-actions>
+      </md-dialog-content>
     </md-dialog>
 
       <md-dialog :md-active.sync="showDialogDel">

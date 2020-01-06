@@ -17,6 +17,9 @@ import TaskList from "./Task/Table/List.vue";
 import TaskFilter from "./Task/Filter/TableFilter.vue";
 import TaskTag from "./Task/Tags/TaskTag";
 
+//Search
+import SearchField from "./Search/SearchField";
+
 import NoteList from "./Note/Table/List.vue";
 //tools
 import Pagination from "./Tools/Pagination.vue";
@@ -42,5 +45,6 @@ export {
   TaskFilter,
   TaskTabsHistory,
   TaskTag,
-  SnackbarSuccess
+  SnackbarSuccess,
+  SearchField
 };

@@ -39,6 +39,9 @@ export const settings = {
   TAG_CREATE: ApiUrl+"tag/create",
   TAG_UPDATE: ApiUrl+"tag/update",
   TAG_DELETE: ApiUrl + "tag/delete",
+
+  //SEARCH
+  APP_SEARCH: ApiUrl + "app/search",
   //Constants for sort
   TASK_SORT_ID: 1,
   TASK_SORT_THEME: 2,
@@ -46,6 +49,9 @@ export const settings = {
   TASK_SORT_STATUS: 4,
   TASK_SORT_PRIORITY: 5,
   TASK_SORT_DATE_END: 6,
+
+
+
 
 
 

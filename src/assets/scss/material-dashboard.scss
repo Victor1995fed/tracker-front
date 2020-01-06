@@ -102,8 +102,9 @@
   border-radius: 50% ;
 }
 
-//Баг с мультиселектом
+//fix bug multiselect
 .md-ripple .md-list-item-text
 {
   position: relative !important;
 }
+

@@ -3,7 +3,6 @@
         <div class="md-layout md-gutter preloader-view" v-if="loader" :class="`md-alignment-center-center`">
             <DoubleBounce></DoubleBounce>
         </div>
-<!--        <md-progress-spinner disabled="true" :md-diameter="100" :md-stroke="10" md-mode="indeterminate"></md-progress-spinner>-->
         <div>
 <div v-if="!loader">
         <md-card v-for="(item, index) in project" md-medium  class="md-primary" md-theme="md-theme">
@@ -29,17 +28,6 @@
                             <md-tooltip md-direction="top">Добавить проект</md-tooltip>
                         </md-button>
                     </div>
-
-<!--                    <md-button-->
-<!--                            href="/#/project/create"-->
-<!--                            class="md-just-icon md-simple md-success"-->
-
-<!--                    >-->
-<!--                        <md-icon class="md-size-2x">add</md-icon>-->
-
-<!--                        <md-tooltip md-direction="top">Добавить проект</md-tooltip>-->
-<!--                    </md-button>-->
-<!--                        <md-button class="md-success"  href="/#/project/create" >Добавить проект</md-button>-->
                 </md-card-content>
             </md-card>
 </div>

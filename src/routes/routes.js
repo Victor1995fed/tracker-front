@@ -40,6 +40,8 @@ import Maps from "@/pages/Maps.vue";
 import Notifications from "@/pages/Notifications.vue";
 import UpgradeToPRO from "@/pages/UpgradeToPRO.vue";
 
+//Search
+import Search from "@/pages/Search/Search.vue";
 //LoginForm
 
 import LoginForm from "@/pages/LoginForm.vue";
@@ -117,11 +119,11 @@ const routes = [
         component: NoteList
       },
 
-      // {
-      //   path: "login",
-      //   name: "Авторизация",
-      //   component: LoginForm
-      // },
+      {
+        path: "search/:str?",
+        name: "Поиск",
+        component: Search
+      },
       {
         path:'test/:id?',
         name: "Тестирование",

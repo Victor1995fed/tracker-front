@@ -17,13 +17,18 @@
 
         <div class="md-collapse">
           <div class="md-autocomplete">
-            <md-autocomplete
-              class="search"
-              v-model="selectedEmployee"
-              :md-options="employees"
-            >
-              <label>Search...</label>
-            </md-autocomplete>
+              <search-field></search-field>
+<!--            <md-field class="search" v-model="selectedEmployee">-->
+<!--              <label>Поиск...</label>-->
+<!--              <md-input v-model="initial"></md-input>-->
+<!--            </md-field>-->
+<!--            <md-autocomplete-->
+<!--              class="search"-->
+<!--              v-model="selectedEmployee"-->
+<!--              :md-options="employees"-->
+<!--            >-->
+<!--              <label>Поиск...</label>-->
+<!--            </md-autocomplete>-->
           </div>
           <md-list>
 
@@ -47,20 +52,24 @@
 </template>
 
 <script>
+import { SearchField} from "@/components";
 export default {
+    components: {
+        SearchField
+    },
   data() {
     return {
-      selectedEmployee: null,
-      employees: [
-        "Jim Halpert",
-        "Dwight Schrute",
-        "Michael Scott",
-        "Pam Beesly",
-        "Angela Martin",
-        "Kelly Kapoor",
-        "Ryan Howard",
-        "Kevin Malone"
-      ]
+      // selectedEmployee: null,
+      // employees: [
+      //   "Jim Halpert",
+      //   "Dwight Schrute",
+      //   "Michael Scott",
+      //   "Pam Beesly",
+      //   "Angela Martin",
+      //   "Kelly Kapoor",
+      //   "Ryan Howard",
+      //   "Kevin Malone"
+      // ]
     };
   },
   methods: {

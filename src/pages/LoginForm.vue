@@ -65,6 +65,8 @@
                             // console.log(this.componentError);
                             this.message = 'Неверные учетные данные'
                         }
+                        else
+                             return Promise.reject(err.response);
 
                     })
             }

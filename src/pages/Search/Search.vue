@@ -9,7 +9,22 @@
 
             </div>
         </div>
-
+        <div class="pagination-custom">
+            <paginate
+                    v-model="currentPage"
+                    ref="paginate"
+                    :force-page="2"
+                    v-if="pageCount > 1"
+                    :page-count="pageCount"
+                    :page-range="3"
+                    :margin-pages="3"
+                    :click-handler="clickCallback"
+                    :prev-text="'Предыдущая'"
+                    :next-text="'Следующая'"
+                    :container-class="'pagination'"
+                    :page-class="'page-item'">
+            </paginate>
+        </div>
     </div>
 <!--    TODO: Добавить навигацию!-->
 <!--    TODO: Разработать ссылку для комментариев-->
@@ -17,9 +32,15 @@
 </template>
 
 <script>
+    import Paginate from 'vuejs-paginate'
     export default {
-
+        components: {
+            Paginate
+        },
         data: () => ({
+            pageCount:5,
+            currentPage : 1,
+
            response:null
         }),
         mounted(){
@@ -33,20 +54,27 @@
         },
         methods:{
             getResultSearch(){
-                let url = this.$settings.APP_SEARCH+'?str='+this.$route.params.str
+                let url = this.$settings.APP_SEARCH+'?str='+this.$route.params.str+'&page='+this.currentPage
                 let _this = this
                 this.response = null;
                 console.warn(url);
                 this.$http.get(url)
                     .then(function(response){
-                        if (response.data) {
+                        if (response.status == 200) {
                             console.warn(this)
                             _this.response = response.data.rows;
-                        }
-                        else{
-                            alert('error')
+                            _this.pageCount = response.data.totalPage
                         }
                     })
+                    .catch((error) => {
+                      if(error.status == 404)
+                          alert('Ничего не найдено')
+                    })
+            },
+
+            clickCallback: function(page) {
+                this.$router.push('/search/' + page+'/'+this.$route.params.str);
+                this.getResultSearch()
             }
         }
     }
@@ -64,7 +92,7 @@
     {
         margin-left: 30px;
     }
-    em {
+    highlight-string {
         background-color: #FCFD8D;
     }
 </style>

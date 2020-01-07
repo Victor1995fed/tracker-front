@@ -27,6 +27,10 @@ import NoteView from "@/pages/Note/View.vue";
 import NoteList from "@/pages/Note/List.vue";
 import NoteUpdate from "@/pages/Note/Update.vue";
 import NoteCreate from "@/pages/Note/Create.vue";
+
+//Comment
+import CommentView from "@/pages/Comment/View.vue";
+
 //Category
 import CategoryCreate from "@/pages/Category/Create.vue";
 import CategoryList from "@/pages/Category/List.vue";
@@ -118,9 +122,14 @@ const routes = [
         name: "Задачи",
         component: NoteList
       },
-
       {
-        path: "search/:str?",
+          path:"comment/view/:id",
+          name: "Комменарий",
+          component: CommentView
+
+      },
+      {
+        path: "search/:page/:str",
         name: "Поиск",
         component: Search
       },

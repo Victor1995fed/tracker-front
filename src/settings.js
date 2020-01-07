@@ -33,7 +33,7 @@ export const settings = {
   COMMENT_CREATE: ApiUrl + "comment/create",
   COMMENT_UPDATE: ApiUrl + "comment/update",
   COMMENT_DELETE: ApiUrl + "comment/delete",
-
+  COMMENT_VIEW : ApiUrl + "comment/view",
   //Tags
   TAG_LIST: ApiUrl+"tag/list",
   TAG_CREATE: ApiUrl+"tag/create",

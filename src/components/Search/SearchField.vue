@@ -16,7 +16,7 @@
 
         methods: {
             submit() {
-                this.$router.push({ path: '/search/'+this.selectedEmployee })
+                this.$router.push({ path: '/search/1/'+this.selectedEmployee })
             },
 
         }

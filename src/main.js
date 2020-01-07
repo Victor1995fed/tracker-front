@@ -110,6 +110,8 @@ Vue.prototype.$http.interceptors.response.use(
             })
         throw new Error('Invalid token detected')
       }
+      else
+        return Promise.reject(error.response);
     }
 );
 

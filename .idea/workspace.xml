@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e239849-0685-47fe-a502-1a2637ab8794" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Search/SearchField.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Search/Search.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Comment/View.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scss/material-dashboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/material-dashboard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Layout/TopNavbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Layout/TopNavbar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Project/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Project/List.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Search/SearchField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search/SearchField.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/LoginForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LoginForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Search/Search.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Search/Search.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings.js" afterDir="false" />
     </list>
@@ -34,6 +34,7 @@
   <component name="ProjectId" id="1QPxoSZHhIFZX6wCeCuMvsqioRv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
@@ -181,7 +182,9 @@
       <workItem from="1576752140404" duration="2859000" />
       <workItem from="1577611128891" duration="1598000" />
       <workItem from="1578223543457" duration="1072000" />
-      <workItem from="1578286913614" duration="8192000" />
+      <workItem from="1578286913614" duration="8458000" />
+      <workItem from="1578304583868" duration="854000" />
+      <workItem from="1578366358170" duration="5271000" />
     </task>
     <task id="LOCAL-00001" summary="add validations for EditProject">
       <created>1567775730521</created>
@@ -519,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577611544715</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="component search">
+      <created>1578295626238</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1578295626238</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,7 +551,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="add snackbar-error" />
     <MESSAGE value="action logout" />
     <MESSAGE value="add Note" />
     <MESSAGE value="add const URL" />
@@ -566,6 +575,7 @@
     <MESSAGE value="choice tags in taskList" />
     <MESSAGE value="add icons" />
     <MESSAGE value="fix bug scroll" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bug scroll" />
+    <MESSAGE value="component search" />
+    <option name="LAST_COMMIT_MESSAGE" value="component search" />
   </component>
 </project>

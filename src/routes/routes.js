@@ -46,6 +46,9 @@ import UpgradeToPRO from "@/pages/UpgradeToPRO.vue";
 
 //Search
 import Search from "@/pages/Search/Search.vue";
+
+//Statistics
+import StatisticsView from "@/pages/Statistics/View.vue";
 //LoginForm
 
 import LoginForm from "@/pages/LoginForm.vue";
@@ -121,6 +124,13 @@ const routes = [
         path: "note/:page?",
         name: "Задачи",
         component: NoteList
+      },
+
+      {
+        path: "statistics/view",
+        name: "Статистика",
+        component: StatisticsView
+
       },
       {
           path:"comment/view/:id",

@@ -44,7 +44,7 @@
 
 
 
-      <sidebar-link to="/user4">
+      <sidebar-link to="/statistics/view">
         <md-icon>show_chart</md-icon>
         <p>Статистика</p>
       </sidebar-link>

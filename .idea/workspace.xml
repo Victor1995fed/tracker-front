@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e239849-0685-47fe-a502-1a2637ab8794" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Comment/View.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Chart/Bar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Chart/LineChart.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Statistics/View.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Search/SearchField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search/SearchField.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/LoginForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LoginForm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Search/Search.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Search/Search.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Layout/DashboardLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Layout/DashboardLayout.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings.js" afterDir="false" />
     </list>
@@ -184,14 +184,8 @@
       <workItem from="1578223543457" duration="1072000" />
       <workItem from="1578286913614" duration="8458000" />
       <workItem from="1578304583868" duration="854000" />
-      <workItem from="1578366358170" duration="5271000" />
-    </task>
-    <task id="LOCAL-00001" summary="add validations for EditProject">
-      <created>1567775730521</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1567775730521</updated>
+      <workItem from="1578366358170" duration="6492000" />
+      <workItem from="1578806075679" duration="12449000" />
     </task>
     <task id="LOCAL-00002" summary="create Project/List.vue">
       <created>1567837608196</created>
@@ -529,7 +523,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578295626238</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="add paginate for search">
+      <created>1578371834969</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1578371834970</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -551,7 +552,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="action logout" />
     <MESSAGE value="add Note" />
     <MESSAGE value="add const URL" />
     <MESSAGE value="add filters view" />
@@ -576,6 +576,7 @@
     <MESSAGE value="add icons" />
     <MESSAGE value="fix bug scroll" />
     <MESSAGE value="component search" />
-    <option name="LAST_COMMIT_MESSAGE" value="component search" />
+    <MESSAGE value="add paginate for search" />
+    <option name="LAST_COMMIT_MESSAGE" value="add paginate for search" />
   </component>
 </project>

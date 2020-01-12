@@ -27,7 +27,13 @@ import Pagination from "./Tools/Pagination.vue";
 import  SnackbarError from "./Helpers/SnackbarError.vue";
 import  SnackbarSuccess from "./Helpers/SnackbarSuccess";
 
+//Chart
+import LineChart from "./Chart/LineChart.vue";
+import BarChart from "./Chart/Bar.vue";
+
 export {
+  BarChart,
+  LineChart,
   SnackbarError,
   ChartCard,
   NavTabsCard,

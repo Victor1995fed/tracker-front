@@ -42,6 +42,9 @@ export const settings = {
 
   //SEARCH
   APP_SEARCH: ApiUrl + "app/search",
+  //Statistics
+  STATISTICS_INDEX: ApiUrl + "statistics/index",
+
   //Constants for sort
   TASK_SORT_ID: 1,
   TASK_SORT_THEME: 2,

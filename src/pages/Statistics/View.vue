@@ -45,7 +45,6 @@
 
                     this.$http.get( this.$settings.STATISTICS_INDEX).then(response => {
                         let data = response.data
-                        console.log('DATA',data['count_new'])
                         this.dataCollectionBar = {
                             labels: ["Выполненные", "Новые", "Остальные"],
                             datasets: [

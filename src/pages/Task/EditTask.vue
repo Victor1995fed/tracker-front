@@ -241,11 +241,13 @@ export default {
     taskSend() {
       let _this = this;
       const formData = new FormData();
+      //Массив для исключения из правила null
+      let arrDate = ['date_end','date_start'];
       for (var key in this.form) {
-        if (this.form[key] !== undefined && this.form[key] !== null) {
+        if ((this.form[key] !== undefined && this.form[key] !== null)) {
           formData.append(
             key,
-            key == "date_end" || key == "date_start"
+                  (arrDate.includes(key) && this.form[key] !== null)
               ? format(this.form[key], this.$settings.DATE_FORMAT_TO_SERVER)
               : this.form[key]
           );

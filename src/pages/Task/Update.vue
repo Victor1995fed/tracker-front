@@ -35,9 +35,9 @@
                 this.form.spending = 0
                 //Замена формата даты
                 // console.warn('DATA',this.$options.filters.setFormatDate(this.form.date_end))
-
-                this.form.date_end = (this.form.date_end !== null) ? new Date(this.form.date_end) : null
-                this.form.date_start = (this.form.date_end !== null) ? new Date(this.form.date_start) : null
+                this.form.date_end = (this.form.date_end !== null ) ? new Date(this.form.date_end) : null
+                this.form.date_start = (this.form.date_start !== null) ? new Date(this.form.date_start) : null
+                // this.form.date_start = null;
             })
 
         },

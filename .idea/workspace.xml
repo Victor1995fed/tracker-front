@@ -4,8 +4,6 @@
     <list default="true" id="6e239849-0685-47fe-a502-1a2637ab8794" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Statistics/View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Statistics/View.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Task/Update.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/Update.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -181,14 +179,8 @@
       <workItem from="1578304583868" duration="854000" />
       <workItem from="1578366358170" duration="6492000" />
       <workItem from="1578806075679" duration="12811000" />
-      <workItem from="1579169929197" duration="3348000" />
-    </task>
-    <task id="LOCAL-00003" summary="choice Project">
-      <created>1567858266563</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1567858266563</updated>
+      <workItem from="1579169929197" duration="3608000" />
+      <workItem from="1579254438055" duration="548000" />
     </task>
     <task id="LOCAL-00004" summary="functional development for EditTask.vue">
       <created>1568029439220</created>
@@ -526,7 +518,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578820555784</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="fix bug date">
+      <created>1579173359752</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1579173359752</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -548,7 +547,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="add const URL" />
     <MESSAGE value="add filters view" />
     <MESSAGE value="fix filter" />
     <MESSAGE value="add sort" />
@@ -573,6 +571,7 @@
     <MESSAGE value="component search" />
     <MESSAGE value="add paginate for search" />
     <MESSAGE value="statistics page" />
-    <option name="LAST_COMMIT_MESSAGE" value="statistics page" />
+    <MESSAGE value="fix bug date" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bug date" />
   </component>
 </project>

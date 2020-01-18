@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6e239849-0685-47fe-a502-1a2637ab8794" name="Default Changelist" comment="">
+    <list default="true" id="6e239849-0685-47fe-a502-1a2637ab8794" name="Default Changelist" comment="fix bug date #2">
+      <change afterPath="$PROJECT_DIR$/src/pages/Statistics/Test.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Task/Update.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/Update.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Statistics/View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Statistics/View.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Task/EditTask.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +44,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="ts.external.directory.path" value="D:\Programs\WebStorm 2019.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
@@ -64,6 +67,16 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Debug (dev)" type="JavascriptDebugType" temporary="true" uri="http://localhost:8080/">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.Debug (dev)" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -180,14 +193,10 @@
       <workItem from="1578366358170" duration="6492000" />
       <workItem from="1578806075679" duration="12811000" />
       <workItem from="1579169929197" duration="3608000" />
-      <workItem from="1579254438055" duration="548000" />
-    </task>
-    <task id="LOCAL-00004" summary="functional development for EditTask.vue">
-      <created>1568029439220</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1568029439220</updated>
+      <workItem from="1579254438055" duration="786000" />
+      <workItem from="1579258520660" duration="1318000" />
+      <workItem from="1579321645633" duration="2689000" />
+      <workItem from="1579324376222" duration="8218000" />
     </task>
     <task id="LOCAL-00005" summary="add download files">
       <created>1568457686930</created>
@@ -525,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579173359752</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="fix bug date #2">
+      <created>1579255171840</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1579255171840</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -547,7 +563,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="add filters view" />
     <MESSAGE value="fix filter" />
     <MESSAGE value="add sort" />
     <MESSAGE value="refactor url sort" />
@@ -572,6 +587,7 @@
     <MESSAGE value="add paginate for search" />
     <MESSAGE value="statistics page" />
     <MESSAGE value="fix bug date" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bug date" />
+    <MESSAGE value="fix bug date #2" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bug date #2" />
   </component>
 </project>

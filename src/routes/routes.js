@@ -49,6 +49,7 @@ import Search from "@/pages/Search/Search.vue";
 
 //Statistics
 import StatisticsView from "@/pages/Statistics/View.vue";
+import StatisticsTest from "@/pages/Statistics/Test.vue";
 //LoginForm
 
 import LoginForm from "@/pages/LoginForm.vue";
@@ -132,6 +133,13 @@ const routes = [
         component: StatisticsView
 
       },
+      {
+        path: "statistics/test",
+        name: "Статистика",
+        component: StatisticsTest
+
+      },
+
       {
           path:"comment/view/:id",
           name: "Комменарий",

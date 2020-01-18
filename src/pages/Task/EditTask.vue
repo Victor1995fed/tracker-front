@@ -318,6 +318,7 @@ export default {
 
   mounted() {
     let parent_id = this.$route.params.parent_id;
+
     this.$http.get(this.$settings.API + "task/edit").then(response => {
       this.response = response.data;
     });
@@ -330,6 +331,7 @@ export default {
           this.parentTask = response.data.task;
           this.form.project_id = response.data.task.project_id;
           this.form.category_id = response.data.task.category_id;
+
         });
     }
   },

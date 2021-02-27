@@ -3,7 +3,7 @@ version: '3.2'
 services:
 
   frontend:
-    image: node:14
+    build: ./
     ports:
       - 20088:8080
     volumes:

@@ -1,4 +1,4 @@
-# Task tracker
+# Task tracker (front)
 ### Описание:
 Таск-трекер для планирования и учета задач на Vue.js
 

@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@livelybone/vue-datepicker": "^3.1.0",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "chart.js": "^2.9.3",
     "chartist": "0.11.2",
     "google-maps": "3.3.0",

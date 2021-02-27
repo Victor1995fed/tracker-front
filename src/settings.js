@@ -1,4 +1,4 @@
-const ApiUrl = "http://tracker-api.zz/";
+const ApiUrl = "http://localhost:20080/";
 
 export const settings = {
   API: ApiUrl,

@@ -57,7 +57,7 @@
                 console.warn(this.$store);
 
                 this.$store.dispatch('login', { username, password })
-                    .then(() => this.$router.push('/'))
+                    .then(() => this.$router.push('/task/list'))
                     .catch(err => {
                         // console.warn('ОШИБКА',err.response.status)
                         if(err.response.status == 403){

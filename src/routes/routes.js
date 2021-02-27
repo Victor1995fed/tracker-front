@@ -142,9 +142,8 @@ const routes = [
 
       {
           path:"comment/view/:id",
-          name: "Комменарий",
-          component: CommentView
-
+        name: "Комменарий",
+        component: CommentView
       },
       {
         path: "search/:page/:str",

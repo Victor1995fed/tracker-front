@@ -1,0 +1,12 @@
+version: '3.2'
+
+services:
+
+  frontend:
+    image: node:14
+    ports:
+      - 20088:8080
+    volumes:
+      - ./:/app
+    working_dir: /app
+    tty: true

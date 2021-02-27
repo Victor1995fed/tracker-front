@@ -3,6 +3,7 @@
 Таск-трекер для планирования и учета задач на Vue.js
 
 Установить API для работы с трекером  по данной [ссылке](https://github.com/Victor1995fed/tracker) 
+
 ![Иллюстрация к проекту](https://github.com/Victor1995fed/tracker-front/raw/master/image/tasks.png)
 ### Системные требования:
 - `docker >= 18.0` _(установка: `curl -fsSL get.docker.com | sudo sh`)_

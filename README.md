@@ -1,5 +1,8 @@
 # Front tracker
-![Иллюстрация к проекту](https://github.com/Victor1995fed/tracker-front/master/image/image.png)
+### Описание:
+Таск-трекер для планирования и учета задач
+
+![Иллюстрация к проекту](https://github.com/Victor1995fed/tracker-front/raw/master/image/tasks.png)
 ### Системные требования:
 - `docker >= 18.0` _(установка: `curl -fsSL get.docker.com | sudo sh`)_
 -  `docker-compose >= 3` _([installing manual](https://docs.docker.com/compose/install/#install-compose))_
